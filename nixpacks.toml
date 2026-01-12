@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = ["python310", "poetry", "nodejs-18_x"]
+
+[phases.install]
+cmds = [
+    "cd backend && poetry config virtualenvs.create false && poetry install --no-dev",
+    "cd frontend && npm install && npm run build"
+]
+
+[phases.build]
+cmds = ["echo 'Build complete'"]
+
+[start]
+cmd = "cd backend && poetry run python app_v2.py"

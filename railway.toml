@@ -5,20 +5,3 @@ builder = "nixpacks"
 startCommand = "cd backend && poetry run python app_v2.py"
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
-
-[build.nixpacksPlan]
-providers = ["python", "nodejs"]
-
-[build.nixpacksPlan.phases.setup]
-nixPkgs = ["python310", "poetry", "nodejs-18_x"]
-
-[build.nixpacksPlan.phases.install]
-cmds = [
-    "cd backend && poetry config virtualenvs.create false && poetry install --no-dev",
-    "cd frontend && npm install && npm run build"
-]
-
-[build.nixpacksPlan.phases.build]
-cmds = [
-    "echo 'Frontend built successfully'"
-]
