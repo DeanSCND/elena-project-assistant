@@ -1,0 +1,48 @@
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Development files
+*.log
+.env.local
+.env.development
+
+# Test files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts (we rebuild on Railway)
+frontend/dist/
+
+# Documentation
+*.md
+!README.md
+
+# Git
+.git/
+.gitignore

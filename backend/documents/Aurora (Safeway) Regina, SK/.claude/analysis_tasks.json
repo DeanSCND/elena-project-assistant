@@ -1,0 +1,739 @@
+{
+  "project": {
+    "name": "Aurora Food Store (Safeway) Regina, SK",
+    "type": "grocery_store",
+    "base_dir": "/Users/deanskelton/Devlopment/morgan/Aurora (Safeway) Regina, SK",
+    "generated": "2026-01-09T17:09:11.249328"
+  },
+  "analysis_config": {
+    "focus_areas": [
+      "hvac_clearances",
+      "structural_conflicts",
+      "color_coding",
+      "ceiling_heights",
+      "cross_references"
+    ],
+    "critical_elements": [
+      "trellis structures",
+      "bulkheads",
+      "exposed structure",
+      "equipment clearances"
+    ]
+  },
+  "drawings": [
+    {
+      "name": "12in Shelf Bracket",
+      "md_path": "PCN_Calrifications/PCN42/12in Shelf Bracket.md",
+      "img_dir": "PCN_Calrifications/PCN42/12in Shelf Bracket_images",
+      "ai_md_path": "PCN_Calrifications/PCN42/12in Shelf Bracket.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 200,
+      "category": "general"
+    },
+    {
+      "name": "Aurora Food Store IFC Drawings (March 25, 2025)",
+      "md_path": "Aurora Food Store IFC Drawings (March 25, 2025).md",
+      "img_dir": "Aurora Food Store IFC Drawings (March 25, 2025)_images",
+      "ai_md_path": "Aurora Food Store IFC Drawings (March 25, 2025).AI.md",
+      "image_count": 187,
+      "needs_analysis": true,
+      "md_size": 892129,
+      "category": "ifc_drawings"
+    },
+    {
+      "name": "CLAR 2445-15 - Safeway Aurora - Regina SK",
+      "md_path": "PCN_Calrifications/CLAR 2445-15 - Safeway Aurora - Regina SK.md",
+      "img_dir": "PCN_Calrifications/CLAR 2445-15 - Safeway Aurora - Regina SK_images",
+      "ai_md_path": "PCN_Calrifications/CLAR 2445-15 - Safeway Aurora - Regina SK.AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 1769,
+      "category": "clarification"
+    },
+    {
+      "name": "Clarification #01",
+      "md_path": "PCN_Calrifications/Clarification #01.md",
+      "img_dir": "PCN_Calrifications/Clarification #01_images",
+      "ai_md_path": "PCN_Calrifications/Clarification #01.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1786,
+      "category": "clarification"
+    },
+    {
+      "name": "Clarification #03",
+      "md_path": "PCN_Calrifications/Clarification #03.md",
+      "img_dir": "PCN_Calrifications/Clarification #03_images",
+      "ai_md_path": "PCN_Calrifications/Clarification #03.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1479,
+      "category": "clarification"
+    },
+    {
+      "name": "Clarification #05 - Vestibule Windows",
+      "md_path": "PCN_Calrifications/Clarification #05 - Vestibule Windows.md",
+      "img_dir": "PCN_Calrifications/Clarification #05 - Vestibule Windows_images",
+      "ai_md_path": "PCN_Calrifications/Clarification #05 - Vestibule Windows.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1493,
+      "category": "clarification"
+    },
+    {
+      "name": "Clarification #11 - Refrigeration Generator Installation",
+      "md_path": "PCN_Calrifications/Clarification #11 - Refrigeration Generator Installation.md",
+      "img_dir": "PCN_Calrifications/Clarification #11 - Refrigeration Generator Installation_images",
+      "ai_md_path": "PCN_Calrifications/Clarification #11 - Refrigeration Generator Installation.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1841,
+      "category": "clarification"
+    },
+    {
+      "name": "Clarification #16 - Lighting at RTU-1",
+      "md_path": "PCN_Calrifications/Clarification #16 - Lighting at RTU-1.md",
+      "img_dir": "PCN_Calrifications/Clarification #16 - Lighting at RTU-1_images",
+      "ai_md_path": "PCN_Calrifications/Clarification #16 - Lighting at RTU-1.AI.md",
+      "image_count": 3,
+      "needs_analysis": true,
+      "md_size": 13813,
+      "category": "clarification"
+    },
+    {
+      "name": "F0.1 General Notes and Schedule - Aurora Food Store - DECOR PACKAGE R01",
+      "md_path": "Active Drawing/F0.1 General Notes and Schedule - Aurora Food Store - DECOR PACKAGE R01.md",
+      "img_dir": "Active Drawing/F0.1 General Notes and Schedule - Aurora Food Store - DECOR PACKAGE R01_images",
+      "ai_md_path": "Active Drawing/F0.1 General Notes and Schedule - Aurora Food Store - DECOR PACKAGE R01.AI.md",
+      "image_count": 8,
+      "needs_analysis": true,
+      "md_size": 33901,
+      "category": "decor"
+    },
+    {
+      "name": "F0.2 Aurora Food Store - DECOR PACKAGE R01",
+      "md_path": "Active Drawing/F0.2 Aurora Food Store - DECOR PACKAGE R01.md",
+      "img_dir": "Active Drawing/F0.2 Aurora Food Store - DECOR PACKAGE R01_images",
+      "ai_md_path": "Active Drawing/F0.2 Aurora Food Store - DECOR PACKAGE R01.AI.md",
+      "image_count": 44,
+      "needs_analysis": true,
+      "md_size": 9411,
+      "category": "decor"
+    },
+    {
+      "name": "F0.3 Aurora Food Store - DECOR PACKAGE R01",
+      "md_path": "Active Drawing/F0.3 Aurora Food Store - DECOR PACKAGE R01.md",
+      "img_dir": "Active Drawing/F0.3 Aurora Food Store - DECOR PACKAGE R01_images",
+      "ai_md_path": "Active Drawing/F0.3 Aurora Food Store - DECOR PACKAGE R01.AI.md",
+      "image_count": 8,
+      "needs_analysis": true,
+      "md_size": 2497,
+      "category": "decor"
+    },
+    {
+      "name": "F1.2 Aurora Food Store - DECOR PACKAGE R01",
+      "md_path": "Active Drawing/F1.2 Aurora Food Store - DECOR PACKAGE R01.md",
+      "img_dir": "Active Drawing/F1.2 Aurora Food Store - DECOR PACKAGE R01_images",
+      "ai_md_path": "Active Drawing/F1.2 Aurora Food Store - DECOR PACKAGE R01.AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 5925,
+      "category": "decor"
+    },
+    {
+      "name": "F3.2 Aurora Food Store - DECOR PACKAGE R01",
+      "md_path": "Active Drawing/F3.2 Aurora Food Store - DECOR PACKAGE R01.md",
+      "img_dir": "Active Drawing/F3.2 Aurora Food Store - DECOR PACKAGE R01_images",
+      "ai_md_path": "Active Drawing/F3.2 Aurora Food Store - DECOR PACKAGE R01.AI.md",
+      "image_count": 99,
+      "needs_analysis": true,
+      "md_size": 18895,
+      "category": "decor"
+    },
+    {
+      "name": "F6.1 Aurora Food Store - DECOR PACKAGE R01",
+      "md_path": "Active Drawing/F6.1 Aurora Food Store - DECOR PACKAGE R01.md",
+      "img_dir": "Active Drawing/F6.1 Aurora Food Store - DECOR PACKAGE R01_images",
+      "ai_md_path": "Active Drawing/F6.1 Aurora Food Store - DECOR PACKAGE R01.AI.md",
+      "image_count": 4,
+      "needs_analysis": true,
+      "md_size": 7866,
+      "category": "decor"
+    },
+    {
+      "name": "F6.2 Aurora Food Store - DECOR PACKAGE R01",
+      "md_path": "Active Drawing/F6.2 Aurora Food Store - DECOR PACKAGE R01.md",
+      "img_dir": "Active Drawing/F6.2 Aurora Food Store - DECOR PACKAGE R01_images",
+      "ai_md_path": "Active Drawing/F6.2 Aurora Food Store - DECOR PACKAGE R01.AI.md",
+      "image_count": 10,
+      "needs_analysis": true,
+      "md_size": 10002,
+      "category": "decor"
+    },
+    {
+      "name": "F7.1 Interior Elevations Aurora Food Store - DECOR PACKAGE R01",
+      "md_path": "Active Drawing/F7.1 Interior Elevations Aurora Food Store - DECOR PACKAGE R01.md",
+      "img_dir": "Active Drawing/F7.1 Interior Elevations Aurora Food Store - DECOR PACKAGE R01_images",
+      "ai_md_path": "Active Drawing/F7.1 Interior Elevations Aurora Food Store - DECOR PACKAGE R01.AI.md",
+      "image_count": 113,
+      "needs_analysis": true,
+      "md_size": 28670,
+      "category": "decor"
+    },
+    {
+      "name": "InvQUOTE",
+      "md_path": "PCN_Calrifications/PCN42/InvQUOTE.md",
+      "img_dir": "PCN_Calrifications/PCN42/InvQUOTE_images",
+      "ai_md_path": "PCN_Calrifications/PCN42/InvQUOTE.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 945,
+      "category": "general"
+    },
+    {
+      "name": "PCN # 001 - Storm Connection",
+      "md_path": "PCN_Calrifications/PCN # 001 - Storm Connection.md",
+      "img_dir": "PCN_Calrifications/PCN # 001 - Storm Connection_images",
+      "ai_md_path": "PCN_Calrifications/PCN # 001 - Storm Connection.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 2078,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN 2445-03 CANCELLED",
+      "md_path": "PCN_Calrifications/PCN 2445-03 CANCELLED.md",
+      "img_dir": "PCN_Calrifications/PCN 2445-03 CANCELLED_images",
+      "ai_md_path": "PCN_Calrifications/PCN 2445-03 CANCELLED.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 209,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 002 - Freezer Fence & Closed Stair Risers",
+      "md_path": "PCN_Calrifications/PCN# 002 - Freezer Fence & Closed Stair Risers.md",
+      "img_dir": "PCN_Calrifications/PCN# 002 - Freezer Fence & Closed Stair Risers_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 002 - Freezer Fence & Closed Stair Risers.AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 5751,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 004 - Refrigeration \u2013 Circuitry Revisions",
+      "md_path": "PCN_Calrifications/PCN# 004 - Refrigeration \u2013 Circuitry Revisions.md",
+      "img_dir": "PCN_Calrifications/PCN# 004 - Refrigeration \u2013 Circuitry Revisions_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 004 - Refrigeration \u2013 Circuitry Revisions.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 56618,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 005 - North Sidewalk to Anaquod Road",
+      "md_path": "PCN_Calrifications/PCN# 005 - North Sidewalk to Anaquod Road.md",
+      "img_dir": "PCN_Calrifications/PCN# 005 - North Sidewalk to Anaquod Road_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 005 - North Sidewalk to Anaquod Road.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1816,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 006 - Compressor Mezzanine Stair Wall",
+      "md_path": "PCN_Calrifications/PCN# 006 - Compressor Mezzanine Stair Wall.md",
+      "img_dir": "PCN_Calrifications/PCN# 006 - Compressor Mezzanine Stair Wall_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 006 - Compressor Mezzanine Stair Wall.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1793,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 007 - Exit Doors Maglocks",
+      "md_path": "PCN_Calrifications/PCN# 007 - Exit Doors Maglocks.md",
+      "img_dir": "PCN_Calrifications/PCN# 007 - Exit Doors Maglocks_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 007 - Exit Doors Maglocks.AI.md",
+      "image_count": 3,
+      "needs_analysis": true,
+      "md_size": 32576,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 008 - Clean-Up Area Door #193",
+      "md_path": "PCN_Calrifications/PCN# 008 - Clean-Up Area Door #193.md",
+      "img_dir": "PCN_Calrifications/PCN# 008 - Clean-Up Area Door #193_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 008 - Clean-Up Area Door #193.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1737,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 009 R1 - Seating Area Lights",
+      "md_path": "PCN_Calrifications/PCN# 009 R1 - Seating Area Lights.md",
+      "img_dir": "PCN_Calrifications/PCN# 009 R1 - Seating Area Lights_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 009 R1 - Seating Area Lights.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 30237,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 011 R1 - Exterior Lighting and Signage Revisions",
+      "md_path": "PCN_Calrifications/PCN# 011 R1 - Exterior Lighting and Signage Revisions.md",
+      "img_dir": "PCN_Calrifications/PCN# 011 R1 - Exterior Lighting and Signage Revisions_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 011 R1 - Exterior Lighting and Signage Revisions.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 73091,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 012 - Exterior Signage",
+      "md_path": "PCN_Calrifications/PCN# 012 - Exterior Signage.md",
+      "img_dir": "PCN_Calrifications/PCN# 012 - Exterior Signage_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 012 - Exterior Signage.AI.md",
+      "image_count": 19,
+      "needs_analysis": true,
+      "md_size": 24428,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 013 - Building Permit Misc Modifications",
+      "md_path": "PCN_Calrifications/PCN# 013 - Building Permit Misc Modifications.md",
+      "img_dir": "PCN_Calrifications/PCN# 013 - Building Permit Misc Modifications_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 013 - Building Permit Misc Modifications.AI.md",
+      "image_count": 3,
+      "needs_analysis": true,
+      "md_size": 106397,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 015 - Rachelle Bery Lighting & Power",
+      "md_path": "PCN_Calrifications/PCN# 015 - Rachelle Bery Lighting & Power.md",
+      "img_dir": "PCN_Calrifications/PCN# 015 - Rachelle Bery Lighting & Power_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 015 - Rachelle Bery Lighting & Power.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 44480,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 016 - Delete Mobile Floral Wrap Station",
+      "md_path": "PCN_Calrifications/PCN# 016 - Delete Mobile Floral Wrap Station.md",
+      "img_dir": "PCN_Calrifications/PCN# 016 - Delete Mobile Floral Wrap Station_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 016 - Delete Mobile Floral Wrap Station.AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 1864,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 019 - Vestibule Steel Studs",
+      "md_path": "PCN_Calrifications/PCN# 019 - Vestibule Steel Studs.md",
+      "img_dir": "PCN_Calrifications/PCN# 019 - Vestibule Steel Studs_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 019 - Vestibule Steel Studs.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 2147,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 022R1 - Delete Meat Prep Supply Diffuser",
+      "md_path": "PCN_Calrifications/PCN# 022R1 - Delete Meat Prep Supply Diffuser.md",
+      "img_dir": "PCN_Calrifications/PCN# 022R1 - Delete Meat Prep Supply Diffuser_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 022R1 - Delete Meat Prep Supply Diffuser.AI.md",
+      "image_count": 8,
+      "needs_analysis": true,
+      "md_size": 3371,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 023 - Butcher Shop Refrigeration",
+      "md_path": "PCN_Calrifications/PCN# 023 - Butcher Shop Refrigeration.md",
+      "img_dir": "PCN_Calrifications/PCN# 023 - Butcher Shop Refrigeration_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 023 - Butcher Shop Refrigeration.AI.md",
+      "image_count": 13,
+      "needs_analysis": true,
+      "md_size": 18144,
+      "category": "shop_drawing"
+    },
+    {
+      "name": "PCN# 024 - Canopy Overhang",
+      "md_path": "PCN_Calrifications/PCN# 024 - Canopy Overhang.md",
+      "img_dir": "PCN_Calrifications/PCN# 024 - Canopy Overhang_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 024 - Canopy Overhang.AI.md",
+      "image_count": 9,
+      "needs_analysis": true,
+      "md_size": 4286,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 025 - Refrigerated Floral Cases",
+      "md_path": "PCN_Calrifications/PCN# 025 - Refrigerated Floral Cases.md",
+      "img_dir": "PCN_Calrifications/PCN# 025 - Refrigerated Floral Cases_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 025 - Refrigerated Floral Cases.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 26745,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 027 - Fixture Plan R03 Pharmacy Consultation Room",
+      "md_path": "PCN_Calrifications/PCN# 027 - Fixture Plan R03 Pharmacy Consultation Room.md",
+      "img_dir": "PCN_Calrifications/PCN# 027 - Fixture Plan R03 Pharmacy Consultation Room_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 027 - Fixture Plan R03 Pharmacy Consultation Room.AI.md",
+      "image_count": 3,
+      "needs_analysis": true,
+      "md_size": 33837,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 028 - Customer Service Pony Wall",
+      "md_path": "PCN_Calrifications/PCN# 028 - Customer Service Pony Wall.md",
+      "img_dir": "PCN_Calrifications/PCN# 028 - Customer Service Pony Wall_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 028 - Customer Service Pony Wall.AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 2191,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 031 - Baler, Compactor & Power Pack (Fixture Plan R04)",
+      "md_path": "PCN_Calrifications/PCN# 031 - Baler, Compactor & Power Pack (Fixture Plan R04).md",
+      "img_dir": "PCN_Calrifications/PCN# 031 - Baler, Compactor & Power Pack (Fixture Plan R04)_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 031 - Baler, Compactor & Power Pack (Fixture Plan R04).AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 44974,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 032 - Bakery Billboard Power & Data",
+      "md_path": "PCN_Calrifications/PCN# 032 - Bakery Billboard Power & Data.md",
+      "img_dir": "PCN_Calrifications/PCN# 032 - Bakery Billboard Power & Data_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 032 - Bakery Billboard Power & Data.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 2886,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 033 - Ice Melt Tub",
+      "md_path": "PCN_Calrifications/PCN# 033 - Ice Melt Tub.md",
+      "img_dir": "PCN_Calrifications/PCN# 033 - Ice Melt Tub_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 033 - Ice Melt Tub.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1897,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 034 - Compressor Room FRR",
+      "md_path": "PCN_Calrifications/PCN# 034 - Compressor Room FRR.md",
+      "img_dir": "PCN_Calrifications/PCN# 034 - Compressor Room FRR_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 034 - Compressor Room FRR.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1841,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 035 - Staff Hallway Ceiling & Lights Office Corridor Bulkhead",
+      "md_path": "PCN_Calrifications/PCN# 035 - Staff Hallway Ceiling & Lights Office Corridor Bulkhead.md",
+      "img_dir": "PCN_Calrifications/PCN# 035 - Staff Hallway Ceiling & Lights Office Corridor Bulkhead_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 035 - Staff Hallway Ceiling & Lights Office Corridor Bulkhead.AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 2922,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 039 - 4 Cold Side and Salads Power",
+      "md_path": "PCN_Calrifications/PCN# 039 - 4 Cold Side and Salads Power.md",
+      "img_dir": "PCN_Calrifications/PCN# 039 - 4 Cold Side and Salads Power_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 039 - 4 Cold Side and Salads Power.AI.md",
+      "image_count": 15,
+      "needs_analysis": true,
+      "md_size": 35267,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 041 - Rolling Shutters HSS",
+      "md_path": "PCN_Calrifications/PCN# 041 - Rolling Shutters HSS.md",
+      "img_dir": "PCN_Calrifications/PCN# 041 - Rolling Shutters HSS_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 041 - Rolling Shutters HSS.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 3621,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 042 - Floral Glass Shelves",
+      "md_path": "PCN_Calrifications/PCN# 042 - Floral Glass Shelves.md",
+      "img_dir": "PCN_Calrifications/PCN# 042 - Floral Glass Shelves_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 042 - Floral Glass Shelves.AI.md",
+      "image_count": 11,
+      "needs_analysis": true,
+      "md_size": 6148,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 043 - HMR Ref. Service Hot Foods Power",
+      "md_path": "PCN_Calrifications/PCN# 043 - HMR Ref. Service Hot Foods Power.md",
+      "img_dir": "PCN_Calrifications/PCN# 043 - HMR Ref. Service Hot Foods Power_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 043 - HMR Ref. Service Hot Foods Power.AI.md",
+      "image_count": 3,
+      "needs_analysis": true,
+      "md_size": 26094,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 043 R1 - HMR Ref. Service Hot Foods Power",
+      "md_path": "PCN_Calrifications/PCN# 043 R1 - HMR Ref. Service Hot Foods Power.md",
+      "img_dir": "PCN_Calrifications/PCN# 043 R1 - HMR Ref. Service Hot Foods Power_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 043 R1 - HMR Ref. Service Hot Foods Power.AI.md",
+      "image_count": 3,
+      "needs_analysis": true,
+      "md_size": 28623,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 044 - IDF Closet Power",
+      "md_path": "PCN_Calrifications/PCN# 044 - IDF Closet Power.md",
+      "img_dir": "PCN_Calrifications/PCN# 044 - IDF Closet Power_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 044 - IDF Closet Power.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 2771,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 045 - Power for Dry System Compressor (002)",
+      "md_path": "PCN_Calrifications/PCN# 045 - Power for Dry System Compressor (002).md",
+      "img_dir": "PCN_Calrifications/PCN# 045 - Power for Dry System Compressor (002)_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 045 - Power for Dry System Compressor (002).AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 37773,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 046 - Deli Bulkhead (002)",
+      "md_path": "PCN_Calrifications/PCN# 046 - Deli Bulkhead (002).md",
+      "img_dir": "PCN_Calrifications/PCN# 046 - Deli Bulkhead (002)_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 046 - Deli Bulkhead (002).AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1918,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 048 - Delete Stainless Steel Railing @ Floral",
+      "md_path": "PCN_Calrifications/PCN# 048 - Delete Stainless Steel Railing @ Floral.md",
+      "img_dir": "PCN_Calrifications/PCN# 048 - Delete Stainless Steel Railing @ Floral_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 048 - Delete Stainless Steel Railing @ Floral.AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 2038,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 049 - Delete Floral Posts  Glass",
+      "md_path": "PCN_Calrifications/PCN# 049 - Delete Floral Posts  Glass.md",
+      "img_dir": "PCN_Calrifications/PCN# 049 - Delete Floral Posts  Glass_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 049 - Delete Floral Posts  Glass.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1780,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 053 - Checkout Pop Cooler Power",
+      "md_path": "PCN_Calrifications/PCN# 053 - Checkout Pop Cooler Power.md",
+      "img_dir": "PCN_Calrifications/PCN# 053 - Checkout Pop Cooler Power_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 053 - Checkout Pop Cooler Power.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 53579,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 054 - Frozen Foods Refrigeration Defrost Heaters",
+      "md_path": "PCN_Calrifications/PCN# 054 - Frozen Foods Refrigeration Defrost Heaters.md",
+      "img_dir": "PCN_Calrifications/PCN# 054 - Frozen Foods Refrigeration Defrost Heaters_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 054 - Frozen Foods Refrigeration Defrost Heaters.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 40569,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 055 - Illuminated Department Letters",
+      "md_path": "PCN_Calrifications/PCN# 055 - Illuminated Department Letters.md",
+      "img_dir": "PCN_Calrifications/PCN# 055 - Illuminated Department Letters_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 055 - Illuminated Department Letters.AI.md",
+      "image_count": 303,
+      "needs_analysis": true,
+      "md_size": 68743,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 056 - Pharmacy Bulkhead (002)",
+      "md_path": "PCN_Calrifications/PCN# 056 - Pharmacy Bulkhead (002).md",
+      "img_dir": "PCN_Calrifications/PCN# 056 - Pharmacy Bulkhead (002)_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 056 - Pharmacy Bulkhead (002).AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 3675,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 057 - Grade Beam Covering",
+      "md_path": "PCN_Calrifications/PCN# 057 - Grade Beam Covering.md",
+      "img_dir": "PCN_Calrifications/PCN# 057 - Grade Beam Covering_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 057 - Grade Beam Covering.AI.md",
+      "image_count": 4,
+      "needs_analysis": true,
+      "md_size": 2428,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 058 - Olive Bar Electrical",
+      "md_path": "PCN_Calrifications/PCN# 058 - Olive Bar Electrical.md",
+      "img_dir": "PCN_Calrifications/PCN# 058 - Olive Bar Electrical_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 058 - Olive Bar Electrical.AI.md",
+      "image_count": 3,
+      "needs_analysis": true,
+      "md_size": 27354,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 059 - Snack Bar Cooler (Propane)",
+      "md_path": "PCN_Calrifications/PCN# 059 - Snack Bar Cooler (Propane).md",
+      "img_dir": "PCN_Calrifications/PCN# 059 - Snack Bar Cooler (Propane)_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 059 - Snack Bar Cooler (Propane).AI.md",
+      "image_count": 12,
+      "needs_analysis": true,
+      "md_size": 30310,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 060 - Soup Island",
+      "md_path": "PCN_Calrifications/PCN# 060 - Soup Island.md",
+      "img_dir": "PCN_Calrifications/PCN# 060 - Soup Island_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 060 - Soup Island.AI.md",
+      "image_count": 3,
+      "needs_analysis": true,
+      "md_size": 26895,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 061 - Bakery Spiral Mixer",
+      "md_path": "PCN_Calrifications/PCN# 061 - Bakery Spiral Mixer.md",
+      "img_dir": "PCN_Calrifications/PCN# 061 - Bakery Spiral Mixer_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 061 - Bakery Spiral Mixer.AI.md",
+      "image_count": 5,
+      "needs_analysis": true,
+      "md_size": 30123,
+      "category": "clarification"
+    },
+    {
+      "name": "PCN# 062 - Bakery Sheeter",
+      "md_path": "PCN_Calrifications/PCN# 062 - Bakery Sheeter.md",
+      "img_dir": "PCN_Calrifications/PCN# 062 - Bakery Sheeter_images",
+      "ai_md_path": "PCN_Calrifications/PCN# 062 - Bakery Sheeter.AI.md",
+      "image_count": 4,
+      "needs_analysis": true,
+      "md_size": 29770,
+      "category": "clarification"
+    },
+    {
+      "name": "RFI# 005 - Steel Colum Spray Foam",
+      "md_path": "PCN_Calrifications/RFI# 005 - Steel Colum Spray Foam.md",
+      "img_dir": "PCN_Calrifications/RFI# 005 - Steel Colum Spray Foam_images",
+      "ai_md_path": "PCN_Calrifications/RFI# 005 - Steel Colum Spray Foam.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1246,
+      "category": "rfi"
+    },
+    {
+      "name": "RFI# 005 - Steel Colum Spray Foam (consultants response)",
+      "md_path": "PCN_Calrifications/RFI# 005 - Steel Colum Spray Foam (consultants response).md",
+      "img_dir": "PCN_Calrifications/RFI# 005 - Steel Colum Spray Foam (consultants response)_images",
+      "ai_md_path": "PCN_Calrifications/RFI# 005 - Steel Colum Spray Foam (consultants response).AI.md",
+      "image_count": 2,
+      "needs_analysis": true,
+      "md_size": 539,
+      "category": "rfi"
+    },
+    {
+      "name": "RFI# 014 - Door Location Dimensions Missing",
+      "md_path": "PCN_Calrifications/RFI# 014 - Door Location Dimensions Missing.md",
+      "img_dir": "PCN_Calrifications/RFI# 014 - Door Location Dimensions Missing_images",
+      "ai_md_path": "PCN_Calrifications/RFI# 014 - Door Location Dimensions Missing.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 1085,
+      "category": "rfi"
+    },
+    {
+      "name": "SAF-TRE-001-R6",
+      "md_path": "Active Drawing/TC Drawings/SAF-TRE-001-R6.md",
+      "img_dir": "Active Drawing/TC Drawings/SAF-TRE-001-R6_images",
+      "ai_md_path": "Active Drawing/TC Drawings/SAF-TRE-001-R6.AI.md",
+      "image_count": 29,
+      "needs_analysis": true,
+      "md_size": 40861,
+      "category": "shop_drawing"
+    },
+    {
+      "name": "SAF-TRE-003-R3[21]",
+      "md_path": "Active Drawing/TC Drawings/SAF-TRE-003-R3[21].md",
+      "img_dir": "Active Drawing/TC Drawings/SAF-TRE-003-R3[21]_images",
+      "ai_md_path": "Active Drawing/TC Drawings/SAF-TRE-003-R3[21].AI.md",
+      "image_count": 67,
+      "needs_analysis": true,
+      "md_size": 59553,
+      "category": "shop_drawing"
+    },
+    {
+      "name": "SAF-TRE-013 R2",
+      "md_path": "Active Drawing/TC Drawings/SAF-TRE-013 R2.md",
+      "img_dir": "Active Drawing/TC Drawings/SAF-TRE-013 R2_images",
+      "ai_md_path": "Active Drawing/TC Drawings/SAF-TRE-013 R2.AI.md",
+      "image_count": 62,
+      "needs_analysis": true,
+      "md_size": 83118,
+      "category": "shop_drawing"
+    },
+    {
+      "name": "SD# 011 - Refrigeration Pits",
+      "md_path": "PCN_Calrifications/SD# 011 - Refrigeration Pits.md",
+      "img_dir": "PCN_Calrifications/SD# 011 - Refrigeration Pits_images",
+      "ai_md_path": "PCN_Calrifications/SD# 011 - Refrigeration Pits.AI.md",
+      "image_count": 1,
+      "needs_analysis": true,
+      "md_size": 2487,
+      "category": "general"
+    }
+  ],
+  "summary": {
+    "total_drawings": 70,
+    "need_analysis": 70,
+    "already_analyzed": 0,
+    "total_images": 1107,
+    "by_category": {
+      "general": 3,
+      "ifc_drawings": 1,
+      "clarification": 51,
+      "decor": 8,
+      "shop_drawing": 4,
+      "rfi": 3
+    }
+  }
+}

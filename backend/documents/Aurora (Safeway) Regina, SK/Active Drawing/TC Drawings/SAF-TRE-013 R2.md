@@ -1,0 +1,10695 @@
+# SAF-TRE-013 R2
+
+**Source**: `SAF-TRE-013 R2.pdf`  
+**Pages**: 62  
+**Extracted**: 2026-01-09 18:29:41
+
+---
+
+## Page 1
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+1
+SAF-TRE-013-A
+FULL ASSEMBLY GRID A
+
+1
+SAF-TRE-013-B
+FULL ASSEMBLY GRID B
+
+SEAFOOD
+PREP
+
+1
+SAF-TRE-013-C
+FULL ASSEMBLY GRID C
+
+ 
+120"
+3048mm
+ 
+
+ 127-29/32"
+3249mm
+ 
+
+2
+
+BUTCHER SHOP
+
+C
+
+ 
+263"
+6680mm
+ 
+
+ 135DEG 
+
+B
+
+1
+2
+3
+
+ 
+314"
+7976mm
+ 
+
+A
+
+ 
+18"
+457mm
+ 
+
+ 135DEG 
+
+ 
+48"
+1219mm
+ 
+
+ 
+146"
+3708mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 
+8"
+203mm
+ 
+
+ 362-27/64"
+9206mm
+ 
+
+ 618-21/32"
+15714mm
+ 
+
+REVISIONS
+REV.
+DESCRIPTION
+DATE
+1
+CONCEPT ONLY
+10/17/2025
+2
+PRODUCTION APPROVED
+10/30/2025
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+CONCEPT
+
+![page001_img001.png](SAF-TRE-013 R2_images/page001_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/23/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+1
+5
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY
+
+GP
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:128
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 2
+
+REVISIONS
+REV.
+DESCRIPTION
+DATE
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+TOTAL BOUNDING BOX 
+LENGTH
+TOTAL BOUNDING BOX 
+WIDTH
+TOTAL BOUNDING BOX 
+THICKNESS
+
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+13 7/8"
+7 1/2"
+1 1/32"
+
+ 
+7-1/2"
+191mm
+ 
+
+ 13-7/8"
+352mm
+ 
+ 1-1/32"
+26mm
+ 
+
+Material:
+
+Manufacturing:
+
+Part Number:
+
+CONCEPT
+
+SAF-TRE-013
+
+Drawn By:
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+2
+5
+
+Date:
+
+Carrie V
+
+10/23/2025
+
+![page002_img001.png](SAF-TRE-013 R2_images/page002_img001.png)
+
+Client:
+Description:
+
+FULL ASSEMBLY
+
+3 Adi Dassler Way, Paris, On. N3L 0B9
+Tel. 1.519.442.7000, Fax. 1.519.442.7535
+
+Scale:
+
+Rev:
+Sheet:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:2
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 3
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+ 
+2"
+51mm
+ 
+
+ 
+8"
+203mm
+ 
+
+ 1/64"
+1mm
+ 
+
+R1/2"
+13mm
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+CONCEPT
+
+![page003_img001.png](SAF-TRE-013 R2_images/page003_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/23/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+3
+5
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY
+
+GP
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:2
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 4
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+ 1-1/32"
+26mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+ 7-17/32"
+191mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+CONCEPT
+
+![page004_img001.png](SAF-TRE-013 R2_images/page004_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/23/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+4
+5
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY
+
+GP
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:2
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 5
+
+REVISIONS
+REV.
+DESCRIPTION
+DATE
+TC BOM TABLE
+
+QTY.
+DESCRIPTION
+MATERIAL
+
+1
+SPLINE 
+PVCWHI1
+
+VARIOUS SPLINE  LENGTHS SPLINES SEE CUT LISTS
+
+ 1-1/2"
+38mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+Material:
+
+Manufacturing:
+
+Part Number:
+
+CONCEPT
+
+SAF-TRE-013
+
+Drawn By:
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+5
+5
+
+Date:
+
+Carrie V
+
+10/23/2025
+
+![page005_img001.png](SAF-TRE-013 R2_images/page005_img001.png)
+
+Client:
+Description:
+
+FULL ASSEMBLY
+
+3 Adi Dassler Way, Paris, On. N3L 0B9
+Tel. 1.519.442.7000, Fax. 1.519.442.7535
+
+Scale:
+
+Rev:
+Sheet:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:4
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 6
+
+TC BOM TABLE
+QTY.
+PART NUMBER
+DESCRIPTION
+1
+SAF-TRE-013-A07
+ASSEMBLY FULL BEAM A1
+1
+SAF-TRE-013-A08
+ASSEMBLY FULL BEAM A2
+1
+SAF-TRE-013-A09
+ASSEMBLY FULL BEAM A3
+1
+SAF-TRE-013-A10
+ASSEMBLY FULL BEAM A4
+1
+SAF-TRE-013-A11
+ASSEMBLY FULL BEAM A5
+1
+SAF-TRE-013-A12
+ASSEMBLY FULL BEAM A6
+1
+SAF-TRE-013-A13
+ASSEMBLY FULL BEAM A7
+7
+SAF-TRE-013-A14
+ASSEMBLY FULL BEAM A8
+1
+SAF-TRE-013-A18
+ASSEMBLY FULL BEAM A11
+1
+SAF-TRE-013-A19
+ASSEMBLY FULL BEAM A12
+1
+SAF-TRE-013-A21
+ASSEMBLY FULL BEAM A14
+1
+SAF-TRE-013-A17
+ASSEMBLY FULL BEAM A15
+1
+SAF-TRE-013-A05
+METAL GRID ASSEMBLY SECTION A
+80
+SAF-TRE-001-M07
+BEAM HANGING BRACKET
+84
+92979A118
+MEDIUM-STRENGTH, 1/4"-20 THREAD SIZE, 3/4" LONG
+14
+SAF-TRE-001-M06
+HANGING CLIP
+
+SPLINES CUT LIST
+LENGTH
+QTY 2
+74" LONG
+QTY 1
+50.75 " LONG
+QTY 1
+91" LONG
+QTY 2
+60.375 " LONG
+QTY 14
+64" LONG
+QTY 2
+61" LONG
+QTY 2
+55" LONG
+QTY 2
+56" LONG
+QTY 2
+50" LONG
+QTY 1
+88" LONG
+QTY 1
+78.75" LONG
+JOINTER BLOCKS 
+QTY 12
+END BLOCKS 
+QTY 37
+STYRENE ENDCAPS 
+QTY 37
+
+ 
+314"
+7976mm
+ 
+
+ 66-53/64"
+1697mm
+ 
+
+ 146-1/32"
+3709mm
+ 
+
+ 164-35/64"
+4179mm
+ 
+
+V
+
+SAF-TRE-013-A13
+
+1
+2
+
+ 126-5/8"
+3216mm
+ 
+
+SAF-TRE-013-A12
+
+SAF-TRE-001-M06
+
+SAF-TRE-013-A14
+
+SAF-TRE-013-A10
+
+VU2-CS23-01
+
+SAF-TRE-013-A09
+
+SAF-TRE-013-A04-02
+
+ASSEMBLY NOTE:
+TO JOIN THE ANGLED
+BEAM,DRILL HOLE INTO FRAME
+ATTACH BOLT TO RAMPA
+
+SAF-TRE-013-A08
+
+SAF-TRE-013-A07
+
+DETAIL G
+SCALE 1 : 20
+
+DETAIL V
+SCALE 1 : 8
+
+SAF-TRE-013-A18
+
+G
+
+SAF-TRE-013-A19
+
+SAF-TRE-013-A21
+
+ 
+18"
+457mm
+ 
+
+ 151-5/16"
+3843mm
+ 
+
+SAF-TRE-013-A17
+
+ 314-11/16"
+7993mm
+ 
+
+SAF-TRE-013-A05
+
+REVISIONS
+REV.
+DESCRIPTION
+DATE
+1
+CONCEPT ONLY
+10/24/2025
+2
+PRODUCTION APPROVED
+10/24/2025
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+![page006_img001.png](SAF-TRE-013 R2_images/page006_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+1
+18
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 7
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+1
+SAF-TRE-013-A01
+METAL BEAM "A" METAL ASSEMBLY 1
+
+1
+SAF-TRE-013-A02
+METAL BEAM "A" METAL ASSEMBLY 2
+
+METAL BEAM "A" METAL ASSEMBLY 1
+
+1
+SAF-TRE-013-A03
+METAL BEAM "A" METAL ASSEMBLY 3
+
+1
+SAF-TRE-013-A04
+METAL BEAM "A" METAL ASSEMBLY 4
+
+METAL BEAM "A" METAL ASSEMBLY 2
+
+METAL BEAM "A" METAL ASSEMBLY 3
+
+METAL BEAM "A" METAL ASSEMBLY 4
+
+ 
+314"
+7976mm
+ 
+
+SAF-TRE-013 - A01
+
+ 
+48"
+1219mm
+ 
+
+ 293-5/8"
+7458mm
+ 
+ 20-3/8"
+518mm
+ 
+
+SAF-TRE-013-A01
+
+SAF-TRE-013 - A02
+
+ 
+48"
+1219mm
+ 
+
+SAF-TRE-013-A02
+
+ 20-5/8"
+524mm
+ 
+
+ 
+219"
+5563mm
+ 
+
+SAF-TRE-013 - A03
+
+SAF-TRE-013-A03
+
+ 
+48"
+1219mm
+ 
+
+ 126-5/8"
+3216mm
+ 
+ 20-3/8"
+518mm
+ 
+
+SAF-TRE-013-A04
+
+SAF-TRE-013 - A04
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+![page007_img001.png](SAF-TRE-013 R2_images/page007_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+2
+18
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 8
+
+TC BOM TABLE
+
+METAL BEAM "A" METAL ASSEMBLY 1
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+3
+SAF-TRE-013-A01-01
+VU2-FD50- EXTRUSION
+
+1
+SAF-TRE-013-A01-02
+VU2-FD50-EXTRUSION
+
+6
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+ 1-17/64"
+32mm
+ 
+
+NOTE:
+ONLY THE RIGHT 
+ENDS GET A HOLE`
+
+5/16"
+8mm
+
+ 1-63/64"
+50mm
+ 
+
+SAF-TRE-013-A01-01
+
+VU2-FD50
+
+ 1" 
+
+DETAIL B
+SCALE 1 : 8
+
+B
+
+ 
+96"
+2438mm
+ 
+ 
+96"
+2438mm
+ 
+ 
+96"
+2438mm
+ 
+ 
+26"
+660mm
+ 
+
+VU2-CS23-01
+
+SAF-TRE-013-A01-02
+
+DETAIL A
+SCALE 1 : 8
+
+ 
+314"
+7976mm
+ 
+
+A
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+![page008_img001.png](SAF-TRE-013 R2_images/page008_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+3
+18
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 9
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+METAL BEAM "A" METAL ASSEMBLY 2
+
+3
+SAF-TRE-013-A01-01
+VU2-FD50- EXTRUSION
+6063-T5
+
+1
+SAF-TRE-013-A01-02
+VU2-FD50-EXTRUSION
+6063-T5
+
+6
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+NOTE:
+ONLY THE RIGHT 
+ENDS GET A HOLE`
+
+ 1-17/64"
+32mm
+ 
+
+SAF-TRE-013-A01-01
+
+5/16"
+8mm
+
+ 1-63/64"
+50mm
+ 
+
+VU2-FD50
+
+ 1" 
+
+DETAIL P
+SCALE 1 : 8
+
+SAF-TRE-013-A01-02
+
+P
+
+ 
+96"
+2438mm
+ 
+ 
+96"
+2438mm
+ 
+ 
+96"
+2438mm
+ 
+ 
+26"
+660mm
+ 
+
+VU2-CS23-01
+
+DETAIL D
+SCALE 1 : 8
+
+D
+
+ 
+314"
+7976mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+![page009_img001.png](SAF-TRE-013 R2_images/page009_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+4
+18
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 10
+
+TC BOM TABLE
+
+METAL BEAM "A" METAL ASSEMBLY 3
+
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+2
+SAF-TRE-013-A03-01
+VU2-FD50-EXTRUSION
+6063-T5
+
+1
+SAF-TRE-013-A03-02
+VU2-FD50-EXTRUSION
+6063-T5
+
+4
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+NOTE:
+ONLY THE RIGHT 
+ENDS GET A HOLE`
+
+ 1-17/64"
+32mm
+ 
+
+5/16"
+8mm
+
+SAF-TRE-013-A03-01
+
+ 1-63/64"
+50mm
+ 
+
+ 1" 
+
+VU2-FD50
+
+DETAIL R
+SCALE 1 : 8
+
+SAF-TRE-013-A03-02
+
+R
+
+ 
+96"
+2438mm
+ 
+ 
+96"
+2438mm
+ 
+ 
+27"
+686mm
+ 
+
+VU2-CS23-01
+
+DETAIL E
+SCALE 1 : 7
+
+E
+
+ 
+219"
+5563mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+![page010_img001.png](SAF-TRE-013 R2_images/page010_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+5
+18
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 11
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+METAL BEAM "A" METAL ASSEMBLY 4
+
+1
+SAF-TRE-013-A04-01
+VU2-FD50- 96" EXTRUSION
+6063-T5
+
+1
+SAF-TRE-013-A04-02
+VU2-FD50- 67"EXTRUSION
+6063-T5
+
+2
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+NOTE:
+ONLY THE RIGHT 
+ENDS GET A HOLE`
+
+ 1-17/64"
+32mm
+ 
+
+5/16"
+8mm
+
+ 1-1/8" 
+
+ 1-63/64"
+50mm
+ 
+
+SAF-TRE-013-A04-01
+
+VU2-FD50
+
+DETAIL T
+SCALE 1 : 8
+
+SAF-TRE-013-A04-02
+
+T
+
+ 
+96"
+2438mm
+ 
+ 30-5/8"
+778mm
+ 
+
+VU2-CS23-01
+
+DETAIL F
+SCALE 1 : 7
+
+F
+
+ 126-5/8"
+3216mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+![page011_img001.png](SAF-TRE-013 R2_images/page011_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+6
+18
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 12
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-A07-01
+FOLDED BEAM A1
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-A07-03
+SPLINE A1
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 66-51/64"
+1696mm
+ 
+
+ 
+64"
+1626mm
+ 
+
+ 66-51/64"
+1696mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A07
+
+ 
+8"
+203mm
+ 
+
+ 66-53/64"
+1697mm
+ 
+
+ 
+2"
+51mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page012_img001.png](SAF-TRE-013 R2_images/page012_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+7
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 13
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-A08-01
+FOLDED BEAM A2
+INFINITY1/2X5X10
+
+4
+3
+1
+?
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-A08-03
+SPLINE A2
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+6
+1
+ASSEM1^SAF-TRE-
+013-A08
+
+ 75-7/16"
+1916mm
+ 
+
+ 27-7/16"
+697mm
+ 
+
+ 32-7/32"
+818mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+ 78-51/64"
+2001mm
+ 
+
+ 
+76"
+1930mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 78-53/64"
+2002mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/2"
+38mm
+ 
+ 1-1/32"
+26mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A08
+
+ 7-17/32"
+191mm
+ 
+
+ 78-51/64"
+2001mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 78-53/64"
+2002mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page013_img001.png](SAF-TRE-013 R2_images/page013_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+8
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 14
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-A09-01
+FOLDED BEAM A3
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-A09-03
+SPLINE A4
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 46-47/64"
+1187mm
+ 
+
+ 51-17/64"
+1302mm
+ 
+
+ 3-33/64"
+89mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+ 90-51/64"
+2306mm
+ 
+
+ 
+88"
+2235mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 90-51/64"
+2306mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A09
+
+ 1-1/32"
+26mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 90-53/64"
+2307mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page014_img001.png](SAF-TRE-013 R2_images/page014_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+9
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 15
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-A10-01
+FOLDED BEAM A4
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-A10-03
+SPLINE A4
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+4
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 94-39/64"
+2403mm
+ 
+
+ 99-25/64"
+2525mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+ 
+50"
+1270mm
+ 
+ 
+50"
+1270mm
+ 
+
+ 102-51/64"
+2611mm
+ 
+
+ 102-51/64"
+2611mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+ 
+8"
+203mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A10
+
+ 
+2"
+51mm
+ 
+
+ 102-53/64"
+2612mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page015_img001.png](SAF-TRE-013 R2_images/page015_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+10
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 16
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-A11-01
+FOLDED BEAM A5
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-A11-03
+SPLINE A5
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 94-39/64"
+2403mm
+ 
+
+ 99-25/64"
+2525mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+56"
+1422mm
+ 
+ 
+56"
+1422mm
+ 
+ 1-3/64"
+27mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 114-51/64"
+2916mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A11
+
+ 
+8"
+203mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 114-53/64"
+2917mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page016_img001.png](SAF-TRE-013 R2_images/page016_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+11
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 17
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+2
+SAF-TRE-013-A12-01
+FOLDED BEAM A6
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-A12-03
+SPLINE A6
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 51-25/64"
+1305mm
+ 
+
+ 46-39/64"
+1184mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 27-7/16"
+697mm
+ 
+
+ 32-7/32"
+818mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+55"
+1397mm
+ 
+ 
+55"
+1397mm
+ 
+ 1-1/32"
+26mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 126-51/64"
+3220mm
+ 
+
+ 63-25/64"
+1610mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+ 13-7/8"
+352mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A12
+
+ 1-1/32"
+26mm
+ 
+
+ 
+8"
+203mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 63-25/64"
+1610mm
+ 
+ 63-25/64"
+1610mm
+ 
+
+ 126-53/64"
+3221mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page017_img001.png](SAF-TRE-013 R2_images/page017_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+12
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 18
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+6
+2
+
+1
+2
+SAF-TRE-013-A13-01
+FOLDED BEAM A7
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-A13-03
+SPLINE A7
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+6
+5
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 39-7/16"
+1002mm
+ 
+
+ 44-7/32"
+1123mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+61"
+1549mm
+ 
+ 
+61"
+1549mm
+ 
+
+ 138-51/64"
+3525mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 69-25/64"
+1763mm
+ 
+
+ 13-7/8"
+352mm
+ 
+ 1-1/2"
+38mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A13
+
+ 1-1/32"
+26mm
+ 
+
+ 
+8"
+203mm
+ 
+
+ 69-25/64"
+1763mm
+ 
+ 69-25/64"
+1763mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 138-53/64"
+3526mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page018_img001.png](SAF-TRE-013 R2_images/page018_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+13
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 19
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+3
+2
+
+1
+2
+SAF-TRE-013-A14-01
+FOLDED BEAM A8
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-A14-03
+SPLINE A8
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+6
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 46-41/64"
+1185mm
+ 
+
+ 51-27/64"
+1306mm
+ 
+
+ 3-27/64"
+87mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+73"
+1854mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+64"
+1626mm
+ 
+ 
+64"
+1626mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 145-63/64"
+3708mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A14
+
+ 13-7/8"
+352mm
+ 
+ 1-1/2"
+38mm
+ 
+ 1-1/32"
+26mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 
+73"
+1854mm
+ 
+ 
+73"
+1854mm
+ 
+
+ 146-1/32"
+3709mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page019_img001.png](SAF-TRE-013 R2_images/page019_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+14
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 20
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+
+2
+
+1
+2
+SAF-TRE-013-A17-01
+FOLDED BEAM A15
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+5
+
+3
+2
+SAF-TRE-013-A17-03
+SPLINE A15
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+4
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 58-13/64"
+1478mm
+ 
+
+ 
+6"
+152mm
+ 
+
+ 54-7/64"
+1374mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 1-61/64"
+49mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+74"
+1880mm
+ 
+ 
+74"
+1880mm
+ 
+
+ 164-1/2"
+4178mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 13-7/8"
+352mm
+ 
+ 1-1/2"
+38mm
+ 
+
+ 
+82-1/4"
+2089mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A17
+
+ 
+2"
+51mm
+ 
+
+ 
+82-1/4"
+2089mm
+ 
+ 
+82-1/4"
+2089mm
+ 
+
+ 164-35/64"
+4179mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page020_img001.png](SAF-TRE-013 R2_images/page020_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+15
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 21
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+2
+SAF-TRE-013-A18-01
+FOLDED BEAM A11
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-A18-03
+SPLINE A11
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 42-23/32"
+1085mm
+ 
+
+ 37-15/16"
+964mm
+ 
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+60-3/8"
+1534mm
+ 
+ 
+60-3/8"
+1534mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 137-19/64"
+3487mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 1-1/2"
+38mm
+ 
+ 1-1/32"
+26mm
+ 
+
+ 
+8"
+203mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A18
+
+ 
+2"
+51mm
+ 
+
+ 68-41/64"
+1744mm
+ 
+ 68-41/64"
+1744mm
+ 
+
+ 137-21/64"
+3488mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page021_img001.png](SAF-TRE-013 R2_images/page021_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+16
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 22
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-A19-01
+FOLDED BEAM A12
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-A19-03
+SPLINE A12
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+6
+1
+ASSEM1^SAF-TRE-
+013-A19
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+94-1/4"
+2394mm
+ 
+
+ 
+91"
+2311mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+94-1/4"
+2394mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A19
+
+ 94-19/64"
+2395mm
+ 
+
+ 
+2"
+51mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page022_img001.png](SAF-TRE-013 R2_images/page022_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+17
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 23
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-A21-01
+FOLDED BEAM A13
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-A21-03
+SPLINE A13
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+50-3/4"
+1289mm
+ 
+
+ 
+53"
+1346mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+53"
+1346mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+FLAT PATTERN  SAF-TRE-013-A21
+
+ 
+2"
+51mm
+ 
+
+ 53-3/64"
+1347mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+REVISIONS
+
+![page023_img001.png](SAF-TRE-013 R2_images/page023_img001.png)
+
+SAF-TRE-013
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/21/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+18
+18
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID A
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 24
+
+TC BOM TABLE
+QTY.
+PART NUMBER
+DESCRIPTION
+1
+SAF-TRE-013-B01
+METAL BEAM "B" METAL ASSEMBLY 1
+1
+SAF-TRE-013-B02
+METAL BEAM "B" METAL ASSEMBLY 2
+1
+SAF-TRE-013-B03
+METAL BEAM "B" METAL ASSEMBLY 3
+1
+SAF-TRE-013-B04
+METAL BEAM "B" METAL ASSEMBLY 4
+1
+SAF-TRE-013-B06
+ASSEMBLY FULL BEAM B1
+1
+SAF-TRE-013-B07
+ASSEMBLY FULL BEAM A2
+1
+SAF-TRE-013-B08
+ASSEMBLY FULL BEAM B3
+11
+SAF-TRE-013-B12
+ASSEMBLY FULL BEAM B4
+1
+SAF-TRE-013-B10
+ASSEMBLY FULL BEAM B15
+1
+SAF-TRE-013-B11
+ASSEMBLY FULL BEAM B16
+97
+SAF-TRE-001-M07
+BEAM HANGING BRACKET
+97
+92979A118
+MEDIUM-STRENGTH, 1/4"-20 THREAD SIZE, 3/4" LONG
+15
+SAF-TRE-001-M06
+HANGING CLIP
+
+SPLINES CUT LIST
+LENGTH
+QTY 1
+75"
+QTY 2
+51.875"
+QTY 22
+68"
+QTY 2
+60.375"
+QTY 1
+92.125"
+QTY 1
+50.75"
+JOINTER BLOCKS
+QTY 13
+END BLOCKS
+QTY 32
+STYRENE ENDCAPS
+QTY 32
+
+ 
+263"
+6680mm
+ 
+
+1
+2
+
+SAF-TRE-013-B08
+SAF-TRE-013-B12
+
+SAF-TRE-013-B07
+
+ 152-1/2"
+3874mm
+ 
+
+SAF-TRE-013-B06
+
+SAF-TRE-001-M06
+
+SAF-TRE-013-B04
+
+ 
+263"
+6680mm
+ 
+
+SAF-TRE-013-B01
+
+ 321-1/2"
+8166mm
+ 
+
+SAF-TRE-001-M07
+
+SAF-TRE-013-B02
+
+SAF-TRE-013-B03
+
+DETAIL A
+SCALE 1 : 10
+
+SAF-TRE-013-B10
+
+SAF-TRE-013-B04
+
+SAF-TRE-013-B11
+
+ 152-1/2"
+3874mm
+ 
+ 
+8"
+203mm
+ 
+A
+
+ 
+18"
+457mm
+ 
+
+ 321-1/2"
+8166mm
+ 
+
+REVISIONS
+REV.
+DESCRIPTION
+DATE
+1
+CONCEPT ONLY
+10/24/2025
+2
+PRODUCTION APPROVED
+10/24/2025
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page024_img001.png](SAF-TRE-013 R2_images/page024_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+1
+9
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 25
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+1
+SAF-TRE-013-B01
+METAL BEAM "B" METAL ASSEMBLY 1
+
+METAL BEAM "B" METAL ASSEMBLY 1
+
+1
+SAF-TRE-013-B02
+METAL BEAM "B" METAL ASSEMBLY 2
+
+1
+SAF-TRE-013-B03
+METAL BEAM "B" METAL ASSEMBLY 3
+
+1
+SAF-TRE-013-B04
+METAL BEAM "B" METAL ASSEMBLY 4
+
+METAL BEAM "B" METAL ASSEMBLY 2
+
+METAL BEAM "B" METAL ASSEMBLY 3
+
+METAL BEAM "B" METAL ASSEMBLY 4
+
+SAF-TRE-013-B01-02
+
+ 
+263"
+6680mm
+ 
+
+SAF-TRE-013 - B01-02
+
+SAF-TRE-013-B02-02
+
+ 
+48"
+1219mm
+ 
+
+ 
+263"
+6680mm
+ 
+
+ 19-1/2"
+495mm
+ 
+
+SAF-TRE-013 - B02-02
+
+SAF-TRE-013-B03-02
+
+ 
+48"
+1219mm
+ 
+
+ 
+263"
+6680mm
+ 
+
+ 19-1/2"
+495mm
+ 
+
+SAF-TRE-013-B04-02
+
+SAF-TRE-013 - B03-02
+
+ 
+263"
+6680mm
+ 
+
+ 19-1/2"
+495mm
+ 
+
+ 
+48"
+1219mm
+ 
+
+SAF-TRE-013 - B04-02
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page025_img001.png](SAF-TRE-013 R2_images/page025_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+2
+9
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 26
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+NOTE:
+SAF-TRE-013-B01
+SAF-TRE-013-B02
+SAF-TRE-013-B03
+SAF-TRE-013-B04
+ARE ALL THE SAME
+
+2
+SAF-TRE-013-B01-01
+VU2-FD50- EXTRUSION
+
+4
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+1
+SAF-TRE-013-B01-02
+VU2-FD50- 37"EXTRUSION
+
+ 
+96"
+2438mm
+ 
+ 
+96"
+2438mm
+ 
+ 
+71"
+1803mm
+ 
+
+ 
+263"
+6680mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page026_img001.png](SAF-TRE-013 R2_images/page026_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+3
+9
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:64
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 27
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-B06-01
+FOLDED BEAM A1
+INFINITY1/2X5X10
+
+4
+3
+1
+3
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-B06-03
+SPLINE B1
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+53"
+1346mm
+ 
+
+ 
+50-3/4"
+1289mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+53"
+1346mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+FLAT PATTERN SAF-TRE-013-B06
+
+ 
+8"
+203mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 53-3/64"
+1347mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page027_img001.png](SAF-TRE-013 R2_images/page027_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+4
+9
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 28
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-B07-01
+FOLDED BEAM B2
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-B07-03
+SPLINE B2
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+6
+1
+ASSEM1^SAF-TRE-
+013-B07
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+95"
+2413mm
+ 
+
+ 
+92-1/8"
+2340mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 95-3/64"
+2414mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+FLAT PATTERN SAF-TRE-013-B07
+
+ 
+8"
+203mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 95-3/64"
+2414mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page028_img001.png](SAF-TRE-013 R2_images/page028_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+5
+9
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 29
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+2
+SAF-TRE-013-B08-01
+FOLDED BEAM B3
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-B08-03
+SPLINE A3
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 43-15/16"
+1116mm
+ 
+
+ 39-5/32"
+994mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+60-3/8"
+1534mm
+ 
+ 
+60-3/8"
+1534mm
+ 
+
+ 
+69-1/4"
+1759mm
+ 
+
+ 138-1/2"
+3518mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+ 13-7/8"
+352mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+FLAT PATTERN SAF-TRE-013-B08
+
+ 
+69-1/4"
+1759mm
+ 
+ 
+69-1/4"
+1759mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 138-35/64"
+3519mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page029_img001.png](SAF-TRE-013 R2_images/page029_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+6
+9
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 30
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+2
+SAF-TRE-013-B10-01
+FOLDED BEAM A12
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-B10-03
+SPLINE A12
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 14-9/32"
+363mm
+ 
+
+ 19-1/16"
+484mm
+ 
+
+ 
+57-3/4"
+1467mm
+ 
+
+ 
+9-3/4"
+248mm
+ 
+
+ 5-5/64"
+129mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+60"
+1524mm
+ 
+
+ 
+51-7/8"
+1318mm
+ 
+ 
+51-7/8"
+1318mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+120"
+3048mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 1-1/2"
+38mm
+ 
+ 13-7/8"
+352mm
+ 
+ 1-1/32"
+26mm
+ 
+
+FLAT PATTERN SAF-TRE-013-B10
+
+ 
+2"
+51mm
+ 
+
+ 
+60"
+1524mm
+ 
+ 
+60"
+1524mm
+ 
+
+ 120-3/64"
+3049mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page030_img001.png](SAF-TRE-013 R2_images/page030_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+7
+9
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 31
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-B11-01
+FOLDED BEAM B16
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-B11-03
+SPLINE A16
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+4
+RAMPA1-4_20
+
+6
+1
+ASSEM1^SAF-TRE-
+013-B11
+
+ 67-25/32"
+1722mm
+ 
+
+ 72-15/32"
+1841mm
+ 
+
+ 19-25/32"
+503mm
+ 
+
+ 24-15/32"
+621mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+77-1/2"
+1969mm
+ 
+
+ 
+75"
+1905mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+77-1/2"
+1969mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+FLAT PATTERN SAF-TRE-013-B11
+
+ 
+8"
+203mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 77-35/64"
+1970mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page031_img001.png](SAF-TRE-013 R2_images/page031_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+8
+9
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 32
+
+SPLINES CUT LIST
+LENGTH
+
+TC BOM TABLE
+QTY.
+PART NUMBER
+DESCRIPTION
+1
+SAF-TRE-013-C05
+METAL ASSEMBLY C
+1
+SAF-TRE-013-C10
+ASSEMBLY FULL BEAM C1
+1
+SAF-TRE-013-C07
+ASSEMBLY FULL BEAM C2
+1
+SAF-TRE-013-C08
+ASSEMBLY FULL BEAM C3
+1
+SAF-TRE-013-C09
+ASSEMBLY FULL BEAM C4
+2
+SAF-TRE-013-C17
+ASSEMBLY FULL BEAM C6
+1
+SAF-TRE-013-C16
+ASSEMBLY FULL BEAM C7
+1
+SAF-TRE-013-C15
+ASSEMBLY FULL BEAM C8
+1
+SAF-TRE-013-C14
+ASSEMBLY FULL BEAM C9
+1
+SAF-TRE-013-C13
+ASSEMBLY FULL BEAM C10
+1
+SAF-TRE-013-C12
+ASSEMBLY FULL BEAM C11
+40
+92979A118
+MEDIUM-STRENGTH, 1/4"-20 THREAD SIZE, 3/4" LONG
+37
+SAF-TRE-001-M07
+BEAM HANGING BRACKET
+11
+SAF-TRE-001-M06
+HANGING CLIP
+
+QTY 2
+74.125"
+QTY 1
+29"
+QTY 1
+69.75"
+QTY 2
+47.25"
+QTY 4
+51.5"
+QTY 2
+53.25"
+QTY 2
+47"
+QTY 1
+83"
+QTY 1
+71"
+QTY 1
+59"
+JOINER BLOCKS
+QTY 4
+END BLOCKS
+QTY 22
+STYRENE ENDCAPS
+QTY 22
+
+ 127-29/32"
+3249mm
+ 
+
+ 
+62"
+1575mm
+ 
+
+ 
+120"
+3048mm
+ 
+
+ 164-1/2"
+4178mm
+ 
+
+SAF-TRE-013-C17
+
+1
+2
+
+A
+
+SAF-TRE-013-C16
+
+SAF-TRE-013-C15
+
+SAF-TRE-013-C09
+
+SAF-TRE-013-C08
+
+SAF-TRE-013-C14
+
+SAF-TRE-013-C07
+
+SAF-TRE-013-C13
+
+SAF-TRE-013-C10
+
+SAF-TRE-013-C12
+
+ASSEMBLY NOTE:
+TO JOIN THE ANGLED
+BWEAM,DRILL HOLE INTO FRAME
+ATTACH BOLT TO RAMPA
+
+DETAIL A
+SCALE 1 : 8
+
+SAF-TRE-013-C05
+
+ 34-3/4"
+883mm
+ 
+ 34-3/4"
+883mm
+ 
+ 34-3/4"
+883mm
+ 
+ 34-3/4"
+883mm
+ 
+
+SAF-TRE-013-C05
+
+SAF-TRE-013-C05
+
+ 121-5/16"
+3081mm
+ 
+ 
+8"
+203mm
+ 
+
+ 
+18"
+457mm
+ 
+
+ 192-31/32"
+4901mm
+ 
+
+REVISIONS
+REV.
+DESCRIPTION
+DATE
+1
+CONCEPT ONLY
+10/24/2025
+2
+PRODUCTION APPROVED
+10/24/2025
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page032_img001.png](SAF-TRE-013 R2_images/page032_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+1
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 33
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+METAL BEAM "C" METAL ASSEMBLY 1
+
+1
+SAF-TRE-013-C01
+METAL BEAM "C" METAL ASSEMBLY 1
+
+1
+SAF-TRE-013-C02
+METAL BEAM "C" METAL ASSEMBLY 2
+
+1
+SAF-TRE-013-C03
+METAL BEAM "C" METAL ASSEMBLY 3
+
+METAL BEAM "C" METAL ASSEMBLY 2
+
+METAL BEAM "C" METAL ASSEMBLY 3
+
+SAF-TRE-013-C01
+
+SAF-TRE-013-C02
+
+SAF-TRE-013-C03
+
+ 127-29/32"
+3249mm
+ 
+
+SAF-TRE-013 - C01
+
+ 
+21"
+533mm
+ 
+
+ 
+48"
+1219mm
+ 
+
+ 148-29/32"
+3782mm
+ 
+
+SAF-TRE-013 - C02
+
+ 20-1/2"
+521mm
+ 
+
+ 
+48"
+1219mm
+ 
+
+ 115-13/32"
+2931mm
+ 
+
+SAF-TRE-013 - C03
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page033_img001.png](SAF-TRE-013 R2_images/page033_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+2
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 34
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+METAL BEAM "C" ASSEMBLY 1
+
+1
+SAF-TRE-013-C01-01
+VU2-FD50-EXTRUSION
+
+1
+SAF-TRE-013-C01-02
+VU2-FD50-EXTRUSION
+
+2
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+5/16"
+8mm
+
+ 3/8" 
+
+DETAIL B
+SCALE 1 : 2
+
+B
+
+ 
+96"
+2438mm
+ 
+ 31-29/32"
+810mm
+ 
+
+ 127-29/32"
+3249mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page034_img001.png](SAF-TRE-013 R2_images/page034_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+3
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 35
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+METAL BEAM "C" ASSEMBLY 2
+
+1
+SAF-TRE-013-C02-01
+VU2-FD50-EXTRUSION
+
+1
+SAF-TRE-013-C02-02
+VU2-FD50-EXTRUSION
+
+5/16"
+8mm
+
+2
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+ 5/8" 
+
+DETAIL D
+SCALE 1 : 3
+
+D
+
+ 
+96"
+2438mm
+ 
+ 52-29/32"
+1344mm
+ 
+
+ 148-29/32"
+3782mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page035_img001.png](SAF-TRE-013 R2_images/page035_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+4
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 36
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+1
+SAF-TRE-013-C03-01
+VU2-FD50-EXTRUSION
+
+5/16"
+8mm
+
+1
+SAF-TRE-013-C03-02
+VU2-FD50-EXTRUSION
+
+METAL BEAM "C" ASSEMBLY 3
+
+2
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+ 13/64"
+5mm
+ 
+
+DETAIL E
+SCALE 1 : 3
+
+E
+
+ 
+96"
+2438mm
+ 
+ 19-13/32"
+493mm
+ 
+
+ 115-13/32"
+2931mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page036_img001.png](SAF-TRE-013 R2_images/page036_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+5
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 37
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C07-01
+FOLDED BEAM C2
+INFINITY1/2X5X10
+
+4
+3
+1
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C07-03
+SPLINE C2
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+2
+RAMPA1-4_20
+
+ 
+5-7/8"
+149mm
+ 
+
+ 10-9/16"
+268mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 31-45/64"
+805mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+29"
+737mm
+ 
+
+ 31-45/64"
+805mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C07
+
+ 
+8"
+203mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 31-3/4"
+806mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page037_img001.png](SAF-TRE-013 R2_images/page037_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+6
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 38
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C08-01
+FOLDED BEAM C3
+INFINITY1/2X5X10
+
+4
+3
+1
+3
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C08-03
+SPLINE C3
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 47-15/64"
+1200mm
+ 
+
+ 51-59/64"
+1319mm
+ 
+
+ 3-59/64"
+99mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+72-1/2"
+1842mm
+ 
+
+ 
+69-3/4"
+1772mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+72-1/2"
+1842mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C08
+
+ 1-1/2"
+38mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 72-35/64"
+1843mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page038_img001.png](SAF-TRE-013 R2_images/page038_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+7
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 39
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+2
+SAF-TRE-013-C09-01
+FOLDED BEAM C4
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-C09-03
+SPLINE C4
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+4
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 40-1/32"
+1017mm
+ 
+
+ 44-45/64"
+1136mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 20-5/8"
+524mm
+ 
+
+ 25-5/16"
+643mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+47-1/4"
+1200mm
+ 
+ 
+47-1/4"
+1200mm
+ 
+
+ 113-19/64"
+2878mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 13-7/8"
+352mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C09
+
+ 56-41/64"
+1439mm
+ 
+ 56-41/64"
+1439mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 113-21/64"
+2879mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page039_img001.png](SAF-TRE-013 R2_images/page039_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+8
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 40
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+?
+2
+
+1
+2
+SAF-TRE-013-C10-01
+FOLDED BEAM C1
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-C10-03
+SPLINE C1
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 54-9/16"
+1386mm
+ 
+
+ 
+57-5/8"
+1464mm
+ 
+
+ 2-1/4"
+57mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 82-15/64"
+2089mm
+ 
+
+ 
+74-1/8"
+1883mm
+ 
+ 
+74-1/8"
+1883mm
+ 
+
+ 164-29/64"
+4177mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 13-7/8"
+352mm
+ 
+ 1-1/2"
+38mm
+ 
+
+ 
+8"
+203mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C10
+
+ 
+2"
+51mm
+ 
+
+ 82-15/64"
+2089mm
+ 
+ 82-15/64"
+2089mm
+ 
+
+ 164-1/2"
+4178mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page040_img001.png](SAF-TRE-013 R2_images/page040_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+9
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 41
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C12-01
+FOLDED BEAM C11
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C12-03
+SPLINE C11
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 61-31/32"
+1574mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+59"
+1499mm
+ 
+
+ 61-31/32"
+1574mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C12
+
+ 
+2"
+51mm
+ 
+
+ 
+62"
+1575mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page041_img001.png](SAF-TRE-013 R2_images/page041_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+10
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 42
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C13-01
+FOLDED BEAM C10
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C13-03
+SPLINE C10
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 73-15/16"
+1878mm
+ 
+
+ 
+71"
+1803mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 73-15/16"
+1878mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C13
+
+ 
+2"
+51mm
+ 
+
+ 73-63/64"
+1879mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page042_img001.png](SAF-TRE-013 R2_images/page042_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+11
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 43
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C14-01
+FOLDED BEAM C9
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C14-03
+SPLINE C9
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+6
+1
+ASSEM1^SAF-TRE-
+013-C14
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 85-15/16"
+2183mm
+ 
+
+ 
+83"
+2108mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 85-15/16"
+2183mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C14
+
+ 
+2"
+51mm
+ 
+
+ 85-63/64"
+2184mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page043_img001.png](SAF-TRE-013 R2_images/page043_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+12
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 44
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+1
+SAF-TRE-013-C15-01
+FOLDED BEAM C8
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-C15-03
+SPLINE C8
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+4
+RAMPA1-4_20
+
+ 94-39/64"
+2403mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 46-39/64"
+1184mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+47"
+1194mm
+ 
+ 
+47"
+1194mm
+ 
+
+ 97-15/16"
+2488mm
+ 
+
+ 97-15/16"
+2488mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C15
+
+ 
+2"
+51mm
+ 
+
+ 97-63/64"
+2489mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page044_img001.png](SAF-TRE-013 R2_images/page044_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+13
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 45
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+1
+SAF-TRE-013-C16-01
+FOLDED BEAM C7
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-C16-03
+SPLINE C7
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 94-39/64"
+2403mm
+ 
+
+ 99-25/64"
+2525mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+53-1/4"
+1353mm
+ 
+ 
+53-1/4"
+1353mm
+ 
+
+ 108-15/16"
+2767mm
+ 
+
+ 108-15/16"
+2767mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C16
+
+ 
+2"
+51mm
+ 
+
+ 108-63/64"
+2768mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page045_img001.png](SAF-TRE-013 R2_images/page045_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+14
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 46
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+2
+5
+
+1
+2
+SAF-TRE-013-C17-01
+FOLDED BEAM C6
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+
+3
+2
+SAF-TRE-013-C17-03
+SPLINE C6
+PVCWHI1
+
+1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 94-39/64"
+2403mm
+ 
+
+ 99-25/64"
+2525mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 59-31/32"
+1523mm
+ 
+
+ 
+51-1/2"
+1308mm
+ 
+ 
+51-1/2"
+1308mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 119-15/16"
+3046mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C17
+
+ 13-7/8"
+352mm
+ 
+
+ 59-31/32"
+1523mm
+ 
+ 59-31/32"
+1523mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 119-63/64"
+3047mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page046_img001.png](SAF-TRE-013 R2_images/page046_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+15
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 47
+
+TC BOM TABLE
+
+ITEM NO. QTY.
+PART NUMBER
+DESCRIPTION
+
+1
+2
+SAF-TRE-013-A16-01
+FOLDED BEAM A10
+
+3
+4
+6
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+
+3
+2
+SAF-TRE-013-A16-03
+SPLINE A10
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+
+5
+7
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+
+ 53-7/64"
+1349mm
+ 
+
+ 57-57/64"
+1470mm
+ 
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 9-57/64"
+251mm
+ 
+
+ 5-7/64"
+130mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+68"
+1727mm
+ 
+ 
+68"
+1727mm
+ 
+
+ 152-1/2"
+3874mm
+ 
+
+ 
+77-1/2"
+1969mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 1-1/2"
+38mm
+ 
+ 13-7/8"
+352mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/32"
+26mm
+ 
+
+ 
+2"
+51mm
+ 
+
+FLAT PATTERN SAF-TRE-013-B12
+
+ 76-15/64"
+1936mm
+ 
+ 76-15/64"
+1936mm
+ 
+
+ 152-1/2"
+3874mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page047_img001.png](SAF-TRE-013 R2_images/page047_img001.png)
+
+SAF-TRE-013-B
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+9
+9
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID B
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 48
+
+SPLINES CUT LIST
+LENGTH
+
+TC BOM TABLE
+QTY.
+PART NUMBER
+DESCRIPTION
+1
+SAF-TRE-013-C05
+METAL ASSEMBLY C
+1
+SAF-TRE-013-C10
+ASSEMBLY FULL BEAM C1
+1
+SAF-TRE-013-C07
+ASSEMBLY FULL BEAM C2
+1
+SAF-TRE-013-C08
+ASSEMBLY FULL BEAM C3
+1
+SAF-TRE-013-C09
+ASSEMBLY FULL BEAM C4
+2
+SAF-TRE-013-C17
+ASSEMBLY FULL BEAM C6
+1
+SAF-TRE-013-C16
+ASSEMBLY FULL BEAM C7
+1
+SAF-TRE-013-C15
+ASSEMBLY FULL BEAM C8
+1
+SAF-TRE-013-C14
+ASSEMBLY FULL BEAM C9
+1
+SAF-TRE-013-C13
+ASSEMBLY FULL BEAM C10
+1
+SAF-TRE-013-C12
+ASSEMBLY FULL BEAM C11
+40
+92979A118
+MEDIUM-STRENGTH, 1/4"-20 THREAD SIZE, 3/4" LONG
+37
+SAF-TRE-001-M07
+BEAM HANGING BRACKET
+11
+SAF-TRE-001-M06
+HANGING CLIP
+
+QTY 2
+74.125"
+QTY 1
+29"
+QTY 1
+69.75"
+QTY 2
+47.25"
+QTY 4
+51.5"
+QTY 2
+53.25"
+QTY 2
+47"
+QTY 1
+83"
+QTY 1
+71"
+QTY 1
+59"
+JOINER BLOCKS
+QTY 4
+END BLOCKS
+QTY 22
+STYRENE ENDCAPS
+QTY 22
+
+ 127-29/32"
+3249mm
+ 
+
+ 
+62"
+1575mm
+ 
+
+ 
+120"
+3048mm
+ 
+
+ 164-1/2"
+4178mm
+ 
+
+SAF-TRE-013-C17
+
+1
+2
+
+A
+
+SAF-TRE-013-C16
+
+SAF-TRE-013-C15
+
+SAF-TRE-013-C09
+
+SAF-TRE-013-C08
+
+SAF-TRE-013-C14
+
+SAF-TRE-013-C07
+
+SAF-TRE-013-C13
+
+SAF-TRE-013-C10
+
+SAF-TRE-013-C12
+
+ASSEMBLY NOTE:
+TO JOIN THE ANGLED
+BWEAM,DRILL HOLE INTO FRAME
+ATTACH BOLT TO RAMPA
+
+DETAIL A
+SCALE 1 : 8
+
+SAF-TRE-013-C05
+
+ 34-3/4"
+883mm
+ 
+ 34-3/4"
+883mm
+ 
+ 34-3/4"
+883mm
+ 
+ 34-3/4"
+883mm
+ 
+
+SAF-TRE-013-C05
+
+SAF-TRE-013-C05
+
+ 121-5/16"
+3081mm
+ 
+ 
+8"
+203mm
+ 
+
+ 
+18"
+457mm
+ 
+
+ 192-31/32"
+4901mm
+ 
+
+REVISIONS
+REV.
+DESCRIPTION
+DATE
+1
+CONCEPT ONLY
+10/24/2025
+2
+PRODUCTION APPROVED
+10/24/2025
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page048_img001.png](SAF-TRE-013 R2_images/page048_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+1
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 49
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+METAL BEAM "C" METAL ASSEMBLY 1
+
+1
+SAF-TRE-013-C01
+METAL BEAM "C" METAL ASSEMBLY 1
+
+1
+SAF-TRE-013-C02
+METAL BEAM "C" METAL ASSEMBLY 2
+
+1
+SAF-TRE-013-C03
+METAL BEAM "C" METAL ASSEMBLY 3
+
+METAL BEAM "C" METAL ASSEMBLY 2
+
+METAL BEAM "C" METAL ASSEMBLY 3
+
+SAF-TRE-013-C01
+
+SAF-TRE-013-C02
+
+SAF-TRE-013-C03
+
+ 127-29/32"
+3249mm
+ 
+
+ 
+21"
+533mm
+ 
+
+ 
+48"
+1219mm
+ 
+
+ 148-29/32"
+3782mm
+ 
+
+ 20-1/2"
+521mm
+ 
+
+ 
+48"
+1219mm
+ 
+
+ 115-13/32"
+2931mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page049_img001.png](SAF-TRE-013 R2_images/page049_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+2
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 50
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+METAL BEAM "C" ASSEMBLY 1
+
+1
+SAF-TRE-013-C01-01
+VU2-FD50-EXTRUSION
+
+1
+SAF-TRE-013-C01-02
+VU2-FD50-EXTRUSION
+
+2
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+5/16"
+8mm
+
+ 3/8" 
+
+DETAIL B
+SCALE 1 : 2
+
+B
+
+ 
+96"
+2438mm
+ 
+ 31-29/32"
+810mm
+ 
+
+ 127-29/32"
+3249mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page050_img001.png](SAF-TRE-013 R2_images/page050_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+3
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 51
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+METAL BEAM "C" ASSEMBLY 2
+
+1
+SAF-TRE-013-C02-01
+VU2-FD50-EXTRUSION
+
+1
+SAF-TRE-013-C02-02
+VU2-FD50-EXTRUSION
+
+5/16"
+8mm
+
+2
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+ 5/8" 
+
+DETAIL D
+SCALE 1 : 3
+
+D
+
+ 
+96"
+2438mm
+ 
+ 52-29/32"
+1344mm
+ 
+
+ 148-29/32"
+3782mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page051_img001.png](SAF-TRE-013 R2_images/page051_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+4
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 52
+
+TC BOM TABLE
+
+QTY.
+PART NUMBER
+DESCRIPTION
+
+1
+SAF-TRE-013-C03-01
+VU2-FD50-EXTRUSION
+
+5/16"
+8mm
+
+1
+SAF-TRE-013-C03-02
+VU2-FD50-EXTRUSION
+
+METAL BEAM "C" ASSEMBLY 3
+
+2
+VU2-CS23
+STRAIGHT CONNECTOR BRACKET
+
+ 13/64"
+5mm
+ 
+
+DETAIL E
+SCALE 1 : 3
+
+E
+
+ 
+96"
+2438mm
+ 
+ 19-13/32"
+493mm
+ 
+
+ 115-13/32"
+2931mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+![page052_img001.png](SAF-TRE-013 R2_images/page052_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+5
+15
+
+Description:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:48
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 53
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C07-01
+FOLDED BEAM C2
+INFINITY1/2X5X10
+
+4
+3
+1
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C07-03
+SPLINE C2
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+2
+RAMPA1-4_20
+
+ 
+5-7/8"
+149mm
+ 
+
+ 10-9/16"
+268mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 31-45/64"
+805mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+29"
+737mm
+ 
+
+ 31-45/64"
+805mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C07
+
+ 
+8"
+203mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 31-3/4"
+806mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page053_img001.png](SAF-TRE-013 R2_images/page053_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+6
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 54
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C08-01
+FOLDED BEAM C3
+INFINITY1/2X5X10
+
+4
+3
+1
+3
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C08-03
+SPLINE C3
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 47-15/64"
+1200mm
+ 
+
+ 51-59/64"
+1319mm
+ 
+
+ 3-59/64"
+99mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+72-1/2"
+1842mm
+ 
+
+ 
+69-3/4"
+1772mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+72-1/2"
+1842mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C08
+
+ 1-1/2"
+38mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 72-35/64"
+1843mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page054_img001.png](SAF-TRE-013 R2_images/page054_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+7
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 55
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+2
+SAF-TRE-013-C09-01
+FOLDED BEAM C4
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-C09-03
+SPLINE C4
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+4
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 40-1/32"
+1017mm
+ 
+
+ 44-45/64"
+1136mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 20-5/8"
+524mm
+ 
+
+ 25-5/16"
+643mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+47-1/4"
+1200mm
+ 
+ 
+47-1/4"
+1200mm
+ 
+
+ 113-19/64"
+2878mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 13-7/8"
+352mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C09
+
+ 56-41/64"
+1439mm
+ 
+ 56-41/64"
+1439mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 113-21/64"
+2879mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page055_img001.png](SAF-TRE-013 R2_images/page055_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+8
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 56
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+?
+2
+
+1
+2
+SAF-TRE-013-C10-01
+FOLDED BEAM C1
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-C10-03
+SPLINE C1
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 54-9/16"
+1386mm
+ 
+
+ 
+57-5/8"
+1464mm
+ 
+
+ 2-1/4"
+57mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 82-15/64"
+2089mm
+ 
+
+ 
+74-1/8"
+1883mm
+ 
+ 
+74-1/8"
+1883mm
+ 
+
+ 164-29/64"
+4177mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 13-7/8"
+352mm
+ 
+ 1-1/2"
+38mm
+ 
+
+ 
+8"
+203mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C10
+
+ 
+2"
+51mm
+ 
+
+ 82-15/64"
+2089mm
+ 
+ 82-15/64"
+2089mm
+ 
+
+ 164-1/2"
+4178mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page056_img001.png](SAF-TRE-013 R2_images/page056_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+9
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 57
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C12-01
+FOLDED BEAM C11
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C12-03
+SPLINE C11
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 61-31/32"
+1574mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 
+59"
+1499mm
+ 
+
+ 61-31/32"
+1574mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C12
+
+ 
+2"
+51mm
+ 
+
+ 
+62"
+1575mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page057_img001.png](SAF-TRE-013 R2_images/page057_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+10
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 58
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C13-01
+FOLDED BEAM C10
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C13-03
+SPLINE C10
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 73-15/16"
+1878mm
+ 
+
+ 
+71"
+1803mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 73-15/16"
+1878mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+ 1-1/2"
+38mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C13
+
+ 
+2"
+51mm
+ 
+
+ 73-63/64"
+1879mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page058_img001.png](SAF-TRE-013 R2_images/page058_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+11
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 59
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+1
+1
+SAF-TRE-013-C14-01
+FOLDED BEAM C9
+INFINITY1/2X5X10
+
+4
+3
+1
+5
+2
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+1
+SAF-TRE-013-C14-03
+SPLINE C9
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+3
+RAMPA1-4_20
+
+6
+1
+ASSEM1^SAF-TRE-
+013-C14
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 85-15/16"
+2183mm
+ 
+
+ 
+83"
+2108mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 85-15/16"
+2183mm
+ 
+
+ 17-7/8"
+454mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C14
+
+ 
+2"
+51mm
+ 
+
+ 85-63/64"
+2184mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page059_img001.png](SAF-TRE-013 R2_images/page059_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+12
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 60
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+1
+SAF-TRE-013-C15-01
+FOLDED BEAM C8
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-C15-03
+SPLINE C8
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+4
+RAMPA1-4_20
+
+ 94-39/64"
+2403mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 46-39/64"
+1184mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+47"
+1194mm
+ 
+ 
+47"
+1194mm
+ 
+
+ 97-15/16"
+2488mm
+ 
+
+ 97-15/16"
+2488mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C15
+
+ 
+2"
+51mm
+ 
+
+ 97-63/64"
+2489mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page060_img001.png](SAF-TRE-013 R2_images/page060_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+13
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 61
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+4
+3
+1
+5
+2
+
+1
+1
+SAF-TRE-013-C16-01
+FOLDED BEAM C7
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+2
+SAF-TRE-013-C16-03
+SPLINE C7
+PVCWHI1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 94-39/64"
+2403mm
+ 
+
+ 99-25/64"
+2525mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 
+53-1/4"
+1353mm
+ 
+ 
+53-1/4"
+1353mm
+ 
+
+ 108-15/16"
+2767mm
+ 
+
+ 108-15/16"
+2767mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C16
+
+ 
+2"
+51mm
+ 
+
+ 108-63/64"
+2768mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page061_img001.png](SAF-TRE-013 R2_images/page061_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+14
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+
+## Page 62
+
+TC BOM TABLE
+ITEM NO.
+QTY.
+PART NUMBER
+DESCRIPTION
+MATERIAL
+
+2
+5
+
+1
+2
+SAF-TRE-013-C17-01
+FOLDED BEAM C6
+INFINITY1/2X5X10
+
+2
+2
+SAF-TRE-013-01
+SINTRA END SUPPORT
+PVCWHI1
+
+3
+
+3
+2
+SAF-TRE-013-C17-03
+SPLINE C6
+PVCWHI1
+
+1
+
+4
+2
+SAF-TRE-013-02
+FINISHED END
+STYWHI.020
+
+5
+5
+RAMPA1-4_20
+
+6
+1
+SAF-TRE-013-04
+JOINER BLOCK
+PVCWHI1
+
+ 46-39/64"
+1184mm
+ 
+
+ 51-25/64"
+1305mm
+ 
+
+ 94-39/64"
+2403mm
+ 
+
+ 99-25/64"
+2525mm
+ 
+
+ 3-25/64"
+86mm
+ 
+
+ 
+0"
+0mm
+ 
+
+ 59-31/32"
+1523mm
+ 
+
+ 
+51-1/2"
+1308mm
+ 
+ 
+51-1/2"
+1308mm
+ 
+
+ 1-7/8"
+48mm
+ 
+
+ 119-15/16"
+3046mm
+ 
+
+ 16-43/64"
+423mm
+ 
+
+FLAT PATTERN SAF-TRE-013-C17
+
+ 13-7/8"
+352mm
+ 
+
+ 59-31/32"
+1523mm
+ 
+ 59-31/32"
+1523mm
+ 
+
+ 
+2"
+51mm
+ 
+
+ 119-63/64"
+3047mm
+ 
+
+Manufacturing:
+
+Material:
+
+Part Number:
+Customer Approvl & Date
+
+PRODUCTION
+
+REVISIONS
+
+![page062_img001.png](SAF-TRE-013 R2_images/page062_img001.png)
+
+SAF-TRE-013-C
+
+Date:
+
+Drawn By:
+
+REV.
+DESCRIPTION
+DATE
+
+Carrie V
+
+Date:
+10/24/2025
+
+TOLERANCE:
+UNLESS OTHERWISE SPECIFIED:
+Decimals:
+.X  .060"
+.XX  .030"
+.XXX - .010"
+Fractions:  1/16"
+Angles: .X   1
+Millimeters: X 1mm
+OF
+15
+15
+
+Discription:
+
+Checked By:
+
+FULL ASSEMBLY GRID C
+
+GU
+PC:
+
+PM:
+
+Project:
+
+TRELLIS-MEAT & SEAFOOD
+
+3 Adi Dassler Way
+Paris, On. N3L 0B9
+Tel. 1.519.442.7000, 
+Fax. 1.519.442.7535
+
+Rev:
+Sheet:
+
+Scale:
+
+THE INFORMATION CONTAINED IN THIS DRAWING IS THE SOLE 
+
+1:8
+
+2
+
+PROPERTY OF TC. PARIS. ANY REPRODUCTION IN PART OR AS A WHOLE 
+
+WITHOUT WRITTEN PERMISSION OF TC. PARIS IS PROHIBTED.
+
+

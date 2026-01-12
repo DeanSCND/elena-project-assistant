@@ -1,0 +1,406 @@
+// Construction Agent POC - Frontend Client
+
+// Use relative path when behind Vite proxy, or direct URL for standalone
+const API_BASE = window.location.hostname === 'localhost' && window.location.port === '5173'
+    ? '/api'  // Vite proxy
+    : 'http://localhost:8100';  // Direct access
+
+// State management
+const state = {
+    connected: false,
+    voiceEnabled: false,
+    isRecording: false,
+    messages: [],
+    currentStreamingMessage: null,
+    elevenLabsWs: null,
+    audioContext: null,
+    audioQueue: [],
+    isPlaying: false
+};
+
+// DOM elements
+const elements = {
+    messages: document.getElementById('messages'),
+    messageInput: document.getElementById('message-input'),
+    sendBtn: document.getElementById('send-btn'),
+    chatForm: document.getElementById('chat-form'),
+    connectionStatus: document.getElementById('connection-status'),
+    thinkingIndicator: document.getElementById('thinking-indicator'),
+    voiceToggle: document.getElementById('voice-toggle'),
+    voiceInputBtn: document.getElementById('voice-input-btn'),
+    docStatus: document.getElementById('doc-status')
+};
+
+// Initialize app
+async function init() {
+    console.log('🚀 Initializing Construction Agent...');
+
+    // Check backend health
+    await checkBackendStatus();
+
+    // Setup event listeners
+    setupEventListeners();
+
+    // Initialize audio context for voice
+    initAudioContext();
+}
+
+// Check backend status
+async function checkBackendStatus() {
+    try {
+        const response = await fetch(`${API_BASE}/health`);
+        const health = await response.json();
+
+        state.connected = true;
+        updateConnectionStatus(true);
+
+        // Update document status
+        elements.docStatus.innerHTML = `
+            <p>✅ ${health.documents_loaded} documents loaded</p>
+            <p>📊 Context size: ${(health.total_context_size / 1000).toFixed(0)}K chars</p>
+            <p>🤖 LLM: ${health.openai_configured ? 'OpenAI GPT-4o' : '❌ Not configured'}</p>
+        `;
+    } catch (error) {
+        console.error('Backend not reachable:', error);
+        state.connected = false;
+        updateConnectionStatus(false);
+        elements.docStatus.innerHTML = '<p>❌ Backend not connected</p>';
+    }
+}
+
+// Update connection status indicator
+function updateConnectionStatus(connected) {
+    if (connected) {
+        elements.connectionStatus.textContent = '● Connected';
+        elements.connectionStatus.className = 'status-indicator connected';
+    } else {
+        elements.connectionStatus.textContent = '● Disconnected';
+        elements.connectionStatus.className = 'status-indicator disconnected';
+    }
+}
+
+// Setup event listeners
+function setupEventListeners() {
+    // Chat form submission
+    elements.chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const message = elements.messageInput.value.trim();
+        if (message) {
+            await sendMessage(message);
+        }
+    });
+
+    // Quick query links
+    document.querySelectorAll('.quick-query').forEach(link => {
+        link.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const query = e.target.textContent;
+            elements.messageInput.value = query;
+            await sendMessage(query);
+        });
+    });
+
+    // Voice toggle button
+    elements.voiceToggle.addEventListener('click', toggleVoice);
+
+    // Voice input button (push-to-talk)
+    elements.voiceInputBtn.addEventListener('mousedown', startRecording);
+    elements.voiceInputBtn.addEventListener('mouseup', stopRecording);
+    elements.voiceInputBtn.addEventListener('mouseleave', stopRecording);
+    elements.voiceInputBtn.addEventListener('touchstart', startRecording);
+    elements.voiceInputBtn.addEventListener('touchend', stopRecording);
+}
+
+// Send message to backend
+async function sendMessage(message) {
+    if (!state.connected) {
+        alert('Backend not connected. Please ensure the server is running.');
+        return;
+    }
+
+    // Clear input
+    elements.messageInput.value = '';
+    elements.sendBtn.disabled = true;
+
+    // Add user message to chat
+    addMessage('user', message);
+
+    // Show thinking indicator
+    elements.thinkingIndicator.classList.remove('hidden');
+
+    // Create assistant message container
+    const assistantMessage = addMessage('assistant', '', true);
+
+    try {
+        // Use Server-Sent Events for streaming
+        const response = await fetch(`${API_BASE}/chat`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Process SSE stream
+        await processSSEStream(response, assistantMessage);
+
+    } catch (error) {
+        console.error('Error sending message:', error);
+        assistantMessage.querySelector('.message-content').textContent =
+            'Sorry, there was an error processing your request. Please try again.';
+    } finally {
+        elements.thinkingIndicator.classList.add('hidden');
+        elements.sendBtn.disabled = false;
+        elements.messageInput.focus();
+    }
+}
+
+// Process Server-Sent Events stream
+async function processSSEStream(response, messageElement) {
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let buffer = '';
+    let fullText = '';
+
+    const messageContent = messageElement.querySelector('.message-content');
+    messageElement.classList.add('streaming');
+
+    try {
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+
+            // Keep the last incomplete line in buffer
+            buffer = lines.pop();
+
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const data = line.slice(6);
+                    if (data === '[DONE]') continue;
+
+                    try {
+                        const event = JSON.parse(data);
+                        handleSSEEvent(event, messageContent, fullText);
+
+                        // Update fullText if we have a chunk
+                        if (event.type === 'TEXT_MESSAGE_CHUNK' && event.data?.content) {
+                            fullText += event.data.content;
+                            messageContent.textContent = fullText;
+                        }
+                    } catch (e) {
+                        console.error('Error parsing SSE event:', e);
+                    }
+                }
+            }
+        }
+    } finally {
+        messageElement.classList.remove('streaming');
+
+        // If voice is enabled, speak the response
+        if (state.voiceEnabled && fullText) {
+            await speakText(fullText);
+        }
+    }
+}
+
+// Handle different SSE event types (AG-UI protocol)
+function handleSSEEvent(event, messageContent, currentText) {
+    switch (event.type) {
+        case 'RUN_STARTED':
+            console.log('🏃 Run started:', event.data);
+            break;
+
+        case 'TEXT_MESSAGE_START':
+            console.log('📝 Message start');
+            break;
+
+        case 'TEXT_MESSAGE_CHUNK':
+            // Content is updated in processSSEStream
+            break;
+
+        case 'TEXT_MESSAGE_END':
+            console.log('✅ Message complete');
+            break;
+
+        case 'RUN_FINISHED':
+            console.log('🏁 Run finished');
+            break;
+
+        case 'RUN_ERROR':
+            console.error('❌ Run error:', event.data);
+            messageContent.textContent = 'An error occurred: ' + event.data.error;
+            break;
+
+        default:
+            console.log('Unknown event type:', event.type);
+    }
+}
+
+// Add message to chat
+function addMessage(role, content, streaming = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${role}${streaming ? ' streaming' : ''}`;
+
+    const headerDiv = document.createElement('div');
+    headerDiv.className = 'message-header';
+    headerDiv.textContent = role === 'user' ? '👤 You' : '🤖 Assistant';
+
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+    contentDiv.textContent = content;
+
+    messageDiv.appendChild(headerDiv);
+    messageDiv.appendChild(contentDiv);
+    elements.messages.appendChild(messageDiv);
+
+    // Scroll to bottom
+    elements.messages.scrollTop = elements.messages.scrollHeight;
+
+    return messageDiv;
+}
+
+// Voice functionality
+function initAudioContext() {
+    if (!state.audioContext && window.AudioContext) {
+        state.audioContext = new AudioContext();
+    }
+}
+
+function toggleVoice() {
+    state.voiceEnabled = !state.voiceEnabled;
+
+    if (state.voiceEnabled) {
+        elements.voiceToggle.textContent = '🔊 Voice On';
+        elements.voiceToggle.classList.add('active');
+        initElevenLabsConnection();
+    } else {
+        elements.voiceToggle.textContent = '🎙️ Voice Off';
+        elements.voiceToggle.classList.remove('active');
+        if (state.elevenLabsWs) {
+            state.elevenLabsWs.close();
+            state.elevenLabsWs = null;
+        }
+    }
+}
+
+// Initialize ElevenLabs WebSocket connection
+async function initElevenLabsConnection() {
+    const elevenLabsKey = localStorage.getItem('elevenlabs_api_key');
+    if (!elevenLabsKey) {
+        const key = prompt('Please enter your ElevenLabs API key:');
+        if (key) {
+            localStorage.setItem('elevenlabs_api_key', key);
+        } else {
+            state.voiceEnabled = false;
+            elements.voiceToggle.textContent = '🎙️ Voice Off';
+            elements.voiceToggle.classList.remove('active');
+            return;
+        }
+    }
+
+    // We'll implement actual ElevenLabs WebSocket in the enhanced version
+    console.log('Voice enabled (ElevenLabs connection would be initialized here)');
+}
+
+// Simple TTS fallback using browser Speech Synthesis
+async function speakText(text) {
+    if (!state.voiceEnabled) return;
+
+    // For POC, use browser's built-in speech synthesis
+    // In production, this would stream to ElevenLabs WebSocket
+    if ('speechSynthesis' in window) {
+        // Clean text for speech
+        const cleanText = text
+            .replace(/```[\s\S]*?```/g, '') // Remove code blocks
+            .replace(/[*_~`]/g, '') // Remove markdown
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1'); // Convert links to text
+
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+        utterance.volume = 0.8;
+
+        // Use a better voice if available
+        const voices = window.speechSynthesis.getVoices();
+        const preferredVoice = voices.find(v => v.name.includes('Google') || v.name.includes('Microsoft'));
+        if (preferredVoice) {
+            utterance.voice = preferredVoice;
+        }
+
+        window.speechSynthesis.speak(utterance);
+    }
+}
+
+// Voice input functions
+let mediaRecorder = null;
+let audioChunks = [];
+
+async function startRecording(e) {
+    e.preventDefault();
+    if (state.isRecording) return;
+
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        audioChunks = [];
+
+        mediaRecorder.ondataavailable = (event) => {
+            audioChunks.push(event.data);
+        };
+
+        mediaRecorder.onstop = async () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+            await processAudioInput(audioBlob);
+            stream.getTracks().forEach(track => track.stop());
+        };
+
+        mediaRecorder.start();
+        state.isRecording = true;
+        elements.voiceInputBtn.classList.add('recording');
+        console.log('🎤 Recording started');
+    } catch (error) {
+        console.error('Error accessing microphone:', error);
+        alert('Could not access microphone. Please check permissions.');
+    }
+}
+
+function stopRecording(e) {
+    e.preventDefault();
+    if (!state.isRecording || !mediaRecorder) return;
+
+    mediaRecorder.stop();
+    state.isRecording = false;
+    elements.voiceInputBtn.classList.remove('recording');
+    console.log('🛑 Recording stopped');
+}
+
+async function processAudioInput(audioBlob) {
+    // For POC, we'll simulate speech-to-text
+    // In production, this would use OpenAI Whisper API
+    console.log('Processing audio input...', audioBlob);
+
+    // Simulate transcription
+    addMessage('user', '[Voice input - would be transcribed with Whisper API]');
+
+    // For now, just send a sample query
+    setTimeout(() => {
+        sendMessage("What's the ceiling height in the meat prep area?");
+    }, 500);
+}
+
+// Periodic health check
+setInterval(checkBackendStatus, 30000);
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

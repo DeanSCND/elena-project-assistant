@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elena - Project Assistant</title>
+    <link rel="stylesheet" href="styles_v2.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>
+                Elena - Project Assistant
+                <span class="subtitle">Deep Analysis & Reasoning Engine</span>
+                <span class="version">Version POC.1</span>
+            </h1>
+            <div class="status">
+                <select id="model-selector" class="model-dropdown" title="Select AI Model">
+                    <option value="gpt-4o">GPT-4o</option>
+                    <option value="gpt-4o-mini">GPT-4o Mini</option>
+                    <option value="gpt-5" selected>GPT-5</option>
+                </select>
+                <span id="connection-status" class="status-indicator">● Disconnected</span>
+                <button id="reasoning-toggle" class="control-btn active" title="Toggle reasoning display">🧠 Reasoning On</button>
+                <button id="knowledge-btn" class="control-btn" title="View knowledge base">📖 Knowledge</button>
+                <button id="history-btn" class="control-btn" title="View history">📚 History</button>
+                <button id="theme-toggle" class="control-btn" title="Toggle dark/light mode">🌙</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- Reasoning Panel -->
+            <div id="reasoning-panel" class="reasoning-panel">
+                <div class="panel-header">🧠 Reasoning Process</div>
+                <div class="reasoning-content">
+                    <p class="placeholder">Reasoning steps will appear here when processing queries...</p>
+                </div>
+            </div>
+
+            <!-- Chat Container -->
+            <div id="chat-container">
+                <div id="messages">
+                    <!-- Messages will be added here -->
+                </div>
+
+                <div id="input-container">
+                    <div id="thinking-indicator" class="hidden">
+                        <span class="dots">...</span> Analyzing with deep reasoning
+                    </div>
+                    <form id="chat-form">
+                        <input
+                            type="text"
+                            id="message-input"
+                            placeholder="Ask about base components, patterns, dimensions... (Press Enter to send)"
+                            autocomplete="off"
+                        />
+                        <button type="button" id="save-conversation" class="chat-action-btn hidden" title="Save conversation">
+                            💾
+                        </button>
+                        <button type="button" id="new-conversation" class="chat-action-btn hidden" title="New conversation">
+                            ➕
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Enhanced Info Panel -->
+            <aside id="info-panel">
+                <h3>🎯 Quick Analysis</h3>
+                <details open>
+                    <summary>Complex Queries</summary>
+                    <ul class="quick-queries">
+                        <li><a href="#" class="quick-query">Analyze the trellis shop drawings and identify the base components</a></li>
+                        <li><a href="#" class="quick-query">What are the common dimensional patterns in the trellis system?</a></li>
+                        <li><a href="#" class="quick-query">Compare all trellis parts and group by similar dimensions</a></li>
+                        <li><a href="#" class="quick-query">Are there conflicts between HVAC and trellis clearances?</a></li>
+                        <li><a href="#" class="quick-query">What makes up the base components of the trellis?</a></li>
+                    </ul>
+                </details>
+
+                <details>
+                    <summary>Analysis Tools</summary>
+                    <div class="analysis-tools">
+                        <button id="analyze-trellis-btn" class="analysis-btn">
+                            🔍 Analyze Trellis Components
+                        </button>
+                        <button id="find-patterns-btn" class="analysis-btn">
+                            📊 Find Dimensional Patterns
+                        </button>
+                        <button id="check-conflicts-btn" class="analysis-btn">
+                            ⚠️ Check for Conflicts
+                        </button>
+                    </div>
+                </details>
+
+                <details open>
+                    <summary>Knowledge Base</summary>
+                    <div id="doc-status" class="doc-status">
+                        <p>Loading knowledge base...</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Project Info</summary>
+                    <dl>
+                        <dt>Location:</dt>
+                        <dd>2000 Anaquod Road, Regina, SK</dd>
+                        <dt>Building Area:</dt>
+                        <dd>~55,800 SF</dd>
+                        <dt>Analysis Mode:</dt>
+                        <dd>Deep Reasoning with Pattern Recognition</dd>
+                        <dt>Document Processing:</dt>
+                        <dd>AI-Enhanced with Component Extraction</dd>
+                    </dl>
+                </details>
+
+                <details>
+                    <summary>Features</summary>
+                    <ul class="feature-list">
+                        <li>✓ Multi-step reasoning</li>
+                        <li>✓ Pattern recognition</li>
+                        <li>✓ Base component identification</li>
+                        <li>✓ Dimensional analysis</li>
+                        <li>✓ Conflict detection</li>
+                        <li>✓ Shop drawing comprehension</li>
+                    </ul>
+                </details>
+            </aside>
+        </main>
+    </div>
+
+    <!-- Re-priming Modal -->
+    <div id="reprime-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔄 Re-priming Knowledge Base</h2>
+            </div>
+            <div class="modal-body">
+                <div id="reprime-log" class="log-container">
+                    <!-- Log messages will appear here -->
+                </div>
+                <div id="reprime-progress" class="progress-bar hidden">
+                    <div class="progress-fill"></div>
+                    <span class="progress-text">0%</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="reprime-close" class="btn-secondary" disabled>Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conversation History Modal -->
+    <div id="history-modal" class="modal hidden">
+        <div class="modal-content modal-wide">
+            <div class="modal-header">
+                <h2>📚 Conversation History</h2>
+                <button class="modal-close" onclick="closeHistoryModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div id="conversation-list" class="conversation-list">
+                    <!-- Conversation items will appear here -->
+                </div>
+                <div id="conversation-viewer" class="conversation-viewer hidden">
+                    <!-- Selected conversation will appear here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="history-close" class="btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="voice.js"></script>
+    <script src="conversation-manager.js"></script>
+    <script src="knowledge-viewer.js"></script>
+    <script src="app_v2.js"></script>
+</body>
+</html>
