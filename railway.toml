@@ -9,23 +9,16 @@ restartPolicyMaxRetries = 10
 [build.nixpacksPlan]
 providers = ["python", "nodejs"]
 
-[[build.nixpacksPlan.phases.setup]]
+[build.nixpacksPlan.phases.setup]
 nixPkgs = ["python310", "poetry", "nodejs-18_x"]
 
-[[build.nixpacksPlan.phases.install]]
+[build.nixpacksPlan.phases.install]
 cmds = [
-    # Install backend dependencies
     "cd backend && poetry config virtualenvs.create false && poetry install --no-dev",
-    # Install frontend dependencies and build
     "cd frontend && npm install && npm run build"
 ]
 
-[[build.nixpacksPlan.phases.build]]
+[build.nixpacksPlan.phases.build]
 cmds = [
-    # Frontend is already built in install phase
     "echo 'Frontend built successfully'"
 ]
-
-[volumes]
-# Mount persistent volume for learned knowledge
-mount = "/data"
