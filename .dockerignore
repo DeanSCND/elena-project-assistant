@@ -1,0 +1,59 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info
+.pytest_cache
+.coverage
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Frontend build (we rebuild it)
+frontend/dist
+frontend/node_modules
+
+# Environment
+.env
+.env.local
+.env.development
+
+# Virtual environments
+.venv
+venv
+
+# IDE
+.vscode
+.idea
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Learned knowledge (use volume)
+backend/learned_knowledge
+
+# Large PDFs (already excluded in .gitignore)
+**/*.pdf
+
+# Documentation
+README.md
+*.md
+!backend/documents/**/*.md
+!backend/documents/**/*.AI.md
+
+# Scripts
+scripts
+
+# Railway
+.railway
+nixpacks.toml
