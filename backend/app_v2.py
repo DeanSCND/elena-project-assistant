@@ -31,6 +31,9 @@ from openai import AsyncOpenAI
 # Import knowledge manager
 from knowledge_manager import get_knowledge_manager, KnowledgeEntry
 
+# Import Firestore conversation database
+from firestore_db import ConversationDB
+
 # Load environment variables
 env_path = Path(__file__).parent.parent / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -966,68 +969,131 @@ async def get_knowledge_base():
         "sample_components": dict(list(KNOWLEDGE.components.items())[:5])
     }
 
+@app.post("/auto-save-conversation")
+async def auto_save_conversation(data: dict):
+    """
+    Auto-save conversation after each chat response (silent, no UI).
+    Creates or updates conversation in Firestore with user_saved=False.
+    """
+    try:
+        conversation_id = data.get("conversation_id")
+        messages = data.get("messages", [])
+
+        # Generate ID if not provided
+        if not conversation_id:
+            conversation_id = ConversationDB.generate_id()
+
+        # Auto-save with user_saved=False
+        saved = ConversationDB.save_conversation(
+            conversation_id=conversation_id,
+            messages=messages,
+            title=None,  # No title for auto-saved conversations
+            user_saved=False,
+            metadata=data.get("metadata", {})
+        )
+
+        return {
+            "success": True,
+            "conversation_id": conversation_id,
+            "message_count": len(messages)
+        }
+
+    except Exception as e:
+        print(f"Error auto-saving conversation: {e}")
+        import traceback
+        traceback.print_exc()
+        return {"success": False, "error": str(e)}
+
+
 @app.post("/save_conversation")
-async def save_conversation(conversation: dict):
-    """Save conversation to JSON file"""
+async def save_conversation(data: dict):
+    """
+    User-initiated save: toggles user_saved=True and sets title.
+    Called when user clicks 'Save' button.
+    """
+    try:
+        conversation_id = data.get("conversation_id")
+        title = data.get("title", "Untitled Conversation")
+        messages = data.get("messages", [])
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"conversation_{timestamp}.json"
+        if not conversation_id:
+            conversation_id = ConversationDB.generate_id()
 
-    # Save to a conversations directory
-    conv_dir = Path(__file__).parent / "conversations"
-    conv_dir.mkdir(exist_ok=True)
+        # Save or update with user_saved=True
+        saved = ConversationDB.save_conversation(
+            conversation_id=conversation_id,
+            messages=messages,
+            title=title,
+            user_saved=True,
+            metadata=data.get("metadata", {})
+        )
 
-    filepath = conv_dir / filename
+        return {
+            "success": True,
+            "conversation_id": conversation_id,
+            "title": title
+        }
 
-    # Add metadata
-    conversation["saved_at"] = datetime.now().isoformat()
-    conversation["filename"] = filename
+    except Exception as e:
+        print(f"Error saving conversation: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
 
-    with open(filepath, 'w') as f:
-        json.dump(conversation, f, indent=2)
-
-    return {
-        "success": True,
-        "filename": filename,
-        "path": str(filepath)
-    }
 
 @app.get("/conversations")
-async def list_conversations():
-    """List saved conversations"""
+async def list_conversations(user_saved_only: bool = True, limit: int = 20):
+    """
+    List conversations from Firestore.
+    By default, only returns user-saved conversations (user_saved=True).
+    Set user_saved_only=false to see all conversations including auto-saved.
+    """
+    try:
+        conversations = ConversationDB.list_conversations(
+            user_saved_only=user_saved_only,
+            limit=limit,
+            order_by='updated_at',
+            descending=True
+        )
 
-    conv_dir = Path(__file__).parent / "conversations"
-    if not conv_dir.exists():
+        # Format for frontend
+        formatted = []
+        for conv in conversations:
+            formatted.append({
+                "conversation_id": conv.get("conversation_id"),
+                "title": conv.get("title", "Untitled Conversation"),
+                "message_count": conv.get("message_count", 0),
+                "user_saved": conv.get("user_saved", False),
+                "created_at": conv.get("created_at"),
+                "updated_at": conv.get("updated_at")
+            })
+
+        return {"conversations": formatted}
+
+    except Exception as e:
+        print(f"Error listing conversations: {e}")
+        import traceback
+        traceback.print_exc()
         return {"conversations": []}
 
-    conversations = []
-    for file_path in sorted(conv_dir.glob("*.json"), reverse=True):
-        try:
-            with open(file_path, 'r') as f:
-                data = json.load(f)
-                conversations.append({
-                    "filename": file_path.name,
-                    "saved_at": data.get("saved_at", ""),
-                    "message_count": len(data.get("messages", [])),
-                    "title": data.get("title", "Untitled Conversation")
-                })
-        except:
-            continue
+@app.get("/conversations/{conversation_id}")
+async def get_conversation(conversation_id: str):
+    """Get a specific conversation from Firestore"""
+    try:
+        conversation = ConversationDB.get_conversation(conversation_id)
 
-    return {"conversations": conversations[:20]}  # Return last 20
+        if not conversation:
+            raise HTTPException(status_code=404, detail="Conversation not found")
 
-@app.get("/conversations/{filename}")
-async def get_conversation(filename: str):
-    """Get a specific conversation"""
+        return conversation
 
-    conv_dir = Path(__file__).parent / "conversations"
-    filepath = conv_dir / filename
-
-    if not filepath.exists():
-        raise HTTPException(status_code=404, detail="Conversation not found")
-
-    with open(filepath, 'r') as f:
-        return json.load(f)
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"Error getting conversation: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/analyze")
 async def analyze_specific_topic(request: dict):

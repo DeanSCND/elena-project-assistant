@@ -707,6 +707,16 @@ async function processEnhancedSSEStream(response, messageElement) {
             }
         }
 
+        // Auto-save conversation after assistant response (silent, no UI)
+        if (fullText) {
+            try {
+                await conversationManager.autoSaveConversation();
+                console.log('✓ Conversation auto-saved');
+            } catch (error) {
+                console.warn('Auto-save failed (non-critical):', error);
+            }
+        }
+
         // Speak response if voice enabled
         if (voiceManager && voiceManager.voiceEnabled && fullText) {
             await voiceManager.speakText(fullText);

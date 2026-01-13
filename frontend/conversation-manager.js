@@ -5,6 +5,7 @@ class ConversationManager {
         this.currentModel = 'gpt-4o';
         this.messages = [];
         this.sessionId = this.generateSessionId();
+        this.conversationId = null; // Firestore conversation ID
     }
 
     generateSessionId() {
@@ -47,7 +48,50 @@ class ConversationManager {
         return `Conversation ${new Date().toLocaleDateString()}`;
     }
 
+    async autoSaveConversation() {
+        /**
+         * Silent auto-save after each assistant response.
+         * Saves with user_saved=false (not visible in user's saved list).
+         */
+        try {
+            const conversationData = this.getConversationData();
+            const response = await fetch(`${API_BASE}/auto-save-conversation`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    conversation_id: this.conversationId,
+                    messages: this.messages,
+                    metadata: {
+                        session_id: this.sessionId,
+                        model: this.currentModel
+                    }
+                })
+            });
+
+            if (!response.ok) {
+                console.warn('Failed to auto-save conversation (non-critical)');
+                return null;
+            }
+
+            const result = await response.json();
+            if (result.success && !this.conversationId) {
+                // Store conversation ID for subsequent saves
+                this.conversationId = result.conversation_id;
+            }
+            return result;
+        } catch (error) {
+            console.warn('Error auto-saving conversation (non-critical):', error);
+            return null;
+        }
+    }
+
     async saveConversation() {
+        /**
+         * User-initiated save: sets user_saved=true and adds title.
+         * Called when user clicks 'Save' button.
+         */
         try {
             const conversationData = this.getConversationData();
             const response = await fetch(`${API_BASE}/save_conversation`, {
@@ -55,7 +99,15 @@ class ConversationManager {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(conversationData)
+                body: JSON.stringify({
+                    conversation_id: this.conversationId,
+                    title: conversationData.title,
+                    messages: this.messages,
+                    metadata: {
+                        session_id: this.sessionId,
+                        model: this.currentModel
+                    }
+                })
             });
 
             if (!response.ok) {
@@ -63,6 +115,9 @@ class ConversationManager {
             }
 
             const result = await response.json();
+            if (result.success && !this.conversationId) {
+                this.conversationId = result.conversation_id;
+            }
             return result;
         } catch (error) {
             console.error('Error saving conversation:', error);
@@ -84,13 +139,19 @@ class ConversationManager {
         }
     }
 
-    async loadConversation(filename) {
+    async loadConversation(conversationId) {
         try {
-            const response = await fetch(`${API_BASE}/conversations/${filename}`);
+            const response = await fetch(`${API_BASE}/conversations/${conversationId}`);
             if (!response.ok) {
                 throw new Error('Failed to load conversation');
             }
-            return await response.json();
+            const conversation = await response.json();
+
+            // Restore conversation state
+            this.messages = conversation.messages || [];
+            this.conversationId = conversation.conversation_id;
+
+            return conversation;
         } catch (error) {
             console.error('Error loading conversation:', error);
             throw error;
@@ -100,6 +161,7 @@ class ConversationManager {
     clear() {
         this.messages = [];
         this.sessionId = this.generateSessionId();
+        this.conversationId = null; // Reset conversation ID for new conversation
     }
 
     setModel(model) {
