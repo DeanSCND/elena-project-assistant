@@ -211,7 +211,14 @@ def create_chunks_from_content(content: str, filename: str, source_pdf: str) -> 
     # Strategy: Split by headers (## or ###) to maintain semantic coherence
     sections = re.split(r'\n(#{2,3}\s+.*?)\n', content)
 
+    # Sanitize chunk ID to ASCII-only (Pinecone requirement)
     chunk_id_base = filename.replace(".AI.md", "").replace(" ", "_")
+    # Replace common non-ASCII characters with ASCII equivalents
+    chunk_id_base = chunk_id_base.replace("–", "-")  # en-dash to hyphen
+    chunk_id_base = chunk_id_base.replace("—", "-")  # em-dash to hyphen
+    # Remove any remaining non-ASCII characters
+    chunk_id_base = chunk_id_base.encode('ascii', 'ignore').decode('ascii')
+
     current_section = "Introduction"
     chunk_counter = 0
 
