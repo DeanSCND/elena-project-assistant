@@ -140,13 +140,19 @@ class VectorStore:
         # Prepare vectors for upload
         vectors = []
         for i, chunk in enumerate(chunks):
+            # Clean metadata - remove None values (Pinecone doesn't accept null)
+            clean_metadata = {}
+            for key, value in chunk['metadata'].items():
+                if value is not None:  # Skip None values
+                    clean_metadata[key] = value
+
+            # Add content preview
+            clean_metadata['content_preview'] = chunk['content'][:500]
+
             vectors.append({
                 'id': chunk['id'],
                 'values': embeddings[i],
-                'metadata': {
-                    **chunk['metadata'],
-                    'content_preview': chunk['content'][:500]  # Store preview for debugging
-                }
+                'metadata': clean_metadata
             })
 
         # Upload in batches
