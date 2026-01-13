@@ -157,14 +157,21 @@ class VectorStore:
 
         # Upload in batches
         print(f"\nUploading vectors to Pinecone...")
+        uploaded_count = 0
         for i in range(0, len(vectors), batch_size):
             batch = vectors[i:i + batch_size]
-            self.index.upsert(vectors=batch)
-            print(f"  Uploaded {i+1}-{min(i+batch_size, len(vectors))} of {len(vectors)}")
-            time.sleep(0.1)  # Rate limiting
+            try:
+                result = self.index.upsert(vectors=batch)
+                uploaded_count += len(batch)
+                print(f"  Uploaded {i+1}-{min(i+batch_size, len(vectors))} of {len(vectors)}")
+                time.sleep(0.1)  # Rate limiting
+            except Exception as e:
+                print(f"  ✗ ERROR uploading batch {i//batch_size + 1}: {e}")
+                raise
 
         print(f"\n✓ Upload complete!")
-        print(f"  Total vectors: {len(vectors)}")
+        print(f"  Total vectors uploaded: {uploaded_count}")
+        print(f"  Total vectors in index: {self.index.describe_index_stats().total_vector_count}")
         print(f"{'='*80}\n")
 
     def search(self, query: str, top_k: int = 5, filter: Optional[Dict] = None) -> List[Dict[str, Any]]:
