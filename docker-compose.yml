@@ -1,6 +1,15 @@
 version: '3.8'
 
 services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant-data:/qdrant/storage
+    restart: unless-stopped
+
   firestore:
     image: mtlynch/firestore-emulator
     ports:
@@ -21,12 +30,15 @@ services:
       - FIRESTORE_EMULATOR_HOST=firestore:8080
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - GCP_PROJECT_ID=eleventyseven-45e7c
+      - QDRANT_URL=http://qdrant:6333
     volumes:
       - ./backend:/app/backend
       - ./frontend/dist:/app/frontend/dist
     depends_on:
       - firestore
+      - qdrant
     command: python app_v2.py
 
 volumes:
   firestore-data:
+  qdrant-data:

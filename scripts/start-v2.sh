@@ -116,6 +116,33 @@ export default defineConfig({
 EOF
 fi
 
+# Start Qdrant via Docker
+echo -e "\n${GREEN}Starting Qdrant Vector Database...${NC}"
+cd "$PROJECT_ROOT"
+
+# Check if Qdrant is already running
+if docker ps | grep -q qdrant; then
+    echo -e "${GREEN}✓ Qdrant already running${NC}"
+else
+    # Start Qdrant container
+    docker run -d \
+        --name qdrant \
+        -p 6333:6333 \
+        -p 6334:6334 \
+        -v qdrant_data:/qdrant/storage \
+        qdrant/qdrant:latest
+
+    echo "Waiting for Qdrant to be ready..."
+    for i in {1..10}; do
+        if curl -s http://localhost:6333/health > /dev/null 2>&1; then
+            echo -e "${GREEN}✓ Qdrant is ready!${NC}"
+            break
+        fi
+        echo -n "."
+        sleep 1
+    done
+fi
+
 # Start services
 echo -e "\n${GREEN}Starting services...${NC}"
 echo "=================================================="
@@ -124,6 +151,7 @@ echo "=================================================="
 cleanup() {
     echo -e "\n${YELLOW}Shutting down services...${NC}"
     kill $(jobs -p) 2>/dev/null
+    echo -e "${YELLOW}Note: Qdrant container still running. Stop with: docker stop qdrant${NC}"
     exit 0
 }
 
@@ -131,7 +159,7 @@ trap cleanup EXIT INT TERM
 
 # Start backend (Enhanced V2)
 echo -e "\n${GREEN}Starting Enhanced Backend V2...${NC}"
-cd ../backend
+cd "$PROJECT_ROOT/backend"
 PORT=$PORT poetry run python app_v2.py &
 BACKEND_PID=$!
 
@@ -154,7 +182,7 @@ fi
 
 # Start frontend (Enhanced V2)
 echo -e "\n${GREEN}Starting Enhanced Frontend V2...${NC}"
-cd ../frontend
+cd "$PROJECT_ROOT/frontend"
 $PKG_MANAGER run dev &
 FRONTEND_PID=$!
 

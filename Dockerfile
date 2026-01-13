@@ -40,8 +40,10 @@ EXPOSE 8100
 # Enable production Firestore for Cloud Run
 ENV ALLOW_PRODUCTION_FIRESTORE=true
 
-# Use production Pinecone index for Cloud Run
-ENV PINECONE_INDEX=elena-construction-docs-prod
+# Qdrant configuration for production
+# Set to Cloud Run Qdrant service URL when deployed
+ENV QDRANT_URL=http://qdrant:6333
+ENV GCP_PROJECT_ID=eleventyseven-45e7c
 
 # Start command
 CMD ["python", "app_v2.py"]

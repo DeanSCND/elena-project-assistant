@@ -13,7 +13,7 @@ from datetime import datetime
 import uuid
 import re
 from collections import defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from dotenv import load_dotenv
 from contextlib import asynccontextmanager
 
@@ -34,7 +34,7 @@ from knowledge_manager import get_knowledge_manager, KnowledgeEntry
 # Import Firestore conversation database
 from firestore_db import ConversationDB
 
-# Import vector store for semantic search
+# Import Qdrant vector store
 from vector_store import get_vector_store
 
 # Load environment variables
@@ -93,26 +93,15 @@ class DocumentChunk:
 @dataclass
 class DocumentKnowledge:
     """Structured knowledge extracted from documents"""
-    components: Dict[str, Dict[str, Any]] = None
-    dimensions: Dict[str, List[Dict]] = None
-    patterns: List[Dict] = None
-    conflicts: List[Dict] = None
-    base_components: Dict[str, List] = None
-    raw_content: Dict[str, str] = None
-    analysis_cache: Dict[str, Any] = None
-    chunks: List[DocumentChunk] = None  # NEW: Structured chunks with metadata
-    chunk_index: Dict[str, DocumentChunk] = None  # NEW: Quick lookup by ID
-
-    def __post_init__(self):
-        self.components = self.components or {}
-        self.dimensions = self.dimensions or defaultdict(list)
-        self.patterns = self.patterns or []
-        self.conflicts = self.conflicts or []
-        self.base_components = self.base_components or {}
-        self.raw_content = self.raw_content or {}
-        self.analysis_cache = self.analysis_cache or {}
-        self.chunks = self.chunks or []
-        self.chunk_index = self.chunk_index or {}
+    components: Dict[str, Dict[str, Any]] = field(default_factory=dict)
+    dimensions: Dict[str, List[Dict]] = field(default_factory=lambda: defaultdict(list))
+    patterns: List[Dict] = field(default_factory=list)
+    conflicts: List[Dict] = field(default_factory=list)
+    base_components: Dict[str, List] = field(default_factory=dict)
+    raw_content: Dict[str, str] = field(default_factory=dict)
+    analysis_cache: Dict[str, Any] = field(default_factory=dict)
+    chunks: List[DocumentChunk] = field(default_factory=list)  # NEW: Structured chunks with metadata
+    chunk_index: Dict[str, DocumentChunk] = field(default_factory=dict)  # NEW: Quick lookup by ID
 
 # Global knowledge base
 KNOWLEDGE = DocumentKnowledge()
@@ -338,9 +327,9 @@ async def load_and_analyze_documents():
     # Track source PDF mappings
     source_pdf_map = {}
 
-    # Focus on .AI.md files (AI-analyzed content) and key documents
-    # Skip PDFs as requested
-    patterns = ["**/*.AI.md", "**/*.md"]
+    # Focus on .AI.md files only (AI-analyzed content)
+    # .AI.md files are the processed versions - loading both .AI.md and .md causes 50% duplication
+    patterns = ["**/*.AI.md"]
 
     for pattern in patterns:
         for file_path in aurora_path.glob(pattern):

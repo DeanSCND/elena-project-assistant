@@ -158,20 +158,64 @@ class VectorStore:
         # Upload in batches
         print(f"\nUploading vectors to Pinecone...")
         uploaded_count = 0
+        failed_batches = []
+
         for i in range(0, len(vectors), batch_size):
             batch = vectors[i:i + batch_size]
+            batch_num = i // batch_size + 1
+
             try:
                 result = self.index.upsert(vectors=batch)
+
+                # Check upsert response
+                upserted = result.get('upserted_count', 0) if hasattr(result, 'get') else getattr(result, 'upserted_count', 0)
+
+                if upserted != len(batch):
+                    print(f"  ⚠️  WARNING: Batch {batch_num}: Expected {len(batch)}, got {upserted} upserted")
+                    failed_batches.append({
+                        'batch': batch_num,
+                        'expected': len(batch),
+                        'actual': upserted,
+                        'result': str(result)
+                    })
+
                 uploaded_count += len(batch)
-                print(f"  Uploaded {i+1}-{min(i+batch_size, len(vectors))} of {len(vectors)}")
-                time.sleep(0.1)  # Rate limiting
+                print(f"  Batch {batch_num}: Uploaded {i+1}-{min(i+batch_size, len(vectors))} of {len(vectors)} (upserted: {upserted})")
+                time.sleep(0.2)  # Increased rate limiting
+
             except Exception as e:
-                print(f"  ✗ ERROR uploading batch {i//batch_size + 1}: {e}")
+                print(f"  ✗ ERROR uploading batch {batch_num}: {type(e).__name__}: {e}")
+                failed_batches.append({
+                    'batch': batch_num,
+                    'error': str(e),
+                    'type': type(e).__name__
+                })
                 raise
 
-        print(f"\n✓ Upload complete!")
-        print(f"  Total vectors uploaded: {uploaded_count}")
-        print(f"  Total vectors in index: {self.index.describe_index_stats().total_vector_count}")
+        # Wait for eventual consistency
+        print(f"\n  Waiting 3 seconds for Pinecone to sync...")
+        time.sleep(3)
+
+        # Get fresh stats
+        final_stats = self.index.describe_index_stats()
+        final_count = final_stats.get('total_vector_count', 0)
+
+        print(f"\n{'='*80}")
+        print(f"UPLOAD SUMMARY:")
+        print(f"  Total vectors processed: {uploaded_count}")
+        print(f"  Total vectors in index: {final_count}")
+
+        if failed_batches:
+            print(f"\n  ⚠️  WARNINGS/ERRORS: {len(failed_batches)} batches had issues")
+            for fb in failed_batches[:5]:  # Show first 5
+                print(f"    - Batch {fb.get('batch')}: {fb}")
+
+        if final_count < len(vectors):
+            print(f"\n  ✗ MISMATCH: Expected {len(vectors)}, got {final_count}")
+            print(f"    Missing: {len(vectors) - final_count} vectors")
+        else:
+            print(f"  ✓ Upload complete!")
+
         print(f"{'='*80}\n")
 
     def search(self, query: str, top_k: int = 5, filter: Optional[Dict] = None) -> List[Dict[str, Any]]:

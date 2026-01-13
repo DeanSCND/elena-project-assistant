@@ -17,8 +17,8 @@ python-multipart = "^0.0.6"
 pydantic = "^2.5.0"
 httpx = "^0.25.0"
 google-cloud-firestore = "^2.14.0"
-pinecone-client = "^3.0.0"
 numpy = "^1.26.0"
+pinecone = "^8.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
