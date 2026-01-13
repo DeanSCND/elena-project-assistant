@@ -22,7 +22,7 @@ pc = Pinecone(api_key=PINECONE_API_KEY)
 openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
 # Configuration
-INDEX_NAME = "elena-construction-docs"
+INDEX_NAME = os.getenv('PINECONE_INDEX', 'elena-construction-docs-dev')  # Default to dev
 EMBEDDING_MODEL = "text-embedding-3-small"
 EMBEDDING_DIMENSION = 1536
 CLOUD = "aws"

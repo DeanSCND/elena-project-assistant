@@ -40,5 +40,8 @@ EXPOSE 8100
 # Enable production Firestore for Cloud Run
 ENV ALLOW_PRODUCTION_FIRESTORE=true
 
+# Use production Pinecone index for Cloud Run
+ENV PINECONE_INDEX=elena-construction-docs-prod
+
 # Start command
 CMD ["python", "app_v2.py"]
