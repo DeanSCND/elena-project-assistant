@@ -19,32 +19,33 @@ GCP_PROJECT_ID = os.getenv('GCP_PROJECT_ID', 'eleventyseven-45e7c')
 # SAFETY: Default to local emulator to prevent accidental production writes
 if not USING_EMULATOR and os.getenv('ALLOW_PRODUCTION_FIRESTORE') != 'true':
     print(f"{'='*80}")
-    print(f"❌ FIRESTORE ERROR: Production Firestore disabled by default!")
+    print(f"⚠️  FIRESTORE WARNING: Production Firestore disabled by default!")
     print(f"{'='*80}")
-    print(f"To use local development:")
+    print(f"Conversation auto-save will be DISABLED for this session.")
+    print(f"")
+    print(f"To enable conversation persistence:")
     print(f"  1. Start Firestore emulator: docker-compose up")
     print(f"  2. Or set: export FIRESTORE_EMULATOR_HOST=localhost:8080")
-    print(f"")
-    print(f"To use production Firestore (Cloud Run only):")
-    print(f"  export ALLOW_PRODUCTION_FIRESTORE=true")
-    print(f"{'='*80}")
-    raise RuntimeError(
-        "FIRESTORE_EMULATOR_HOST not set and ALLOW_PRODUCTION_FIRESTORE not enabled. "
-        "Refusing to connect to production Firestore from local development."
-    )
+    print(f"{'='*80}\n")
 
-print(f"{'='*80}")
-print(f"FIRESTORE CONFIGURATION:")
-print(f"  Environment: {'LOCAL EMULATOR' if USING_EMULATOR else 'PRODUCTION CLOUD'}")
-print(f"  Project ID: {GCP_PROJECT_ID}")
-if USING_EMULATOR:
-    print(f"  Emulator Host: {os.getenv('FIRESTORE_EMULATOR_HOST')}")
+    # Set flag to disable Firestore features
+    FIRESTORE_DISABLED = True
+    db = None
 else:
-    print(f"  ⚠️  PRODUCTION MODE ENABLED (ALLOW_PRODUCTION_FIRESTORE=true)")
-print(f"{'='*80}")
+    FIRESTORE_DISABLED = False
+    # Initialize Firestore client
+    db = firestore.Client(project=GCP_PROJECT_ID)
 
-# Initialize Firestore client
-db = firestore.Client(project=GCP_PROJECT_ID)
+if not FIRESTORE_DISABLED:
+    print(f"{'='*80}")
+    print(f"FIRESTORE CONFIGURATION:")
+    print(f"  Environment: {'LOCAL EMULATOR' if USING_EMULATOR else 'PRODUCTION CLOUD'}")
+    print(f"  Project ID: {GCP_PROJECT_ID}")
+    if USING_EMULATOR:
+        print(f"  Emulator Host: {os.getenv('FIRESTORE_EMULATOR_HOST')}")
+    else:
+        print(f"  ⚠️  PRODUCTION MODE ENABLED (ALLOW_PRODUCTION_FIRESTORE=true)")
+    print(f"{'='*80}")
 
 
 class ConversationDB:
