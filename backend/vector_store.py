@@ -9,18 +9,6 @@ from pinecone import Pinecone, ServerlessSpec
 from openai import OpenAI
 import numpy as np
 
-# Initialize clients
-PINECONE_API_KEY = os.getenv('PINECONE_API_KEY')
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
-
-if not PINECONE_API_KEY:
-    raise ValueError("PINECONE_API_KEY not found in environment")
-if not OPENAI_API_KEY:
-    raise ValueError("OPENAI_API_KEY not found in environment")
-
-pc = Pinecone(api_key=PINECONE_API_KEY)
-openai_client = OpenAI(api_key=OPENAI_API_KEY)
-
 # Configuration
 INDEX_NAME = os.getenv('PINECONE_INDEX', 'elena-construction-docs-dev')  # Default to dev
 EMBEDDING_MODEL = "text-embedding-3-small"
@@ -28,11 +16,30 @@ EMBEDDING_DIMENSION = 1536
 CLOUD = "aws"
 REGION = "us-east-1"
 
+# Lazy initialization - clients created when VectorStore is instantiated
+pc = None
+openai_client = None
+
 
 class VectorStore:
     """Manages vector embeddings and semantic search."""
 
     def __init__(self):
+        global pc, openai_client
+
+        # Initialize clients on first use (after .env is loaded)
+        if pc is None:
+            PINECONE_API_KEY = os.getenv('PINECONE_API_KEY')
+            OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
+            if not PINECONE_API_KEY:
+                raise ValueError("PINECONE_API_KEY not found in environment")
+            if not OPENAI_API_KEY:
+                raise ValueError("OPENAI_API_KEY not found in environment")
+
+            pc = Pinecone(api_key=PINECONE_API_KEY)
+            openai_client = OpenAI(api_key=OPENAI_API_KEY)
+
         self.index = None
         self._init_index()
 
