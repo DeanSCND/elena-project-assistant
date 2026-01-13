@@ -34,6 +34,9 @@ from knowledge_manager import get_knowledge_manager, KnowledgeEntry
 # Import Firestore conversation database
 from firestore_db import ConversationDB
 
+# Import vector store for semantic search
+from vector_store import get_vector_store
+
 # Load environment variables
 env_path = Path(__file__).parent.parent / '.env'
 load_dotenv(dotenv_path=env_path)
@@ -179,30 +182,23 @@ class ChatMessage(BaseModel):
 
 def search_chunks(query: str, top_k: int = 5) -> List[DocumentChunk]:
     """
-    Search chunks for relevant content (simple keyword-based for now).
+    Semantic search using Pinecone vector store.
     Returns chunks with source metadata intact.
     """
-    query_lower = query.lower()
-    query_terms = set(query_lower.split())
+    vector_store = get_vector_store()
 
-    scored_chunks = []
+    # Perform semantic search
+    results = vector_store.search(query, top_k=top_k)
 
-    for chunk in KNOWLEDGE.chunks:
-        content_lower = chunk.content.lower()
+    # Convert results back to DocumentChunk objects
+    chunks = []
+    for result in results:
+        chunk_id = result['id']
+        if chunk_id in KNOWLEDGE.chunk_index:
+            chunk = KNOWLEDGE.chunk_index[chunk_id]
+            chunks.append(chunk)
 
-        # Simple scoring: count matching terms
-        score = sum(1 for term in query_terms if term in content_lower)
-
-        # Boost score if exact phrase match
-        if query_lower in content_lower:
-            score += 5
-
-        if score > 0:
-            scored_chunks.append((score, chunk))
-
-    # Sort by score and return top_k
-    scored_chunks.sort(key=lambda x: x[0], reverse=True)
-    return [chunk for score, chunk in scored_chunks[:top_k]]
+    return chunks
 
 def create_chunks_from_content(content: str, filename: str, source_pdf: str) -> List[DocumentChunk]:
     """
@@ -421,6 +417,27 @@ async def load_and_analyze_documents():
         print("\nBase Component Types Found:")
         for comp_type, instances in KNOWLEDGE.base_components.items():
             print(f"  - {comp_type}: {len(instances)} variations")
+
+    # Upload chunks to Pinecone vector store
+    print("\n" + "=" * 50)
+    print("Initializing Vector Store...")
+    print("=" * 50)
+
+    vector_store = get_vector_store()
+
+    # Prepare chunks for upload
+    chunks_for_upload = []
+    for chunk in KNOWLEDGE.chunks:
+        chunks_for_upload.append({
+            'id': chunk.id,
+            'content': chunk.content,
+            'metadata': chunk.metadata
+        })
+
+    # Upload to Pinecone (skips if already uploaded)
+    vector_store.upsert_chunks(chunks_for_upload)
+
+    print("✓ Vector store ready")
 
 async def perform_reasoning(query: str, conversation_history: List[ConversationMessage] = None) -> Dict[str, Any]:
     """Perform multi-step reasoning on query with conversation context"""
