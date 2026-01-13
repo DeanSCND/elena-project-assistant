@@ -16,12 +16,31 @@ from google.cloud import firestore
 USING_EMULATOR = bool(os.getenv('FIRESTORE_EMULATOR_HOST'))
 GCP_PROJECT_ID = os.getenv('GCP_PROJECT_ID', 'eleventyseven-45e7c')
 
+# SAFETY: Default to local emulator to prevent accidental production writes
+if not USING_EMULATOR and os.getenv('ALLOW_PRODUCTION_FIRESTORE') != 'true':
+    print(f"{'='*80}")
+    print(f"❌ FIRESTORE ERROR: Production Firestore disabled by default!")
+    print(f"{'='*80}")
+    print(f"To use local development:")
+    print(f"  1. Start Firestore emulator: docker-compose up")
+    print(f"  2. Or set: export FIRESTORE_EMULATOR_HOST=localhost:8080")
+    print(f"")
+    print(f"To use production Firestore (Cloud Run only):")
+    print(f"  export ALLOW_PRODUCTION_FIRESTORE=true")
+    print(f"{'='*80}")
+    raise RuntimeError(
+        "FIRESTORE_EMULATOR_HOST not set and ALLOW_PRODUCTION_FIRESTORE not enabled. "
+        "Refusing to connect to production Firestore from local development."
+    )
+
 print(f"{'='*80}")
 print(f"FIRESTORE CONFIGURATION:")
 print(f"  Environment: {'LOCAL EMULATOR' if USING_EMULATOR else 'PRODUCTION CLOUD'}")
 print(f"  Project ID: {GCP_PROJECT_ID}")
 if USING_EMULATOR:
     print(f"  Emulator Host: {os.getenv('FIRESTORE_EMULATOR_HOST')}")
+else:
+    print(f"  ⚠️  PRODUCTION MODE ENABLED (ALLOW_PRODUCTION_FIRESTORE=true)")
 print(f"{'='*80}")
 
 # Initialize Firestore client

@@ -37,5 +37,8 @@ WORKDIR /app/backend
 # Expose port
 EXPOSE 8100
 
+# Enable production Firestore for Cloud Run
+ENV ALLOW_PRODUCTION_FIRESTORE=true
+
 # Start command
 CMD ["python", "app_v2.py"]
