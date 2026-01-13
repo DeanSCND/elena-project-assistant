@@ -19,16 +19,20 @@ RUN pip install poetry
 COPY backend/pyproject.toml backend/poetry.lock* ./backend/
 WORKDIR /app/backend
 RUN poetry config virtualenvs.create false && \
-    poetry install --no-dev --no-interaction --no-ansi
+    poetry install --only main --no-interaction --no-ansi --no-root
 
 # Copy backend code
 COPY backend/ ./
 
-# Copy built frontend
-COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
-
 # Copy documents
 COPY backend/documents ./documents
+
+# Copy built frontend (reset WORKDIR to /app first)
+WORKDIR /app
+COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
+
+# Back to backend directory for running the app
+WORKDIR /app/backend
 
 # Expose port
 EXPOSE 8100

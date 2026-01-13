@@ -62,6 +62,29 @@ openai_client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Document knowledge base
 @dataclass
+class DocumentChunk:
+    """Chunk of document content with source metadata"""
+    id: str
+    content: str
+    metadata: Dict[str, Any]  # PDF name, page, section, coordinates
+    embedding: Optional[List[float]] = None  # For semantic search
+
+    def get_citation_ref(self) -> str:
+        """Get formatted citation reference for users"""
+        pdf = self.metadata.get("source_pdf", "Unknown")
+        page = self.metadata.get("page")
+        section = self.metadata.get("section")
+
+        # Build user-friendly reference
+        ref = pdf
+        if page:
+            ref += f", page {page}"
+        if section and section != "Introduction":
+            ref += f", section '{section}'"
+
+        return ref
+
+@dataclass
 class DocumentKnowledge:
     """Structured knowledge extracted from documents"""
     components: Dict[str, Dict[str, Any]] = None
@@ -71,6 +94,8 @@ class DocumentKnowledge:
     base_components: Dict[str, List] = None
     raw_content: Dict[str, str] = None
     analysis_cache: Dict[str, Any] = None
+    chunks: List[DocumentChunk] = None  # NEW: Structured chunks with metadata
+    chunk_index: Dict[str, DocumentChunk] = None  # NEW: Quick lookup by ID
 
     def __post_init__(self):
         self.components = self.components or {}
@@ -80,9 +105,35 @@ class DocumentKnowledge:
         self.base_components = self.base_components or {}
         self.raw_content = self.raw_content or {}
         self.analysis_cache = self.analysis_cache or {}
+        self.chunks = self.chunks or []
+        self.chunk_index = self.chunk_index or {}
 
 # Global knowledge base
 KNOWLEDGE = DocumentKnowledge()
+
+# Conversation memory for tracking citations
+@dataclass
+class ConversationMemory:
+    """Tracks which chunks were cited in each response"""
+    response_citations: Dict[str, List[str]] = None  # message_index → chunk_ids
+
+    def __post_init__(self):
+        self.response_citations = self.response_citations or {}
+
+    def store_citations(self, message_index: int, chunk_ids: List[str]):
+        """Store which chunks were cited in a response"""
+        self.response_citations[str(message_index)] = chunk_ids
+
+    def get_cited_chunks(self, message_index: int) -> List[DocumentChunk]:
+        """Retrieve chunks that were cited in a previous message"""
+        chunk_ids = self.response_citations.get(str(message_index), [])
+        return [KNOWLEDGE.chunk_index[cid] for cid in chunk_ids if cid in KNOWLEDGE.chunk_index]
+
+    def extract_citations_from_text(self, text: str) -> List[str]:
+        """Extract <c>chunk_id</c> markers from generated text"""
+        return re.findall(r'<c>([^<>]+)</c>', text)
+
+MEMORY = ConversationMemory()
 
 # Initialize knowledge manager
 knowledge_manager = get_knowledge_manager()
@@ -112,11 +163,94 @@ For each query:
 
 Always show your reasoning process."""
 
+class ConversationMessage(BaseModel):
+    role: str  # "user" or "assistant"
+    content: str
+
 class ChatMessage(BaseModel):
     message: str
     session_id: Optional[str] = None
     reasoning_mode: bool = True  # Enable deep reasoning by default
     model: str = "gpt-4o"  # Default to GPT-4o
+    conversation_history: List[ConversationMessage] = []  # Previous messages for context
+
+def search_chunks(query: str, top_k: int = 5) -> List[DocumentChunk]:
+    """
+    Search chunks for relevant content (simple keyword-based for now).
+    Returns chunks with source metadata intact.
+    """
+    query_lower = query.lower()
+    query_terms = set(query_lower.split())
+
+    scored_chunks = []
+
+    for chunk in KNOWLEDGE.chunks:
+        content_lower = chunk.content.lower()
+
+        # Simple scoring: count matching terms
+        score = sum(1 for term in query_terms if term in content_lower)
+
+        # Boost score if exact phrase match
+        if query_lower in content_lower:
+            score += 5
+
+        if score > 0:
+            scored_chunks.append((score, chunk))
+
+    # Sort by score and return top_k
+    scored_chunks.sort(key=lambda x: x[0], reverse=True)
+    return [chunk for score, chunk in scored_chunks[:top_k]]
+
+def create_chunks_from_content(content: str, filename: str, source_pdf: str) -> List[DocumentChunk]:
+    """
+    Create chunks from document content with metadata.
+    Follows Tensorlake citation pattern: chunk with source tracking.
+    """
+    chunks = []
+
+    # Split content into logical sections
+    # Strategy: Split by headers (## or ###) to maintain semantic coherence
+    sections = re.split(r'\n(#{2,3}\s+.*?)\n', content)
+
+    chunk_id_base = filename.replace(".AI.md", "").replace(" ", "_")
+    current_section = "Introduction"
+    chunk_counter = 0
+
+    for i, section in enumerate(sections):
+        # Skip empty sections
+        if not section.strip():
+            continue
+
+        # Check if this is a header
+        if section.startswith("##"):
+            current_section = section.replace("#", "").strip()
+            continue
+
+        # This is content - create a chunk
+        if len(section.strip()) > 100:  # Only chunk substantial content
+            chunk_id = f"{chunk_id_base}_chunk_{chunk_counter:03d}"
+
+            # Extract page number from content if available (look for "Page X" patterns)
+            page_match = re.search(r'[Pp]age\s+(\d+)', section)
+            page = int(page_match.group(1)) if page_match else None
+
+            chunk = DocumentChunk(
+                id=chunk_id,
+                content=section.strip()[:2000],  # Limit chunk size
+                metadata={
+                    "source_pdf": source_pdf,
+                    "source_md": filename,
+                    "section": current_section,
+                    "page": page,
+                    "chunk_index": chunk_counter
+                }
+            )
+
+            chunks.append(chunk)
+            KNOWLEDGE.chunk_index[chunk_id] = chunk
+            chunk_counter += 1
+
+    return chunks
 
 async def analyze_shop_drawing_content(content: str, filename: str) -> Dict[str, Any]:
     """Deeply analyze shop drawing content"""
@@ -232,6 +366,13 @@ async def load_and_analyze_documents():
 
                 print(f"Loading {filename} ({len(content):,} chars)...")
 
+                # Create chunks from content (with source PDF metadata)
+                if ".AI.md" in filename and filename in source_pdf_map:
+                    source_pdf = source_pdf_map[filename]
+                    doc_chunks = create_chunks_from_content(content, filename, source_pdf)
+                    KNOWLEDGE.chunks.extend(doc_chunks)
+                    print(f"  → Created {len(doc_chunks)} chunks with citations")
+
                 # Perform deep analysis on shop drawings
                 if "TRE" in filename and ".AI.md" in filename:
                     print(f"  → Analyzing trellis components...")
@@ -267,6 +408,7 @@ async def load_and_analyze_documents():
     print("\n" + "=" * 50)
     print("Knowledge Base Summary:")
     print(f"  Documents loaded: {len(KNOWLEDGE.raw_content)}")
+    print(f"  Chunks created: {len(KNOWLEDGE.chunks)}")  # NEW
     print(f"  Components identified: {len(KNOWLEDGE.components)}")
     print(f"  Base component types: {len(KNOWLEDGE.base_components)}")
     print(f"  Patterns found: {len(KNOWLEDGE.patterns)}")
@@ -277,10 +419,17 @@ async def load_and_analyze_documents():
         for comp_type, instances in KNOWLEDGE.base_components.items():
             print(f"  - {comp_type}: {len(instances)} variations")
 
-async def perform_reasoning(query: str) -> Dict[str, Any]:
-    """Perform multi-step reasoning on query"""
+async def perform_reasoning(query: str, conversation_history: List[ConversationMessage] = None) -> Dict[str, Any]:
+    """Perform multi-step reasoning on query with conversation context"""
 
     reasoning_steps = []
+
+    # Build conversation context if available
+    conversation_context = ""
+    if conversation_history:
+        conversation_context = "\n\nPrevious conversation:\n"
+        for msg in conversation_history[-4:]:  # Include last 4 messages for context
+            conversation_context += f"{msg.role.upper()}: {msg.content}\n"
 
     # Check if this is a learning request
     is_learning, trigger = knowledge_manager.detect_learning_intent(query)
@@ -312,12 +461,14 @@ async def perform_reasoning(query: str) -> Dict[str, Any]:
     # Step 1: Query Understanding
     understanding_prompt = f"""Analyze this construction query:
 "{query}"
+{conversation_context}
 
 Identify:
 1. What specific information is being requested?
 2. What type of analysis is needed? (lookup, calculation, comparison, pattern analysis)
 3. What components or areas are involved?
 4. Is this about base components, dimensions, conflicts, or specifications?
+5. Does this question reference information from the previous conversation?
 
 Respond with your analysis."""
 
@@ -336,44 +487,130 @@ Respond with your analysis."""
         "result": understanding.choices[0].message.content
     })
 
-    # Step 2: Information Retrieval
+    # Step 2: Information Retrieval (Chunk-based with source tracking)
     retrieval_context = []
     source_pdfs = set()
     source_documents = []
+    retrieved_chunks = []  # Store actual chunk objects for later verification
 
-    # Check if asking about base components or trellis
-    if any(term in query.lower() for term in ["base component", "trellis", "similar", "pattern"]):
-        if KNOWLEDGE.base_components:
-            retrieval_context.append(f"Base Components Found:\n{json.dumps(KNOWLEDGE.base_components, indent=2)[:3000]}")
-        if KNOWLEDGE.patterns:
-            retrieval_context.append(f"Patterns Identified:\n{json.dumps(KNOWLEDGE.patterns[:5], indent=2)}")
+    # CITATION MEMORY: Check if user is asking about previous citations
+    is_source_question = any(keyword in query.lower() for keyword in [
+        "what document", "which document", "where did you find", "source", "from what", "what pdf"
+    ])
 
-    # Check for specific documents in cache and track source PDFs
-    for doc_name, analysis in KNOWLEDGE.analysis_cache.items():
-        if "TRE" in doc_name and "trellis" in query.lower():
-            # Skip source_pdf entries to avoid duplication
-            if doc_name.startswith("source_pdf_"):
-                continue
+    print(f"\n{'='*80}")
+    print(f"DEBUG CITATION FLOW:")
+    print(f"  Query: {query[:100]}...")
+    print(f"  Is source question: {is_source_question}")
+    print(f"  Conversation history length: {len(conversation_history)}")
 
-            retrieval_context.append(f"Analysis of {doc_name}:\n{json.dumps(analysis, indent=2)[:2000]}")
+    if conversation_history:
+        print(f"  Last 2 messages:")
+        for i, msg in enumerate(conversation_history[-2:]):
+            preview = msg.content[:200] if msg.content else "(empty)"
+            print(f"    [{i}] {msg.role}: {preview}...")
+            if msg.role == "assistant" and "<c>" in msg.content:
+                print(f"        ✓ Contains citation markers")
 
-            # Track the document
-            source_documents.append(doc_name)
+    if is_source_question and conversation_history:
+        print(f"\n  SOURCE QUESTION DETECTED - Extracting citations from conversation history")
+        # Extract citations from the last assistant message
+        for i in range(len(conversation_history) - 1, -1, -1):
+            if conversation_history[i].role == "assistant":
+                last_assistant_msg = conversation_history[i].content
+                print(f"  Last assistant message length: {len(last_assistant_msg)}")
+                print(f"  First 500 chars: {last_assistant_msg[:500]}")
 
-            # Find corresponding source PDF
-            pdf_info_key = f"source_pdf_{doc_name}"
-            if pdf_info_key in KNOWLEDGE.analysis_cache:
-                pdf_info = KNOWLEDGE.analysis_cache[pdf_info_key]
-                # Extract just the PDF filename, not the full path
-                pdf_name = pdf_info["pdf_file"]  # This should be just the filename
-                source_pdfs.add(pdf_name)
-                print(f"DEBUG: Added PDF {pdf_name} from {doc_name}")
-            else:
-                # If no PDF mapping exists, try to infer from the .AI.md filename
-                if doc_name.endswith(".AI.md"):
-                    inferred_pdf = doc_name.replace(".AI.md", ".pdf")
-                    source_pdfs.add(inferred_pdf)
-                    print(f"DEBUG: Inferred PDF {inferred_pdf} from {doc_name}")
+                cited_chunk_ids = MEMORY.extract_citations_from_text(last_assistant_msg)
+                print(f"  Extracted chunk IDs: {cited_chunk_ids}")
+
+                if cited_chunk_ids:
+                    print(f"  ✓ Found {len(cited_chunk_ids)} citations in previous response")
+                    # Retrieve the cited chunks
+                    for chunk_id in cited_chunk_ids:
+                        if chunk_id in KNOWLEDGE.chunk_index:
+                            chunk = KNOWLEDGE.chunk_index[chunk_id]
+                            retrieved_chunks.append(chunk)
+
+                            # Track source PDFs
+                            source_pdf = chunk.metadata.get("source_pdf")
+                            if source_pdf:
+                                source_pdfs.add(source_pdf)
+                                print(f"    [{chunk_id}] → {source_pdf}")
+
+                            # Add chunk to context for verification
+                            chunk_text = f"<c>{chunk.id}</c>\n{chunk.content}\n"
+                            retrieval_context.append(chunk_text)
+                        else:
+                            print(f"    ✗ Chunk {chunk_id} not found in index")
+                else:
+                    print(f"  ✗ No citations found in assistant message")
+                break  # Only check the last assistant message
+    print(f"{'='*80}\n")
+
+    # NEW: Always search chunks first (context-aware retrieval)
+    should_search_chunks = (
+        bool(conversation_history) or  # Has conversation context
+        any(term in query.lower() for term in ["trellis", "beam", "component", "material", "dimension", "document", "source", "pdf", "where", "which", "what"])
+    )
+
+    if should_search_chunks and KNOWLEDGE.chunks and not retrieval_context:
+        # Search for relevant chunks (skip if we already retrieved cited chunks)
+        relevant_chunks = search_chunks(query, top_k=5)
+
+        if relevant_chunks:
+            # Add chunk content to retrieval context WITH citation markers
+            for chunk in relevant_chunks:
+                # Use <c>chunk_id</c> pattern from research
+                chunk_text = f"<c>{chunk.id}</c>\n{chunk.content}\n"
+                retrieval_context.append(chunk_text)
+
+                # Track source PDFs from chunk metadata
+                source_pdf = chunk.metadata.get("source_pdf")
+                if source_pdf:
+                    source_pdfs.add(source_pdf)
+
+                source_md = chunk.metadata.get("source_md")
+                if source_md:
+                    source_documents.append(source_md)
+
+                retrieved_chunks.append(chunk)
+
+            print(f"DEBUG: Retrieved {len(relevant_chunks)} chunks from {len(set(source_pdfs))} PDFs")
+
+    # Fallback: OLD retrieval method if no chunks found
+    if not retrieval_context:
+        # Check if asking about base components or trellis
+        if any(term in query.lower() for term in ["base component", "trellis", "similar", "pattern"]):
+            if KNOWLEDGE.base_components:
+                retrieval_context.append(f"Base Components Found:\n{json.dumps(KNOWLEDGE.base_components, indent=2)[:3000]}")
+            if KNOWLEDGE.patterns:
+                retrieval_context.append(f"Patterns Identified:\n{json.dumps(KNOWLEDGE.patterns[:5], indent=2)}")
+
+        # Check for specific documents in cache and track source PDFs
+        for doc_name, analysis in KNOWLEDGE.analysis_cache.items():
+            if "TRE" in doc_name and "trellis" in query.lower():
+                # Skip source_pdf entries to avoid duplication
+                if doc_name.startswith("source_pdf_"):
+                    continue
+
+                retrieval_context.append(f"Analysis of {doc_name}:\n{json.dumps(analysis, indent=2)[:2000]}")
+
+                # Track the document
+                source_documents.append(doc_name)
+
+                # Find corresponding source PDF
+                pdf_info_key = f"source_pdf_{doc_name}"
+                if pdf_info_key in KNOWLEDGE.analysis_cache:
+                    pdf_info = KNOWLEDGE.analysis_cache[pdf_info_key]
+                    pdf_name = pdf_info["pdf_file"]
+                    source_pdfs.add(pdf_name)
+                else:
+                    # Infer PDF from .AI.md filename
+                    if doc_name.endswith(".AI.md"):
+                        inferred_pdf = doc_name.replace(".AI.md", ".pdf")
+                        source_pdfs.add(inferred_pdf)
+
 
     # Build detailed retrieval result
     retrieval_result = {
@@ -389,20 +626,80 @@ Respond with your analysis."""
 
     # Step 3: Analysis
     if retrieval_context:
-        analysis_prompt = f"""Based on the retrieved information, analyze and answer this query:
+        # Build PDF source list
+        pdf_citations = ""
+        if source_pdfs:
+            pdf_citations = f"\n\nSource PDF Documents:\n" + "\n".join([f"- {pdf}" for pdf in source_pdfs])
+
+        # Build chunk citation map for reference
+        chunk_citation_map = {}
+        for chunk in retrieved_chunks:
+            chunk_citation_map[chunk.id] = chunk.get_citation_ref()
+
+        # Special handling for source questions
+        if is_source_question:
+            analysis_prompt = f"""The user is asking about the SOURCE DOCUMENT for information I previously provided.
+
+Previous conversation:
+{conversation_context}
+
+Current question:
 "{query}"
+
+The chunks I cited in my previous response:
+{chr(10).join(retrieval_context)}
+
+Citation Reference Map (chunk_id → user-friendly location):
+{json.dumps(chunk_citation_map, indent=2)}
+
+TASK: Tell the user which PDF document(s) I cited in my previous response, using HUMAN-READABLE references.
+
+RESPONSE FORMAT:
+1. Identify the specific information they're asking about (e.g., "RAMPA1-4_20")
+2. Find which chunk_id(s) contained that information
+3. Use the Citation Reference Map to get the user-friendly reference (PDF name, page, section)
+4. Answer using the human-readable reference - DO NOT mention "chunk_id" or technical identifiers to the user
+
+Example: "I found the RAMPA1-4_20 information in **SAF-TRE-013 R2.pdf, section 'Missing Documentation'**"
+
+IMPORTANT: Users don't know what "chunks" are. Use only the information from the Citation Reference Map, which includes:
+- PDF filename
+- Page number (if available)
+- Section name (if available)
+
+If the information cannot be traced to a specific source, say: "I apologize, but I cannot trace that specific detail to a source document. Let me search again for that information."
+"""
+        else:
+            analysis_prompt = f"""Based on the retrieved information, analyze and answer this query:
+"{query}"
+{conversation_context}
 
 {learned_context}
 
-Available Information:
+Available Information (with citation markers):
 {chr(10).join(retrieval_context)}
 
-Provide a detailed analysis that:
-1. Directly answers the question
-2. Cites specific components and dimensions
-3. Explains patterns or relationships found
-4. Identifies base components if relevant
-5. Apply any relevant learned knowledge"""
+Citation Reference Map:
+{json.dumps(chunk_citation_map, indent=2)}
+
+{pdf_citations}
+
+CRITICAL CITATION INSTRUCTIONS (Following RAG Best Practices):
+1. The information above contains <c>chunk_id</c> markers
+2. When you cite information, INCLUDE the <c>chunk_id</c> marker in your response
+3. Example: "According to <c>SAF-TRE-003-R3_21__chunk_046</c>, the width is 8 inches"
+4. EVERY factual claim MUST have a <c>chunk_id</c> citation
+5. Use the Citation Reference Map to see which PDF each chunk_id comes from
+6. If you cannot find a chunk to cite, say "I don't have that information in the available documents"
+
+RESPONSE FORMAT:
+1. Directly answer the question with inline <c>chunk_id</c> citations
+2. Cite specific components and dimensions WITH their chunk_id
+3. Explain patterns or relationships found
+4. Apply any relevant learned knowledge
+5. If the question asks about sources, name the PDF file AND provide the chunk_id
+
+DO NOT reference .md or .AI.md files - only cite the PDF sources using chunk_id markers."""
 
         analysis = await openai_client.chat.completions.create(
             model="gpt-4o",
@@ -416,16 +713,24 @@ Provide a detailed analysis that:
 
         final_answer = analysis.choices[0].message.content
 
+        # Extract and store citations from this response
+        cited_chunk_ids = MEMORY.extract_citations_from_text(final_answer)
+        if cited_chunk_ids:
+            # Message index = current conversation length (user messages + assistant responses)
+            message_index = len(conversation_history)
+            MEMORY.store_citations(message_index, cited_chunk_ids)
+            print(f"DEBUG: Stored {len(cited_chunk_ids)} citations for message {message_index}")
+
         reasoning_steps.append({
             "step": "Analysis & Synthesis",
             "result": "Complete"
         })
     else:
-        # Fallback to general knowledge
-        final_answer = await generate_fallback_response(query)
+        # No relevant documents found - be honest
+        final_answer = await generate_fallback_response(query, conversation_context)
         reasoning_steps.append({
-            "step": "General Response",
-            "result": "Using general construction knowledge"
+            "step": "No Relevant Documents",
+            "result": "Could not find specific information in available documents"
         })
 
     return {
@@ -437,27 +742,31 @@ Provide a detailed analysis that:
         "confidence": 0.95 if retrieval_context else 0.7
     }
 
-async def generate_fallback_response(query: str) -> str:
-    """Generate response when specific data not found"""
+async def generate_fallback_response(query: str, conversation_context: str = "") -> str:
+    """Generate honest response when specific data not found"""
 
-    context = f"""Project: Aurora Food Store, Regina, SK
-Available documents include shop drawings, RCP plans, field verification reports.
+    # Check if this is a follow-up question about sources
+    if any(keyword in query.lower() for keyword in ["what document", "which document", "where did you find", "source", "from what"]):
+        if conversation_context:
+            return f"I apologize, but I cannot find specific source document information for that detail in my available documents. If I mentioned something in my previous response without a source citation, I should not have - I should only cite information I can trace to specific PDF documents.\n\nCould you please ask your question again, or clarify what specific information you're looking for?"
+        else:
+            return "I don't have enough context to answer that question about sources. Could you please rephrase or provide more details about what you're looking for?"
 
-Query: {query}
+    # For general queries where no documents match
+    return f"""I couldn't find specific information about "{query}" in the available Aurora Food Store project documents.
 
-Provide helpful guidance based on construction best practices."""
+The documents I have access to include:
+- Trellis shop drawings (SAF-TRE-*.pdf)
+- Aurora Food Store construction documents
+- PCN (Project Change Notices)
+- RFI (Request for Information) documents
 
-    response = await openai_client.chat.completions.create(
-        model="gpt-4o",
-        messages=[
-            {"role": "system", "content": ANALYSIS_PROMPT},
-            {"role": "user", "content": context}
-        ],
-        temperature=0.5,
-        max_tokens=500
-    )
+Please try:
+1. Rephrasing your question with different terms
+2. Asking about a different aspect of the project
+3. Being more specific about which component or system you're interested in
 
-    return response.choices[0].message.content
+If you believe this information should be in the documents, please let me know and I can help search for it differently."""
 
 async def stream_reasoning_response(query: str, reasoning_result: Dict[str, Any]) -> AsyncGenerator[str, None]:
     """Stream response with visible reasoning steps"""
@@ -525,8 +834,11 @@ async def chat_endpoint(message: ChatMessage):
 
     try:
         if message.reasoning_mode:
-            # Perform deep reasoning
-            reasoning_result = await perform_reasoning(message.message)
+            # Perform deep reasoning with conversation history
+            reasoning_result = await perform_reasoning(
+                message.message,
+                message.conversation_history
+            )
 
             # Stream response with reasoning steps
             return StreamingResponse(
@@ -556,6 +868,7 @@ async def health_check():
     return {
         "status": "healthy",
         "documents_loaded": len(KNOWLEDGE.raw_content),
+        "chunks_created": len(KNOWLEDGE.chunks),  # NEW: Citation chunks
         "components_identified": len(KNOWLEDGE.components),
         "base_component_types": list(KNOWLEDGE.base_components.keys()),
         "patterns_found": len(KNOWLEDGE.patterns),
@@ -932,7 +1245,10 @@ if frontend_dist.exists():
             raise HTTPException(status_code=404)
 
         # Serve index.html for all other routes (SPA routing)
-        index_file = frontend_dist / "index.html"
+        # Try index_v2.html first (built by Vite), then index.html
+        index_file = frontend_dist / "index_v2.html"
+        if not index_file.exists():
+            index_file = frontend_dist / "index.html"
         if index_file.exists():
             return FileResponse(index_file)
         raise HTTPException(status_code=404)

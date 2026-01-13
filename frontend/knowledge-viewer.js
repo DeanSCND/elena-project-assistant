@@ -190,7 +190,7 @@ class KnowledgeViewer {
 
     async loadKnowledge() {
         try {
-            const response = await fetch('http://localhost:8100/learned-knowledge');
+            const response = await fetch('/learned-knowledge');
             if (!response.ok) throw new Error('Failed to load knowledge');
 
             this.knowledgeData = await response.json();
@@ -360,7 +360,7 @@ class KnowledgeViewer {
         const newKnowledge = entry.querySelector('.edit-textarea').value;
 
         try {
-            const response = await fetch(`http://localhost:8100/learned-knowledge/${entryId}`, {
+            const response = await fetch(`/learned-knowledge/${entryId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -383,7 +383,7 @@ class KnowledgeViewer {
         if (!confirm('Are you sure you want to delete this knowledge entry?')) return;
 
         try {
-            const response = await fetch(`http://localhost:8100/learned-knowledge/${entryId}`, {
+            const response = await fetch(`/learned-knowledge/${entryId}`, {
                 method: 'DELETE'
             });
 
@@ -400,7 +400,7 @@ class KnowledgeViewer {
 
     async exportKnowledge() {
         try {
-            const response = await fetch('http://localhost:8100/learned-knowledge/export', {
+            const response = await fetch('/learned-knowledge/export', {
                 method: 'POST'
             });
 
@@ -475,7 +475,7 @@ class KnowledgeViewer {
 
         try {
             // Create knowledge entry via backend
-            const response = await fetch('http://localhost:8100/chat', {
+            const response = await fetch('/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

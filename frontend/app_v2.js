@@ -2,7 +2,7 @@
 
 const API_BASE = window.location.hostname === 'localhost' && window.location.port === '5173'
     ? '/api'
-    : 'http://localhost:8100';
+    : '';
 
 // State management
 const state = {
@@ -218,6 +218,8 @@ function setupEventListeners() {
                 if (confirm('Start a new conversation? Current conversation will be cleared.')) {
                     // Clear conversation
                     conversationManager.clear();
+                    // Clear conversation history state
+                    state.messages = [];
                     // Clear UI
                     if (elements.messages) {
                         elements.messages.innerHTML = '';
@@ -490,6 +492,14 @@ async function sendMessage(message) {
     const assistantMessage = addMessage('assistant', '', true);
 
     try {
+        // Build conversation history (exclude current user message and empty assistant, include up to last 10 COMPLETED messages)
+        // state.messages now contains: [...previous messages, new user message, new empty assistant]
+        // We want to send only the previous messages, excluding the last 2 (current request)
+        const conversationHistory = state.messages.slice(0, -2).slice(-10).map(msg => ({
+            role: msg.role,
+            content: msg.content
+        }));
+
         const response = await fetch(`${API_BASE}/chat`, {
             method: 'POST',
             headers: {
@@ -498,7 +508,8 @@ async function sendMessage(message) {
             body: JSON.stringify({
                 message,
                 reasoning_mode: state.showReasoning,
-                model: state.currentModel
+                model: state.currentModel,
+                conversation_history: conversationHistory
             })
         });
 
@@ -687,6 +698,15 @@ async function processEnhancedSSEStream(response, messageElement) {
     } finally {
         messageElement.classList.remove('streaming');
 
+        // Update the last message in state.messages with the complete response
+        // (it was added with empty content when we created the messageElement)
+        if (fullText && state.messages.length > 0) {
+            const lastMessage = state.messages[state.messages.length - 1];
+            if (lastMessage.role === 'assistant' && !lastMessage.content) {
+                lastMessage.content = fullText;
+            }
+        }
+
         // Speak response if voice enabled
         if (voiceManager && voiceManager.voiceEnabled && fullText) {
             await voiceManager.speakText(fullText);
@@ -762,6 +782,15 @@ function addMessage(role, content, streaming = false, isInitial = false) {
     if (elements.messages) {
         elements.messages.appendChild(messageDiv);
         elements.messages.scrollTop = elements.messages.scrollHeight;
+    }
+
+    // Store in conversation history (skip only initial welcome message)
+    // Allow empty content for streaming messages (will be filled in later)
+    if (!isInitial) {
+        state.messages.push({
+            role: role,
+            content: content
+        });
     }
 
     return messageDiv;
