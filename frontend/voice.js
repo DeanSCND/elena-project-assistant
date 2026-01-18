@@ -1,5 +1,9 @@
 // Voice interaction module for Construction Agent
 
+const API_BASE = window.location.hostname === 'localhost'
+    ? '/api'
+    : '';
+
 class VoiceManager {
     constructor() {
         this.isRecording = false;

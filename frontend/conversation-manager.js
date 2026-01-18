@@ -1,5 +1,9 @@
 // Conversation Management Module
 
+const API_BASE = window.location.hostname === 'localhost'
+    ? '/api'
+    : '';
+
 class ConversationManager {
     constructor() {
         this.currentModel = 'gpt-4o';

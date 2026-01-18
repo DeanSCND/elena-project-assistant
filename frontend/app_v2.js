@@ -1,6 +1,6 @@
 // Enhanced Construction Agent POC - Frontend V2 with Reasoning Display
 
-const API_BASE = window.location.hostname === 'localhost' && window.location.port === '5173'
+const API_BASE = window.location.hostname === 'localhost'
     ? '/api'
     : '';
 

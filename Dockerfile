@@ -39,10 +39,6 @@ EXPOSE 8100
 
 # Enable production Firestore for Cloud Run
 ENV ALLOW_PRODUCTION_FIRESTORE=true
-
-# Qdrant configuration for production
-# Set to Cloud Run Qdrant service URL when deployed
-ENV QDRANT_URL=http://qdrant:6333
 ENV GCP_PROJECT_ID=eleventyseven-45e7c
 
 # Start command
