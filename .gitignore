@@ -104,3 +104,7 @@ htmlcov/
 
 # Railway
 .railway/
+
+# Test files
+test_*.py
+test_*.html
