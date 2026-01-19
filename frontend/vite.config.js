@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
+import { copyFileSync } from 'fs'
 
 export default defineConfig({
   server: {
@@ -23,5 +24,17 @@ export default defineConfig({
         main: resolve(__dirname, 'index_v2.html')
       }
     }
-  }
+  },
+  plugins: [
+    {
+      name: 'copy-pdf-viewer',
+      closeBundle() {
+        // Copy pdf-viewer.js to dist after build
+        copyFileSync(
+          resolve(__dirname, 'pdf-viewer.js'),
+          resolve(__dirname, 'dist/pdf-viewer.js')
+        )
+      }
+    }
+  ]
 })

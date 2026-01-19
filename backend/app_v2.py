@@ -34,22 +34,50 @@ from knowledge_manager import get_knowledge_manager, KnowledgeEntry
 # Import Firestore conversation database
 from firestore_db import ConversationDB
 
-# Import Qdrant vector store
-from vector_store import get_vector_store
+# Import Pinecone vector store
+from vector_store_pinecone import get_vector_store
 
 # Load environment variables
 env_path = Path(__file__).parent.parent / '.env'
 load_dotenv(dotenv_path=env_path)
 
+# Track document loading status
+DOCUMENTS_LOADED = False
+DOCUMENTS_LOADING = False
+
 # Lifespan context manager for startup/shutdown
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup
-    print("Initializing knowledge base...")
-    await load_and_analyze_documents()
+    # Startup - defer document loading to background task
+    print("FastAPI starting...")
+    # Start document loading in background (non-blocking)
+    asyncio.create_task(background_load_documents())
     yield
     # Shutdown (if needed)
     print("Shutting down...")
+
+async def background_load_documents():
+    """Load documents in background to avoid blocking server startup"""
+    global DOCUMENTS_LOADED, DOCUMENTS_LOADING
+
+    DOCUMENTS_LOADING = True
+    print("Background task: Starting document loading...")
+
+    try:
+        # Always load documents to populate KNOWLEDGE object
+        # (Pinecone upsert_chunks will skip upload if vectors already exist)
+        loop = asyncio.get_event_loop()
+
+        print("Loading documents and populating knowledge base...")
+        await loop.run_in_executor(None, load_and_analyze_documents_sync)
+        DOCUMENTS_LOADED = True
+        print("✓ Background task: Documents loaded successfully")
+    except Exception as e:
+        print(f"✗ Background task: Error loading documents: {e}")
+        import traceback
+        traceback.print_exc()
+    finally:
+        DOCUMENTS_LOADING = False
 
 # Initialize FastAPI app with lifespan
 app = FastAPI(title="Construction Agent V2", lifespan=lifespan)
@@ -64,7 +92,7 @@ app.add_middleware(
 )
 
 # Initialize OpenAI client
-openai_client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai_client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY").strip())
 
 # Document knowledge base
 @dataclass
@@ -125,8 +153,10 @@ class ConversationMemory:
         return [KNOWLEDGE.chunk_index[cid] for cid in chunk_ids if cid in KNOWLEDGE.chunk_index]
 
     def extract_citations_from_text(self, text: str) -> List[str]:
-        """Extract <c>chunk_id</c> markers from generated text"""
-        return re.findall(r'<c>([^<>]+)</c>', text)
+        """Extract <c>chunk_id</c> markers from generated text (handles both simple and enhanced formats)"""
+        # Match both <c>chunk_id</c> and <c data-...>chunk_id</c> formats
+        matches = re.findall(r'<c(?:[^>]*)>([^<]+)</c>', text)
+        return matches
 
 MEMORY = ConversationMemory()
 
@@ -301,17 +331,19 @@ Extract as structured JSON with these sections:
             ],
             response_format={"type": "json_object"},
             temperature=0.1,
-            max_tokens=3000
+            max_tokens=3000,
+            timeout=60.0  # 60 second timeout
         )
 
         return json.loads(response.choices[0].message.content)
 
     except Exception as e:
-        print(f"Error analyzing {filename}: {e}")
+        print(f"⚠️  Error analyzing {filename}: {e}")
+        # Return empty dict - don't let analysis failures block document loading
         return {}
 
-async def load_and_analyze_documents():
-    """Load Aurora documents with deep analysis"""
+def load_and_analyze_documents_sync():
+    """Load Aurora documents with deep analysis (synchronous, runs in thread pool)"""
 
     # Use environment variable for documents path, default to relative path
     documents_base = os.getenv('DOCUMENTS_PATH', str(Path(__file__).parent / 'documents'))
@@ -369,32 +401,33 @@ async def load_and_analyze_documents():
                     print(f"  → Created {len(doc_chunks)} chunks with citations")
 
                 # Perform deep analysis on shop drawings
-                if "TRE" in filename and ".AI.md" in filename:
-                    print(f"  → Analyzing trellis components...")
-                    analysis = await analyze_shop_drawing_content(content, filename)
-
-                    if analysis:
-                        KNOWLEDGE.analysis_cache[filename] = analysis
-
-                        # Extract base components
-                        if "base_components" in analysis:
-                            for base_comp in analysis["base_components"]:
-                                comp_type = base_comp.get("type", "unknown")
-                                if comp_type not in KNOWLEDGE.base_components:
-                                    KNOWLEDGE.base_components[comp_type] = []
-                                KNOWLEDGE.base_components[comp_type].append(base_comp)
-
-                            print(f"    ✓ Found {len(analysis['base_components'])} base component types")
-
-                        # Store raw components for detailed queries
-                        if "raw_components" in analysis:
-                            for comp in analysis["raw_components"]:
-                                comp_id = comp.get("id", str(uuid.uuid4()))
-                                KNOWLEDGE.components[comp_id] = comp
-
-                        # Extract patterns
-                        if "patterns" in analysis:
-                            KNOWLEDGE.patterns.extend(analysis["patterns"])
+                # TODO: Re-enable async analysis after fixing threading issues
+                # if "TRE" in filename and ".AI.md" in filename:
+                #     print(f"  → Analyzing trellis components...")
+                #     analysis = await analyze_shop_drawing_content(content, filename)
+                #
+                #     if analysis:
+                #         KNOWLEDGE.analysis_cache[filename] = analysis
+                #
+                #         # Extract base components
+                #         if "base_components" in analysis:
+                #             for base_comp in analysis["base_components"]:
+                #                 comp_type = base_comp.get("type", "unknown")
+                #                 if comp_type not in KNOWLEDGE.base_components:
+                #                     KNOWLEDGE.base_components[comp_type] = []
+                #                 KNOWLEDGE.base_components[comp_type].append(base_comp)
+                #
+                #             print(f"    ✓ Found {len(analysis['base_components'])} base component types")
+                #
+                #         # Store raw components for detailed queries
+                #         if "raw_components" in analysis:
+                #             for comp in analysis["raw_components"]:
+                #                 comp_id = comp.get("id", str(uuid.uuid4()))
+                #                 KNOWLEDGE.components[comp_id] = comp
+                #
+                #         # Extract patterns
+                #         if "patterns" in analysis:
+                #             KNOWLEDGE.patterns.extend(analysis["patterns"])
 
             except Exception as e:
                 print(f"  ✗ Error loading {filename}: {e}")
@@ -555,7 +588,14 @@ Respond with your analysis."""
                                 print(f"    [{chunk_id}] → {source_pdf}")
 
                             # Add chunk to context for verification
-                            chunk_text = f"<c>{chunk.id}</c>\n{chunk.content}\n"
+                            # Include rich citation metadata
+                            pdf_path = chunk.metadata.get("source_pdf", "")
+                            page = chunk.metadata.get("page", 1)
+                            section = chunk.metadata.get("section", "")
+
+                            # Create citation with enhanced metadata
+                            citation_tag = f"<c data-pdf=\"{pdf_path}\" data-page=\"{page}\" data-section=\"{section}\">{chunk.id}</c>"
+                            chunk_text = f"{citation_tag}\n{chunk.content}\n"
                             retrieval_context.append(chunk_text)
                         else:
                             print(f"    ✗ Chunk {chunk_id} not found in index")
@@ -577,9 +617,18 @@ Respond with your analysis."""
         if relevant_chunks:
             # Add chunk content to retrieval context WITH citation markers
             for chunk in relevant_chunks:
-                # Use <c>chunk_id</c> pattern from research
-                chunk_text = f"<c>{chunk.id}</c>\n{chunk.content}\n"
+                # Include rich citation metadata
+                pdf_path = chunk.metadata.get("source_pdf", "")
+                page = chunk.metadata.get("page", 1) or 1  # Ensure page is never None
+                section = chunk.metadata.get("section", "")
+
+                # Create citation with enhanced metadata
+                citation_tag = f"<c data-pdf=\"{pdf_path}\" data-page=\"{page}\" data-section=\"{section}\">{chunk.id}</c>"
+                chunk_text = f"{citation_tag}\n{chunk.content}\n"
                 retrieval_context.append(chunk_text)
+
+                # Debug: Log the citation tags being created
+                print(f"DEBUG: Created citation tag: {citation_tag[:100]}...")
 
                 # Track source PDFs from chunk metadata
                 source_pdf = chunk.metadata.get("source_pdf")
@@ -701,21 +750,28 @@ Citation Reference Map:
 {pdf_citations}
 
 CRITICAL CITATION INSTRUCTIONS (Following RAG Best Practices):
-1. The information above contains <c>chunk_id</c> markers
-2. When you cite information, INCLUDE the <c>chunk_id</c> marker in your response
-3. Example: "According to <c>SAF-TRE-003-R3_21__chunk_046</c>, the width is 8 inches"
-4. EVERY factual claim MUST have a <c>chunk_id</c> citation
-5. Use the Citation Reference Map to see which PDF each chunk_id comes from
-6. If you cannot find a chunk to cite, say "I don't have that information in the available documents"
+1. The information above contains citation markers in the format: <c data-pdf="..." data-page="..." data-section="...">chunk_id</c>
+2. When you cite information, you MUST preserve these EXACT citation tags in your response
+3. Copy the ENTIRE <c...>chunk_id</c> tag including all attributes and angle brackets
+4. Example: "According to <c data-pdf="SAF-TRE-003-R3[21].pdf" data-page="21" data-section="Details">SAF-TRE-003-R3[21]_chunk_046</c>, the width is 8 inches"
+5. DO NOT modify the citation tags - copy them EXACTLY as they appear
+6. EVERY factual claim MUST have its corresponding <c>...</c> citation tag
+7. If you cannot find a chunk to cite, say "I don't have that information in the available documents"
 
 RESPONSE FORMAT:
-1. Directly answer the question with inline <c>chunk_id</c> citations
-2. Cite specific components and dimensions WITH their chunk_id
+1. Directly answer the question with inline <c...>chunk_id</c> citations (preserve the FULL tags)
+2. Cite specific components and dimensions WITH their complete <c...>...</c> tags
 3. Explain patterns or relationships found
 4. Apply any relevant learned knowledge
-5. If the question asks about sources, name the PDF file AND provide the chunk_id
+5. If the question asks about sources, name the PDF file AND provide the complete citation tag
 
-DO NOT reference .md or .AI.md files - only cite the PDF sources using chunk_id markers."""
+DO NOT reference .md or .AI.md files - only cite the PDF sources using the complete <c...>...</c> citation tags."""
+
+        # Debug: Print first part of the analysis prompt to see citation tags
+        print(f"\nDEBUG: First retrieval context item being sent to OpenAI:")
+        if retrieval_context:
+            print(f"{retrieval_context[0][:500]}...")
+        print(f"DEBUG: Total retrieval context items: {len(retrieval_context)}\n")
 
         analysis = await openai_client.chat.completions.create(
             model="gpt-4o",
@@ -728,6 +784,47 @@ DO NOT reference .md or .AI.md files - only cite the PDF sources using chunk_id 
         )
 
         final_answer = analysis.choices[0].message.content
+
+        # Debug: Check if the response has citation tags
+        print(f"\nDEBUG: OpenAI response (first 500 chars):")
+        print(f"{final_answer[:500]}...")
+        has_c_tags = "<c" in final_answer
+        print(f"DEBUG: Response contains <c> tags: {has_c_tags}\n")
+
+        # Post-process: Add citation tags if they're missing
+        # Look for chunk IDs in the format: SAF-TRE-XXX_chunk_YYY or similar patterns
+        if not has_c_tags and retrieved_chunks:
+            print("DEBUG: No <c> tags found, attempting to add them...")
+
+            # Build a mapping of chunk_id to full citation tag
+            chunk_tag_map = {}
+            for chunk in retrieved_chunks:
+                pdf_path = chunk.metadata.get("source_pdf", "")
+                page = chunk.metadata.get("page", 1) or 1  # Ensure page is never None
+                section = chunk.metadata.get("section", "")
+                # Keep citation tag clean and simple for frontend to process
+                citation_tag = f'<c data-pdf="{pdf_path}" data-page="{page}" data-section="{section}">{chunk.id}</c>'
+                chunk_tag_map[chunk.id] = citation_tag
+
+                # Also map common variations for flexible matching
+                # Map without _chunk_ suffix
+                chunk_id_no_chunk = chunk.id.replace("_chunk_", "_")
+                if chunk_id_no_chunk != chunk.id:
+                    chunk_tag_map[chunk_id_no_chunk] = citation_tag
+
+                # Map base ID (before _chunk_)
+                base_id = chunk.id.split("_chunk_")[0] if "_chunk_" in chunk.id else chunk.id
+                if base_id != chunk.id:
+                    chunk_tag_map[base_id] = citation_tag
+
+            # Replace chunk IDs in the text with full citation tags
+            for chunk_id, citation_tag in chunk_tag_map.items():
+                # Look for the chunk ID as a word boundary match
+                pattern = r'\b' + re.escape(chunk_id) + r'\b'
+                final_answer = re.sub(pattern, citation_tag, final_answer)
+
+            print(f"DEBUG: Added citation tags for {len(chunk_tag_map)} chunks")
+            print(f"DEBUG: Modified response now contains <c> tags: {'<c' in final_answer}")
 
         # Extract and store citations from this response
         cited_chunk_ids = MEMORY.extract_citations_from_text(final_answer)
@@ -879,18 +976,40 @@ async def chat_endpoint(message: ChatMessage):
 
 @app.get("/health")
 async def health_check():
-    """Enhanced health check with knowledge base status"""
-
+    """Basic health check - server is running"""
     return {
         "status": "healthy",
-        "documents_loaded": len(KNOWLEDGE.raw_content),
-        "chunks_created": len(KNOWLEDGE.chunks),  # NEW: Citation chunks
-        "components_identified": len(KNOWLEDGE.components),
-        "base_component_types": list(KNOWLEDGE.base_components.keys()),
-        "patterns_found": len(KNOWLEDGE.patterns),
-        "analyzed_documents": len(KNOWLEDGE.analysis_cache),
-        "openai_configured": bool(os.getenv("OPENAI_API_KEY"))
+        "server": "running"
     }
+
+@app.get("/ready")
+async def readiness_check():
+    """Readiness check - documents loaded and ready to serve"""
+    global DOCUMENTS_LOADED, DOCUMENTS_LOADING
+
+    if DOCUMENTS_LOADED:
+        return {
+            "status": "ready",
+            "documents_loaded": len(KNOWLEDGE.raw_content),
+            "chunks_created": len(KNOWLEDGE.chunks),
+            "components_identified": len(KNOWLEDGE.components),
+            "base_component_types": list(KNOWLEDGE.base_components.keys()),
+            "patterns_found": len(KNOWLEDGE.patterns),
+            "analyzed_documents": len(KNOWLEDGE.analysis_cache),
+            "openai_configured": bool(os.getenv("OPENAI_API_KEY"))
+        }
+    elif DOCUMENTS_LOADING:
+        return {
+            "status": "loading",
+            "message": "Documents are being loaded in the background",
+            "documents_loaded": len(KNOWLEDGE.raw_content),
+            "chunks_created": len(KNOWLEDGE.chunks)
+        }
+    else:
+        return {
+            "status": "not_started",
+            "message": "Document loading has not started"
+        }
 
 @app.post("/reprime")
 async def reprime_knowledge(request: dict):
@@ -1108,6 +1227,91 @@ async def get_conversation(conversation_id: str):
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.delete("/conversations/{conversation_id}")
+async def delete_conversation(conversation_id: str):
+    """Delete a conversation from Firestore"""
+    try:
+        success = ConversationDB.delete_conversation(conversation_id)
+
+        if not success:
+            raise HTTPException(status_code=404, detail="Conversation not found")
+
+        return {
+            "success": True,
+            "message": "Conversation deleted successfully",
+            "conversation_id": conversation_id
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"Error deleting conversation: {e}")
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/documents/{file_path:path}")
+async def serve_pdf_document(file_path: str):
+    """
+    Serve PDF documents for viewing.
+    Supports both local file system and Google Cloud Storage (future).
+    """
+    # URL decode the file path to handle special characters like brackets
+    from urllib.parse import unquote
+    file_path = unquote(file_path)
+
+    # Security: Prevent path traversal attacks
+    if ".." in file_path or file_path.startswith("/"):
+        raise HTTPException(status_code=400, detail="Invalid file path")
+
+    # Construct full path to PDF
+    base_path = Path(__file__).parent / "documents"
+    print(f"🔍 PDF Request - file_path: {file_path}")
+    print(f"📁 Base path: {base_path}")
+    print(f"📂 Base path exists: {base_path.exists()}")
+    if base_path.exists():
+        print(f"📋 Files in base path: {list(base_path.iterdir())[:10]}")  # Show first 10
+
+    # First try the direct path
+    pdf_path = base_path / file_path
+    print(f"🎯 Trying direct path: {pdf_path}")
+    print(f"✅ Direct path exists: {pdf_path.exists()}")
+
+    # If not found and it's just a filename, search recursively
+    if not pdf_path.exists() and "/" not in file_path:
+        # Search for the file recursively
+        print(f"🔎 Searching recursively for PDF: {file_path}")
+        # Escape special characters for glob pattern
+        import glob
+        escaped_filename = glob.escape(file_path)
+        print(f"🔤 Escaped filename: {escaped_filename}")
+        found_files = list(base_path.rglob("*.pdf"))[:20]  # Show first 20 PDFs
+        print(f"📄 Found {len(list(base_path.rglob('*.pdf')))} total PDF files")
+        print(f"📝 Sample PDFs: {[f.name for f in found_files]}")
+        for pdf_file in base_path.rglob(escaped_filename):
+            if pdf_file.is_file() and pdf_file.suffix.lower() == '.pdf':
+                pdf_path = pdf_file
+                print(f"✅ Found PDF at: {pdf_path}")
+                break
+
+    # Check if file exists and is a PDF
+    if not pdf_path.exists():
+        print(f"❌ PDF not found: {file_path}")
+        raise HTTPException(status_code=404, detail=f"Document not found: {file_path}")
+
+    if pdf_path.suffix.lower() != '.pdf':
+        raise HTTPException(status_code=400, detail="Only PDF files are allowed")
+
+    # Return the PDF file
+    return FileResponse(
+        path=str(pdf_path),
+        media_type="application/pdf",
+        headers={
+            "Content-Disposition": f"inline; filename={pdf_path.name}",
+            "Cache-Control": "public, max-age=3600"  # Cache for 1 hour
+        }
+    )
+
 @app.post("/analyze")
 async def analyze_specific_topic(request: dict):
     """Perform specific analysis on demand"""
@@ -1312,15 +1516,27 @@ async def export_learned_knowledge():
 # Mount static files for frontend (production mode)
 # Check if built frontend exists
 frontend_dist = Path(__file__).parent.parent / "frontend" / "dist"
-if frontend_dist.exists():
+if frontend_dist.exists() and (frontend_dist / "assets").exists():
     print(f"📦 Serving frontend from: {frontend_dist}")
     app.mount("/assets", StaticFiles(directory=str(frontend_dist / "assets")), name="assets")
+
+    @app.get("/pdf-viewer.js")
+    async def serve_pdf_viewer():
+        """Serve the PDF viewer JavaScript file"""
+        pdf_viewer_path = frontend_dist / "pdf-viewer.js"
+        if pdf_viewer_path.exists():
+            return FileResponse(
+                path=str(pdf_viewer_path),
+                media_type="application/javascript",
+                headers={"Cache-Control": "public, max-age=3600"}
+            )
+        raise HTTPException(status_code=404)
 
     @app.get("/{full_path:path}")
     async def serve_frontend(full_path: str):
         """Serve frontend for all non-API routes"""
         # If path is API route, let it fall through
-        if full_path.startswith(("chat", "learned-knowledge", "health", "model", "docs", "openapi.json")):
+        if full_path.startswith(("chat", "learned-knowledge", "health", "model", "docs", "openapi.json", "documents", "knowledge", "ready", "analyze", "auto-save-conversation", "conversations")):
             raise HTTPException(status_code=404)
 
         # Serve index.html for all other routes (SPA routing)

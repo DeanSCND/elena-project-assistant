@@ -42,9 +42,6 @@ Thumbs.db
 # Learned knowledge (use volume)
 backend/learned_knowledge
 
-# Large PDFs (already excluded in .gitignore)
-**/*.pdf
-
 # Documentation
 README.md
 *.md

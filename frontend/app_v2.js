@@ -99,28 +99,32 @@ async function checkBackendStatus() {
         state.connected = true;
         updateConnectionStatus(true);
 
+        // Fetch knowledge base metrics
+        const knowledgeResponse = await fetch(`${API_BASE}/knowledge`);
+        const knowledge = await knowledgeResponse.json();
+
         // Update with enhanced status
         if (elements.docStatus) {
             elements.docStatus.innerHTML = `
                 <div class="status-item">
                     <span class="status-label">📄 Documents:</span>
-                    <span class="status-value">${health.documents_loaded || 0}</span>
+                    <span class="status-value">${knowledge.document_count || 0}</span>
                 </div>
                 <div class="status-item">
                     <span class="status-label">🔧 Components:</span>
-                    <span class="status-value">${health.components_identified || 0}</span>
+                    <span class="status-value">${knowledge.component_count || 0}</span>
                 </div>
                 <div class="status-item">
                     <span class="status-label">📊 Base Types:</span>
-                    <span class="status-value">${health.base_component_types?.length || 0}</span>
+                    <span class="status-value">${Object.keys(knowledge.base_components || {}).length}</span>
                 </div>
                 <div class="status-item">
                     <span class="status-label">🔍 Patterns:</span>
-                    <span class="status-value">${health.patterns_found || 0}</span>
+                    <span class="status-value">${knowledge.patterns?.length || 0}</span>
                 </div>
                 <div class="status-item">
                     <span class="status-label">🤖 Model:</span>
-                    <span class="status-value">${health.openai_configured ? state.currentModel.toUpperCase() : '❌'}</span>
+                    <span class="status-value">${health.status === 'healthy' ? state.currentModel.toUpperCase() : '❌'}</span>
                 </div>
             `;
         }
@@ -375,23 +379,29 @@ async function showHistoryModal() {
         const conversations = await conversationManager.loadConversations();
 
         if (conversations.length === 0) {
-            listContainer.innerHTML = '<p style="text-align: center; color: #6b7280;">No saved conversations</p>';
+            listContainer.innerHTML = '<p style="text-align: center; color: #6b7280;">No conversations yet</p>';
         } else {
             listContainer.innerHTML = conversations.map(conv => `
-                <div class="conversation-item" data-filename="${conv.filename}">
-                    <div class="conversation-title">${conv.title || 'Untitled'}</div>
-                    <div class="conversation-meta">
-                        <span>📅 ${new Date(conv.saved_at).toLocaleString()}</span>
-                        <span>💬 ${conv.message_count} messages</span>
+                <div class="conversation-item" data-conv-id="${conv.conversation_id}">
+                    <div class="conversation-item-content" data-conv-id="${conv.conversation_id}">
+                        <div class="conversation-title">${conv.title || 'Untitled'}</div>
+                        <div class="conversation-meta">
+                            <span>📅 ${new Date(conv.updated_at || conv.created_at).toLocaleString()}</span>
+                            <span>💬 ${conv.message_count} messages</span>
+                        </div>
+                    </div>
+                    <div class="conversation-actions">
+                        <button class="btn-resume" data-conv-id="${conv.conversation_id}" title="Resume conversation">↩️</button>
+                        <button class="btn-delete" data-conv-id="${conv.conversation_id}" title="Delete conversation">🗑️</button>
                     </div>
                 </div>
             `).join('');
 
-            // Add click handlers
-            listContainer.querySelectorAll('.conversation-item').forEach(item => {
-                item.addEventListener('click', async () => {
-                    const filename = item.dataset.filename;
-                    const conversation = await conversationManager.loadConversation(filename);
+            // Add click handlers for viewing
+            listContainer.querySelectorAll('.conversation-item-content').forEach(content => {
+                content.addEventListener('click', async () => {
+                    const convId = content.dataset.convId;
+                    const conversation = await conversationManager.loadConversation(convId);
 
                     // Show in viewer
                     viewer.innerHTML = `
@@ -400,7 +410,7 @@ async function showHistoryModal() {
                             ${conversation.messages.map(msg => `
                                 <div class="message ${msg.role}">
                                     <div class="message-header">${msg.role === 'user' ? '👤 You' : '🤖 Assistant'}</div>
-                                    <div class="message-content">${msg.content}</div>
+                                    <div class="message-content">${formatMessageContent(msg.content)}</div>
                                 </div>
                             `).join('')}
                         </div>
@@ -410,7 +420,78 @@ async function showHistoryModal() {
                     // Highlight selected
                     listContainer.querySelectorAll('.conversation-item').forEach(i =>
                         i.classList.remove('selected'));
-                    item.classList.add('selected');
+                    content.parentElement.classList.add('selected');
+                });
+            });
+
+            // Add resume handlers
+            listContainer.querySelectorAll('.btn-resume').forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    e.stopPropagation();
+                    const convId = btn.dataset.convId;
+                    try {
+                        await conversationManager.resumeConversation(convId);
+
+                        console.log('DEBUG: Loaded conversation messages:', conversationManager.messages);
+
+                        // Clear and reload chat UI
+                        elements.messages.innerHTML = '';
+                        state.messages = [];
+
+                        conversationManager.messages.forEach((msg, idx) => {
+                            console.log(`DEBUG: Processing message ${idx}:`, msg);
+
+                            if (!msg.content) {
+                                console.warn(`Message ${idx} has no content:`, msg);
+                                return;
+                            }
+
+                            const messageEl = addMessage(msg.role, msg.content);
+
+                            // If assistant message with reasoning steps, show them
+                            if (msg.role === 'assistant' && msg.reasoning_steps && msg.reasoning_steps.length > 0) {
+                                // Find the message container and add reasoning
+                                const reasoningContainer = document.createElement('div');
+                                reasoningContainer.className = 'reasoning-steps-container';
+                                reasoningContainer.innerHTML = `
+                                    <div class="reasoning-header">🧠 Reasoning Steps</div>
+                                    ${msg.reasoning_steps.map(step => `
+                                        <div class="reasoning-step">
+                                            <div class="reasoning-step-type">${step.type || 'step'}</div>
+                                            <div class="reasoning-step-content">${step.content || step.message || ''}</div>
+                                        </div>
+                                    `).join('')}
+                                `;
+                                messageEl.appendChild(reasoningContainer);
+                            }
+                        });
+
+                        console.log('DEBUG: Messages loaded, total:', conversationManager.messages.length);
+                        showNotification('Conversation resumed!', 'success');
+                        closeHistoryModal();
+                    } catch (error) {
+                        console.error('Resume error:', error);
+                        showNotification('Failed to resume conversation', 'error');
+                    }
+                });
+            });
+
+            // Add delete handlers
+            listContainer.querySelectorAll('.btn-delete').forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    e.stopPropagation();
+                    const convId = btn.dataset.convId;
+
+                    if (confirm('Are you sure you want to delete this conversation?')) {
+                        try {
+                            await conversationManager.deleteConversation(convId);
+                            showNotification('Conversation deleted', 'success');
+                            // Reload the conversation list
+                            await showHistoryModal();
+                        } catch (error) {
+                            showNotification('Failed to delete conversation', 'error');
+                        }
+                    }
                 });
             });
         }
@@ -698,6 +779,21 @@ async function processEnhancedSSEStream(response, messageElement) {
     } finally {
         messageElement.classList.remove('streaming');
 
+        // Update the message content with formatted HTML (for clickable citations)
+        if (fullText && messageContent) {
+            console.log('DEBUG: Raw fullText before formatting:', fullText.substring(0, 500));
+            const formattedContent = formatMessageContent(fullText);
+            console.log('DEBUG: Formatted content after formatMessageContent:', formattedContent.substring(0, 500));
+
+            // Clear the text content and set HTML
+            messageContent.textContent = '';  // Clear any text content first
+            messageContent.innerHTML = formattedContent;
+
+            // Verify the HTML was set correctly
+            console.log('DEBUG: Actual HTML in DOM:', messageContent.innerHTML.substring(0, 500));
+            console.log('DEBUG: Citation elements found:', messageContent.querySelectorAll('.citation').length);
+        }
+
         // Update the last message in state.messages with the complete response
         // (it was added with empty content when we created the messageElement)
         if (fullText && state.messages.length > 0) {
@@ -707,7 +803,15 @@ async function processEnhancedSSEStream(response, messageElement) {
             }
         }
 
+        // Save assistant response to conversation manager FIRST
+        if (conversationManager && fullText) {
+            conversationManager.addMessage('assistant', fullText, {
+                reasoning_steps: reasoningSteps
+            });
+        }
+
         // Auto-save conversation after assistant response (silent, no UI)
+        // MUST happen AFTER adding assistant message to conversationManager
         if (fullText) {
             try {
                 await conversationManager.autoSaveConversation();
@@ -720,13 +824,6 @@ async function processEnhancedSSEStream(response, messageElement) {
         // Speak response if voice enabled
         if (voiceManager && voiceManager.voiceEnabled && fullText) {
             await voiceManager.speakText(fullText);
-        }
-
-        // Save assistant response to conversation manager
-        if (conversationManager && fullText) {
-            conversationManager.addMessage('assistant', fullText, {
-                reasoning_steps: reasoningSteps
-            });
         }
 
         // Store reasoning steps
@@ -806,9 +903,64 @@ function addMessage(role, content, streaming = false, isInitial = false) {
     return messageDiv;
 }
 
-// Format message content with basic markdown support
+// Format message content with basic markdown support and citations
 function formatMessageContent(content) {
-    return content
+    console.log('DEBUG formatMessageContent: Input content sample:', content.substring(0, 200));
+
+    // Check if content looks like it has HTML-escaped citation tags
+    if (content.includes('&lt;c ') || content.includes('&lt;c&gt;')) {
+        console.log('DEBUG: Found escaped citation tags, unescaping...');
+        // Unescape HTML entities for citation tags only
+        content = content.replace(/&lt;c\s/g, '<c ')
+                        .replace(/&lt;\/c&gt;/g, '</c>')
+                        .replace(/&quot;/g, '"');
+        console.log('DEBUG: After unescaping:', content.substring(0, 200));
+    }
+
+    // First normalize any broken citation tags (remove newlines within tags)
+    let normalized = content.replace(/<c\s+([^>]+)\s*>/gm, (match, attrs) => {
+        console.log('DEBUG: Normalizing citation tag:', match);
+        return '<c ' + attrs.replace(/\s+/g, ' ') + '>';
+    });
+
+    // Then process citations
+    let formatted = normalized.replace(
+        /<c\s+data-pdf="([^"]*?)"\s+data-page="([^"]*?)"\s+data-section="([^"]*?)"[^>]*>([^<]+)<\/c>/g,
+        (match, pdfPath, pageNum, section, citationId) => {
+            // Extract meaningful display text from citation ID
+            const displayText = citationId.split('_chunk_')[0] || citationId;
+
+            if (pdfPath) {
+                // Create clickable citation with PDF metadata
+                // Handle "None" string from Python backend
+                const pageNumber = (pageNum && pageNum !== 'None' && pageNum !== 'null') ? parseInt(pageNum) : 1;
+                const pageInfo = pageNumber > 1 ? ` (p.${pageNumber})` : '';
+                const sectionInfo = section && section !== 'None' ? ` - ${section}` : '';
+
+                // Escape single quotes in paths for onclick
+                const safePath = (pdfPath || '').replace(/'/g, "\\'");
+                const safeSection = (section || '').replace(/'/g, "\\'");
+
+                // Return span on single line to avoid rendering issues
+                return `<span class="citation" data-pdf="${pdfPath || ''}" data-page="${pageNumber}" data-section="${section || ''}" onclick="openPdfCitation('${safePath}', ${pageNumber}, '${safeSection}')" title="Click to view source document${pageInfo}${sectionInfo}">${displayText}${pageInfo}</span>`;
+            } else {
+                // Legacy citation format without metadata
+                return `<span class="citation-legacy" title="${citationId}">${displayText}</span>`;
+            }
+        }
+    );
+
+    // Also handle simple citations without attributes (fallback)
+    formatted = formatted.replace(
+        /<c>([^<]+)<\/c>/g,
+        (match, citationId) => {
+            const displayText = citationId.split('_chunk_')[0] || citationId;
+            return `<span class="citation-legacy" title="${citationId}">${displayText}</span>`;
+        }
+    );
+
+    // Then apply markdown formatting
+    return formatted
         .replace(/\n/g, '<br>')
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.*?)\*/g, '<em>$1</em>')
@@ -816,6 +968,18 @@ function formatMessageContent(content) {
         .replace(/^- (.+)$/gm, '<li>$1</li>')
         .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
 }
+
+// Open PDF citation in viewer
+function openPdfCitation(pdfPath, pageNum, section) {
+    if (window.pdfViewer && pdfPath) {
+        window.pdfViewer.openPdf(pdfPath, pageNum, section);
+    } else {
+        console.warn('PDF viewer not available or no PDF path provided');
+    }
+}
+
+// Expose openPdfCitation to global scope for onclick handlers
+window.openPdfCitation = openPdfCitation;
 
 // Hook for voice manager
 if (window.VoiceManager) {
