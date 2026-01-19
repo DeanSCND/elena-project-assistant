@@ -116,8 +116,8 @@ export default defineConfig({
 EOF
 fi
 
-# Start Qdrant via Docker
-echo -e "\n${GREEN}Starting Qdrant Vector Database...${NC}"
+# Start Docker services
+echo -e "\n${GREEN}Starting Docker services (Qdrant + Firestore)...${NC}"
 cd "$PROJECT_ROOT"
 
 # Check if Qdrant is already running
@@ -143,6 +143,29 @@ else
     done
 fi
 
+# Check if Firestore is already running
+if docker ps | grep -q firestore; then
+    echo -e "${GREEN}✓ Firestore already running${NC}"
+else
+    # Start Firestore emulator
+    docker run -d \
+        --name firestore-emulator \
+        -p 8080:8080 \
+        -e FIRESTORE_PROJECT_ID=eleventyseven-45e7c \
+        -e PORT=8080 \
+        mtlynch/firestore-emulator
+
+    echo "Waiting for Firestore to be ready..."
+    for i in {1..10}; do
+        if curl -s http://localhost:8080 > /dev/null 2>&1; then
+            echo -e "${GREEN}✓ Firestore is ready!${NC}"
+            break
+        fi
+        echo -n "."
+        sleep 1
+    done
+fi
+
 # Start services
 echo -e "\n${GREEN}Starting services...${NC}"
 echo "=================================================="
@@ -151,7 +174,8 @@ echo "=================================================="
 cleanup() {
     echo -e "\n${YELLOW}Shutting down services...${NC}"
     kill $(jobs -p) 2>/dev/null
-    echo -e "${YELLOW}Note: Qdrant container still running. Stop with: docker stop qdrant${NC}"
+    echo -e "${YELLOW}Note: Docker containers still running.${NC}"
+    echo -e "${YELLOW}Stop with: docker stop qdrant firestore-emulator${NC}"
     exit 0
 }
 
@@ -160,12 +184,12 @@ trap cleanup EXIT INT TERM
 # Start backend (Enhanced V2)
 echo -e "\n${GREEN}Starting Enhanced Backend V2...${NC}"
 cd "$PROJECT_ROOT/backend"
-PORT=$PORT poetry run python app_v2.py &
+FIRESTORE_EMULATOR_HOST=localhost:8080 PORT=$PORT poetry run python app_v2.py &
 BACKEND_PID=$!
 
-# Wait for backend to start and analyze documents
+# Wait for backend to start and analyze documents (takes longer - 90 docs)
 echo "Waiting for backend to initialize and analyze documents..."
-for i in {1..20}; do
+for i in {1..60}; do
     if curl -s "http://localhost:${PORT}/health" > /dev/null 2>&1; then
         echo -e "${GREEN}✓ Backend is ready!${NC}"
         break

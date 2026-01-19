@@ -1,7 +1,7 @@
 // Conversation Management Module
 
 const API_BASE = window.location.hostname === 'localhost'
-    ? '/api'
+    ? 'http://localhost:8100'
     : '';
 
 class ConversationManager {
@@ -131,7 +131,8 @@ class ConversationManager {
 
     async loadConversations() {
         try {
-            const response = await fetch(`${API_BASE}/conversations`);
+            // Load ALL conversations (not just user-saved ones)
+            const response = await fetch(`${API_BASE}/conversations?user_saved_only=false&limit=100`);
             if (!response.ok) {
                 throw new Error('Failed to load conversations');
             }
@@ -140,6 +141,37 @@ class ConversationManager {
         } catch (error) {
             console.error('Error loading conversations:', error);
             return [];
+        }
+    }
+
+    async deleteConversation(conversationId) {
+        try {
+            const response = await fetch(`${API_BASE}/conversations/${conversationId}`, {
+                method: 'DELETE'
+            });
+            if (!response.ok) {
+                throw new Error('Failed to delete conversation');
+            }
+            return await response.json();
+        } catch (error) {
+            console.error('Error deleting conversation:', error);
+            throw error;
+        }
+    }
+
+    async resumeConversation(conversationId) {
+        try {
+            const conversation = await this.loadConversation(conversationId);
+
+            // Restore the conversation state
+            this.messages = conversation.messages || [];
+            this.conversationId = conversationId;
+            this.sessionId = conversation.session_id || this.generateSessionId();
+
+            return conversation;
+        } catch (error) {
+            console.error('Error resuming conversation:', error);
+            throw error;
         }
     }
 

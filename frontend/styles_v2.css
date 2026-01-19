@@ -815,11 +815,14 @@ details[open] summary {
 }
 
 .conversation-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     padding: 12px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     margin-bottom: 10px;
-    cursor: pointer;
     transition: all 0.2s;
 }
 
@@ -833,6 +836,15 @@ details[open] summary {
     border-color: #3b82f6;
 }
 
+.dark-mode .conversation-item.selected {
+    background: #1e3a5f;
+}
+
+.conversation-item-content {
+    flex: 1;
+    cursor: pointer;
+}
+
 .conversation-title {
     font-weight: 600;
     color: var(--text-primary);
@@ -844,6 +856,41 @@ details[open] summary {
     color: var(--text-secondary);
     display: flex;
     gap: 15px;
+}
+
+.conversation-actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.btn-resume, .btn-delete {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.btn-resume {
+    background: #3b82f6;
+    color: white;
+}
+
+.btn-resume:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.btn-delete {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+    transform: scale(1.05);
 }
 
 /* Conversation Viewer */
@@ -1345,4 +1392,165 @@ button:disabled {
         transform: translateX(100%);
         opacity: 0;
     }
+}
+/* PDF Viewer Styles */
+.pdf-viewer-container {
+    max-width: 95vw;
+    max-height: 90vh;
+}
+
+.pdf-viewer-container.fullscreen {
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+}
+
+.pdf-viewer-container.fullscreen .modal-content {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    border-radius: 0;
+}
+
+.pdf-viewer-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    min-height: 400px;
+    background: #f5f5f5;
+    position: relative;
+}
+
+.dark-mode .pdf-viewer-body {
+    background: #1e293b;
+}
+
+.pdf-canvas-container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#pdf-canvas {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background: white;
+    cursor: grab;
+    transform-origin: center center;
+}
+
+#pdf-canvas.dragging {
+    cursor: grabbing;
+}
+
+.pdf-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 1rem;
+    flex-wrap: wrap;
+}
+
+.pdf-controls .btn-icon {
+    background: #60a5fa;
+    color: #1e293b;
+    border: none;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.dark-mode .pdf-controls .btn-icon {
+    background: #3b82f6;
+    color: white;
+}
+
+.pdf-controls .btn-icon:hover:not(:disabled) {
+    background: #3b82f6;
+    transform: scale(1.05);
+}
+
+.dark-mode .pdf-controls .btn-icon:hover:not(:disabled) {
+    background: #60a5fa;
+}
+
+.pdf-controls .btn-icon:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pdf-controls .btn-icon.active {
+    background: #1d4ed8;
+    color: white;
+}
+
+#pdf-page-info {
+    font-size: 0.9rem;
+    min-width: 100px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.dark-mode #pdf-page-info {
+    color: #e2e8f0;
+}
+
+.pdf-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .pdf-loading {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+#pdf-section-info {
+    color: #666;
+    font-size: 0.9rem;
+    margin-right: auto;
+}
+
+.dark-mode #pdf-section-info {
+    color: #94a3b8;
+}
+
+.zoom-indicator {
+    font-size: 0.85rem;
+    color: #475569;
+    min-width: 50px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.dark-mode .zoom-indicator {
+    color: #cbd5e1;
+}
+
+/* Citation Styles */
+.citation {
+    color: #0066cc;
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    transition: all 0.2s;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+.citation:hover {
+    background: rgba(0, 102, 204, 0.1);
+    text-decoration-style: solid;
 }

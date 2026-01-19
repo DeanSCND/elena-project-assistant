@@ -54,9 +54,6 @@
                             placeholder="Ask about base components, patterns, dimensions... (Press Enter to send)"
                             autocomplete="off"
                         />
-                        <button type="button" id="save-conversation" class="chat-action-btn hidden" title="Save conversation">
-                            💾
-                        </button>
                         <button type="button" id="new-conversation" class="chat-action-btn hidden" title="New conversation">
                             ➕
                         </button>
@@ -171,9 +168,47 @@
         </div>
     </div>
 
+    <!-- PDF Viewer Modal -->
+    <div id="pdf-viewer-modal" class="modal hidden">
+        <div class="modal-content modal-wide pdf-viewer-container">
+            <div class="modal-header">
+                <h2 id="pdf-title">📄 Document Viewer</h2>
+                <div class="pdf-controls">
+                    <button id="pdf-prev-page" class="btn-icon" title="Previous page">◀</button>
+                    <span id="pdf-page-info">Page 1 of 1</span>
+                    <button id="pdf-next-page" class="btn-icon" title="Next page">▶</button>
+                    <button id="pdf-zoom-out" class="btn-icon" title="Zoom out">➖</button>
+                    <button id="pdf-zoom-in" class="btn-icon" title="Zoom in">➕</button>
+                    <button id="pdf-fullscreen" class="btn-icon" title="Fullscreen">⛶</button>
+                </div>
+                <button class="modal-close" onclick="closePdfViewer()">×</button>
+            </div>
+            <div class="modal-body pdf-viewer-body">
+                <div class="pdf-canvas-container">
+                    <canvas id="pdf-canvas"></canvas>
+                </div>
+                <div id="pdf-loading" class="pdf-loading hidden">
+                    <span>Loading PDF...</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div id="pdf-section-info"></div>
+                <button id="pdf-close" class="btn-secondary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        // Configure PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+
     <script type="module" src="./voice.js"></script>
     <script type="module" src="./conversation-manager.js"></script>
     <script type="module" src="./knowledge-viewer.js"></script>
+    <script src="./pdf-viewer.js"></script>
     <script type="module" src="./app_v2.js"></script>
 </body>
 </html>

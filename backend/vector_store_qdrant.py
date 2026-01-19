@@ -6,6 +6,7 @@ Works identically for local development and Google Cloud production.
 import os
 import time
 import uuid
+import asyncio
 from typing import List, Dict, Any, Optional
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, PointStruct
@@ -32,13 +33,16 @@ class QdrantVectorStore:
 
         # Initialize clients on first use
         if qdrant_client is None:
-            qdrant_client = QdrantClient(url=QDRANT_URL)
+            print(f"Connecting to Qdrant at {QDRANT_URL}...")
+            qdrant_client = QdrantClient(url=QDRANT_URL, timeout=60)
+            print(f"✓ Connected to Qdrant")
 
         if openai_client is None:
             OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
             if not OPENAI_API_KEY:
                 raise ValueError("OPENAI_API_KEY not found in environment")
-            openai_client = OpenAI(api_key=OPENAI_API_KEY)
+            # Strip whitespace to handle secrets with trailing newlines
+            openai_client = OpenAI(api_key=OPENAI_API_KEY.strip())
 
         self.client = qdrant_client
         self._init_collection()
@@ -103,7 +107,7 @@ class QdrantVectorStore:
 
             # Rate limiting
             if i + batch_size < len(texts):
-                time.sleep(0.1)
+                pass  # Removed blocking sleep - OpenAI has rate limiting built-in
 
         return embeddings
 
@@ -181,14 +185,13 @@ class QdrantVectorStore:
                 )
                 uploaded_count += len(batch)
                 print(f"  Batch {batch_num}: Uploaded {i+1}-{min(i+batch_size, len(points))} of {len(points)}")
-                time.sleep(0.1)  # Rate limiting
+                # Removed blocking sleep - Qdrant handles rate limiting
 
             except Exception as e:
                 print(f"  ✗ ERROR uploading batch {batch_num}: {type(e).__name__}: {e}")
                 raise
 
-        # Verify upload
-        time.sleep(1)  # Give Qdrant a moment to update
+        # Verify upload (Qdrant updates are synchronous, no delay needed)
         final_info = self.client.get_collection(COLLECTION_NAME)
         final_count = final_info.points_count
 
@@ -220,17 +223,16 @@ class QdrantVectorStore:
         # Generate query embedding
         query_embedding = self.generate_embedding(query)
 
-        # Search Qdrant
-        results = self.client.search(
+        # Search Qdrant using query_points
+        results = self.client.query_points(
             collection_name=COLLECTION_NAME,
-            query_vector=query_embedding,
-            limit=top_k,
-            query_filter=filter
+            query=query_embedding,
+            limit=top_k
         )
 
         # Format results - restore original IDs from metadata
         formatted_results = []
-        for hit in results:
+        for hit in results.points:
             formatted_results.append({
                 'id': hit.payload.get('original_id', str(hit.id)),
                 'score': hit.score,

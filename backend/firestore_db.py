@@ -133,6 +133,9 @@ class ConversationDB:
         Returns:
             List of conversation dicts
         """
+        if db is None:
+            return []
+
         query = db.collection(ConversationDB.COLLECTION)
 
         if user_saved_only:
